@@ -1,0 +1,14 @@
+button.menu-button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+nav {
+    display: none!important;
+}
