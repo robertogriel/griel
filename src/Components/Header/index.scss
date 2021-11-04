@@ -1,8 +1,46 @@
 header {
-    width: 100%;
-    background-image: url(../../Assets/Images/PNG/wave1.png);
-    img {
-        width: 160px;
-        height: 80px;
-    }
+	width: 100%;
+	justify-content: space-between;
+	div {
+		justify-content: space-between;
+		&.background {
+			display: flex;
+			position: absolute;
+			width: 100%;
+			padding-bottom: 100%;
+			overflow: hidden;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			svg {
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+		&.content {
+			position: relative;
+			justify-content: space-between;
+			z-index: 2;
+			padding: var(--space);
+			width: 100%;
+			img {
+				width: 160px;
+				height: 80px;
+				position: relative;
+				z-index: 2;
+				transition: all 0.2s ease-in-out;
+			}
+			&.menu {
+				img {
+					transition: all 0.2s ease-in-out;
+					margin-left: auto;
+    				margin-right: auto;
+					transform: scale(0.9);
+				}
+			}
+		}
+	}
 }
