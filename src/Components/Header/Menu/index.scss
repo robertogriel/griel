@@ -12,14 +12,16 @@ button {
 }
 
 nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -500px;
     width: 90%;
     height: 100vh;
     background-color: #FFFFFF;
     z-index: 1;
+    transition: all 0.5s ease-in;
     ul {
         display: flex;
         flex-direction: column;
@@ -54,7 +56,8 @@ nav {
     }
     &.open {
         display: flex;
-        flex-direction: column;
+        left: 0;
+
     }
     div {
         &.menu-close {
@@ -79,12 +82,15 @@ div {
         background-color: rgba(0,0,0,0.8);
         top: 0;
         height: 100vh;
-        z-index: 0;
+        z-index: -1;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        display: none;
+        opacity: 0;
+        transition: opacity 0.5s;
         &.open {
             display: flex;
+            opacity: 1;
+            z-index: 0;
         }
     }
 }
