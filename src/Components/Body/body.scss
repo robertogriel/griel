@@ -11,7 +11,7 @@ main {
         background-image: url('../../Assets/Images/PNG/background.png');
         section {
             &#top {
-                max-width: 800px;
+                width: 100%;
             }
         }
         div {
@@ -50,6 +50,7 @@ main {
             padding: 50px;
             section {
                 &#top {
+                    max-width: 800px;
                     flex-direction: row;
                     align-items: flex-end;
                     justify-content: flex-start;

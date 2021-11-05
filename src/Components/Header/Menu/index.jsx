@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 
-
 //Custom Imports
 import './index.scss';
 import MenuItem from './MenuItem';
@@ -26,7 +25,9 @@ const Menu = ()=>{
 
     }
 
-    /**{
+    /**
+     * ,    
+        {
             title:'quem sou',
             link: '/sobre'
         },
@@ -48,7 +49,8 @@ const Menu = ()=>{
         {
             title:'início',
             link: '/'
-        },    
+        }
+        
     ]
 
     return (

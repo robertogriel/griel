@@ -2,7 +2,6 @@ import React from 'react';
 import Typewriter from 'typewriter-effect';
 
 //Custom Imports
-import bgImage from '../../Assets/Images/PNG/background.png';
 import './body.scss';
 
 const Body = ()=>{

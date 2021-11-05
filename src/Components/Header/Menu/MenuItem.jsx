@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const MenuItem = (props)=>{
 
     return (
         <>
-            <a href={props.link} className={props.class}>
+            <Link to={props.link} className={props.class}>
+            
                 <li>
                     {props.children}
                 </li>
-            </a>
+            
+            </Link>
         </>
     );
 }
