@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 //Custom Imports
 import './index.scss';
-
+import MenuItem from './MenuItem';
 
 const Menu = ()=>{
 
@@ -26,6 +26,31 @@ const Menu = ()=>{
 
     }
 
+    /**{
+            title:'quem sou',
+            link: '/sobre'
+        },
+        {
+            title:'loja virtual',
+            link: '/loja-virtual'
+        },
+        {
+            title:'contato',
+            link: '/contato'
+        },
+        {
+            title:'suporte',
+            link: '/suporte',
+            class: 'support'
+        }, */
+
+    const MenuItemList = [
+        {
+            title:'início',
+            link: '/'
+        },    
+    ]
+
     return (
         <>
             <button type="button" aria-label="Abrir menu" onClick={menuHandler} className="menu-button">
@@ -45,31 +70,9 @@ const Menu = ()=>{
                     </button>
                 </div>
                 <ul>
-                    <a href="/">
-                        <li>
-                            início
-                        </li>
-                    </a>
-                    <a href="/">
-                        <li>
-                            quem sou
-                        </li>
-                    </a>
-                    <a href="/">
-                        <li>
-                            loja virtual
-                        </li>
-                    </a>
-                    <a href="/">
-                        <li>
-                            contato
-                        </li>
-                    </a>
-                    <a href="/" className="support">
-                        <li>
-                            suporte
-                        </li>
-                    </a>
+                    {MenuItemList.map(item=>
+                        <MenuItem key={item.title} class={item.class} link={item.link} >{item.title}</MenuItem>
+                    )}
                 </ul>
             </nav>
             <div className={menuStatus ? 'overflow open' : 'overflow'}></div>

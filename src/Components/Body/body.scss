@@ -1,0 +1,76 @@
+main {
+    &#index {
+        height: calc(100vh - 40px);
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        margin-top: -60px;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: url('../../Assets/Images/PNG/background.png');
+        section {
+            &#top {
+                max-width: 800px;
+            }
+        }
+        div {
+            &.typing {
+                background-color: rgba(255, 255, 255, 0.8);
+                width: 100%;
+                height: 200px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                backdrop-filter: blur(5px);
+                border-top: 1px solid var(--marine);
+                p, strong {
+                    margin: 10px 0;
+                    font-size: 26px;
+                    color: var(--marine);
+                }
+                p {
+                    font-weight: 300;
+                }
+                strong {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        &#index {
+            background-image: url('../../Assets/Images/PNG/Background_2x.png');
+            background-size: contain;
+            background-position: right;
+            justify-content: flex-start;
+            padding: 50px;
+            section {
+                &#top {
+                    flex-direction: row;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                }
+            }
+            div {
+                &.typing {
+                    width: initial;
+                    border: none;
+                    background-color: transparent;
+                    backdrop-filter: none;
+                    padding: var(--space);
+                    height: initial;
+                    max-width: 600px;
+                    text-align: center;
+                    p, strong {
+                        font-size: 60px;
+                        text-shadow: 0px 0px 5px #ffffffa8;
+                    }
+                }
+            }
+        }
+    }
+}

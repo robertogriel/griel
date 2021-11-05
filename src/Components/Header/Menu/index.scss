@@ -16,12 +16,13 @@ nav {
     flex-direction: column;
     position: absolute;
     top: 0;
-    left: -500px;
+    left: -767px;
     width: 90%;
     height: 100vh;
     background-color: #FFFFFF;
     z-index: 1;
     transition: all 0.5s ease-in;
+    border-right: 1px solid var(--marine);
     ul {
         display: flex;
         flex-direction: column;
@@ -34,6 +35,7 @@ nav {
             background-color: var(--marine-2);
             margin: calc(var(--space) * 2);
             border-radius: var(--space) 0;
+            text-align: center;
             li {
                 list-style: none;
                 width: 100%;
@@ -91,6 +93,72 @@ div {
             display: flex;
             opacity: 1;
             z-index: 0;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    div {
+        &.overflow {
+            display: none;
+        }
+    }
+
+    nav {
+        flex-direction: row;
+        width: 100%;
+        left: 0;
+        position: relative;
+        height: inherit;
+        transition: none;
+        border: none;
+        background-color: transparent;
+        div {
+            &.menu-close {
+                display: none;
+            }
+        }
+        ul {
+            display: inline-flex;
+            flex-direction: inherit;
+            padding: 0;
+            justify-content: flex-end;
+            a {
+                background-color: transparent;
+                margin: 0 calc(var(--space) * 2);
+                border-radius: 0;
+                transition: all 0.5s ease;
+                li {
+                    color: var(--marine);
+                    font-size: 1.2vw;
+                    font-weight: 600;
+                }
+                &.support {
+                    border-radius: var(--space);
+                    margin: 20px;
+                    background-color: var(--aura-1);
+                    box-shadow: 10px 10px 20px rgba(94, 218, 255, 0.8);
+                    transition: all 0.2s ease-in;
+                    li {
+                        color: #FFF;
+                    }
+                    &:hover {
+                        background-color: var(--aura-1);
+                        height: inherit;
+                        border-radius: var(--space);
+                    }
+                }
+                &:hover {
+                    color: inherit;
+                    background: var(--marine);
+                    border-radius: 0;
+                    height: 100%;
+                    padding: 0;
+                    li {
+                        color: #FFF;
+                    }
+                }
+            }
         }
     }
 }

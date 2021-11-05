@@ -18,6 +18,11 @@ body, header, footer, main, div, section, article, form, input, ul, li, a, img, 
 	display: flex;
 }
 
+body {
+	background-color: var(--bg-color)!important;
+}
+
 #root {
 	width: 100%;
+	flex-direction: column;
 }

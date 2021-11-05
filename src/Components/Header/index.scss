@@ -1,6 +1,8 @@
 header {
 	width: 100%;
 	justify-content: space-between;
+	position: relative;
+	z-index: 2;
 	div {
 		justify-content: space-between;
 		&.background {
@@ -43,4 +45,25 @@ header {
 			}
 		}
 	}
+}
+
+@media (min-width: 768px) {
+	header {
+        background-color: #FFF;
+        box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+        div {
+            &.background {
+                svg {
+                    display: none;
+                }
+            }
+			&.content {
+				padding: 0;
+				img {
+					margin: 10px;
+					transition: none;
+				}
+			}
+        }
+    }
 }
