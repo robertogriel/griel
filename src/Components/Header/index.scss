@@ -63,6 +63,14 @@ header {
 					margin: 10px;
 					transition: none;
 				}
+				&.menu {
+					img {
+						transition: none;
+						margin-left: 10px;
+						margin-right: 10px;
+						transform: none;
+					}
+				}
 			}
         }
     }

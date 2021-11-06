@@ -99,7 +99,7 @@ div {
 
 @media (min-width: 768px) {
     div {
-        &.overflow {
+        &.overflow, &.overflow.open {
             display: none;
         }
     }
