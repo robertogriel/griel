@@ -28,11 +28,13 @@ const Body = ()=>{
                 </div>
             </section>
 
-            <hr/>                        
+            <hr/>
 
             <section id="about">
-                eeeeuaaa
-            </section>aa
+                <div>
+                
+                </div>
+            </section>
 
             
         </main>

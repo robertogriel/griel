@@ -7,6 +7,7 @@ import './Assets/Scss/reset.scss';
 import Header from './Components/Header';
 import Body from './Components/Body';
 import About from './Components/About';
+import Stores from './Components/Stores';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
 		<Route path='/' element={<Body/>} />
 		
 		<Route path='/sobre' element={<About/>} />
+
+		<Route path='/loja-virtual' element={<Stores/>} />
 		</div>
 	</Routes>
 	</Router>

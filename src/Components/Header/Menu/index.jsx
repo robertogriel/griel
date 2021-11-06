@@ -31,10 +31,7 @@ const Menu = ()=>{
             title:'quem sou',
             link: '/sobre'
         },
-        {
-            title:'loja virtual',
-            link: '/loja-virtual'
-        },
+
         {
             title:'contato',
             link: '/contato'
@@ -49,7 +46,11 @@ const Menu = ()=>{
         {
             title:'início',
             link: '/'
-        }
+        },
+        {
+            title:'loja virtual',
+            link: '/loja-virtual'
+        },
         
     ]
 
@@ -71,9 +72,9 @@ const Menu = ()=>{
                         </svg>
                     </button>
                 </div>
-                <ul>
+                <ul onClick={menuHandler}>
                     {MenuItemList.map(item=>
-                        <MenuItem key={item.title} class={item.class} link={item.link} >{item.title}</MenuItem>
+                        <MenuItem  key={item.title} class={item.class} link={item.link} >{item.title}</MenuItem>
                     )}
                 </ul>
             </nav>

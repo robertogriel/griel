@@ -3,6 +3,14 @@ main {
         height: 100%;
         width: 100%;
         flex-direction: column;
+        hr {
+            width: 50%;
+            align-self: center;
+            border-top: 11px solid var(--marine);
+            opacity: 1;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
         section {
             &#top {
                 width: 100%;
@@ -15,6 +23,11 @@ main {
                 height: 100vh;
                 align-items: flex-end;
             }
+            &#about {
+                background: #2072a7;
+                margin-top: 15px;
+            }
+            
         }
         div {
             &.typing {
