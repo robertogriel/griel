@@ -28,6 +28,12 @@ const Body = ()=>{
                 </div>
             </section>
 
+            <hr/>                        
+
+            <section id="about">
+                eeeeuaaa
+            </section>aa
+
             
         </main>
         </>

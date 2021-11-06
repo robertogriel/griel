@@ -17,6 +17,7 @@ function App() {
 		<div>
 		
 		<Route path='/' element={<Body/>} />
+		
 		<Route path='/sobre' element={<About/>} />
 		</div>
 	</Routes>
