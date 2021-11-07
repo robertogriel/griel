@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 
 //Custom Imports
 import './index.scss';
@@ -16,7 +16,9 @@ const Header = ()=>{
 					<Wave/>
 				</div>
 				<div className="content">
+					<Link to="/">
 					<img src={Logo} alt="Griel Website" />
+					</Link>
 					<Menu/>
 				</div>
 
