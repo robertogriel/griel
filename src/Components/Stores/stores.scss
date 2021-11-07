@@ -4,6 +4,7 @@ main {
         z-index: 0;
         flex-direction: column;
         margin-top: 10%;
+        width: 100%;
         section {
             margin: 10px;
             flex-direction: column;
@@ -103,6 +104,30 @@ section {
                     border-radius: 0 0 10px 10px;
                     padding: 10px;
                     
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        &#ecommerce {
+            max-width: 1000px;
+            align-self: center;
+            section {
+                &#resume {
+                    header {
+                        box-shadow: none;
+                        background-color: initial
+                    }
+                }
+                &#resources {
+                    article {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-gap: 40px;
+                    }
                 }
             }
         }

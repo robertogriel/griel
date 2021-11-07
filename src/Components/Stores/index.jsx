@@ -101,16 +101,12 @@ const Stores = ()=>{
 
             <section id="resources">
                 <article>
-                    <h2>Tudo que sua loja pode ter</h2>
-                    <div className="item">
-                        <h3>Venda 24 horas por dia, 7 dias por semana</h3>
-                        <p>Sua loja virtual funciona 24 horas, incluindo os feriados, e de forma automatizada, verifica seus pagamentos, dá baixa no estoque de produtos vendidos e com uma boa descrição em seus produtos, responde a todas as dúvidas de seus clientes.</p>
-                    </div>
+
                     
-                    {list.map((item)=>(
-                        <div>
+                    {list.map((item, index)=>(
+                        <div className="item" key={index}>
                         <h3>{item.title}</h3>
-                        `${item.description}`
+                        <span dangerouslySetInnerHTML={{ __html: item.description }}></span>
                         </div>
                     ))}
 
