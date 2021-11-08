@@ -129,6 +129,7 @@ div {
                 margin: 0 calc(var(--space) * 2);
                 border-radius: 0;
                 transition: all 0.5s ease;
+                display: flex;
                 li {
                     color: var(--marine);
                     font-size: 1.2vw;
