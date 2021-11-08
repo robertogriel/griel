@@ -91,8 +91,6 @@ const list = [
     }
 ]
 
-
-
 const resources = [
     {
         title:'Tudo que sua loja precisa para começar a vender online',
