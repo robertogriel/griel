@@ -1,4 +1,9 @@
 footer {
+    flex-direction: column;
+    background-color: #3e3e3e;
+    color: #FFF;
+    padding-bottom: 60px;
+    margin-top: 28px;
     div {
         &.goToUp {
             opacity: 0;
@@ -29,5 +34,41 @@ footer {
                 color: #FFF;
             }
         }
+    }
+    section {
+        &#contents {
+            flex-direction: column;
+            div {
+                &.logo {
+                    justify-content: center;
+                    img {
+                        height:60px;
+                        width: auto;
+                        transform: translateY(-28px);
+                    }
+                }
+                &.links {
+                    ul {
+                        display: block;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            margin: 10px;
+                            align-items: center;
+                            height: 48px;
+                            a {
+                                text-decoration: none;
+                                color: #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    p {
+        margin: 10px;
+        text-align: center;
     }
 }
