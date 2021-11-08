@@ -53,6 +53,7 @@ header {
         box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
         div {
             &.background {
+				display: none;
                 svg {
                     display: none;
                 }
