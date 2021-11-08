@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+
 //Custom imports
 import './stores.scss';
 
@@ -82,10 +85,111 @@ const list = [
         <p>Com este recurso seu comprador poderá pagar o pedido pelo aplicativo PicPay ou através de um QRCode ou notificação.</p>
         <p>Este recurso utiliza a plataforma PicPay Ecommerce para o processo de pagamentos.</p>`
     },
-    
+    {
+        title:'Checkout em uma página',
+        description: `<p>Aumente as chances de conversão com uma página de finalização de pedido simples e com menos distrações, onde seu cliente está a poucos cliques para finalizar o pedido.</p>` 
+    }
 ]
 
-console.log(list)
+
+
+const resources = [
+    {
+        title:'Tudo que sua loja precisa para começar a vender online',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Gerenciamento de estoque',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Gerenciamento de clientes',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Produtos com SEO automático',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Estatísticas com Google Analytics',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Frete mais barato com o MelhorEnvio',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Rastreamento de entregas',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Receba pagamentos no cartão de crédito e boleto bancário',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Recuperação de carrinho abandonado',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Grupos de clientes com condições separadas',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Filtros de busca avançado',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Variações dos produtos',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Lembrete e cancelamento de pedido automático',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Formas de envio personalizadas',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Formas de pagamento personalizadas',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Deixar o cliente cancelar o próprio pedido',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Avisar quando disponível',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Checkout de uma página',
+        basic: false,
+        complete: true
+    },
+    {
+        title:'Receber pagamentos pelo PicPay',
+        basic: false,
+        complete: true
+    }
+];  
 
 const Stores = ()=>{
     return (
@@ -120,6 +224,35 @@ const Stores = ()=>{
                     </Button>
                     </a>
                 </footer>
+            </section>
+
+            <section id="resource-table">
+                <header>
+                    <h2>Diferenças de recursos entre as lojas</h2>
+                    <p>São duas opções de loja virtual, a Loja Bãsica e a Loja Completa.</p>
+                    <p>A <b>Loja Básica</b> oferece todos os recursos necessários para você começar a vender e definir a sua presença online. A <b>Loja Completa</b> oferece todos os recursos da Loja Bêsica e diversos outros recursos de automatização e personalização.</p>
+                    <p>Confira na tabela abaixo a diferença entre as lojas:</p>
+                </header>
+
+                <div>
+                    <table className="table table-striped table-hover align-middle">
+                        <thead className="align-middle text-center">
+                            <th>Recurso</th>
+                            <th>Loja Básica</th>
+                            <th>Loja Completa</th>
+                        </thead>
+                        <tbody className="text-center">
+                            {resources.map((item, index)=>(
+                                <tr key={index}>
+                                    <td>{item.title}</td>
+                                    <td>{item.basic ? <CheckCircleIcon color="success"/> : <RadioButtonUncheckedIcon/>}</td>
+                                    <td>{item.complete ? <CheckCircleIcon color="success"/> : <RadioButtonUncheckedIcon/>}</td>
+                                </tr> 
+                            ))}
+                        </tbody>
+
+                    </table>
+                </div>
             </section>
 
         </main>

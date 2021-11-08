@@ -69,6 +69,13 @@ main {
                     }
                 }
             }
+            &#resource-table {
+                header {
+                    flex-direction: column;
+                    padding: calc(var(--space) * 2);
+                }
+                
+            }
         }
     }
 }
@@ -115,6 +122,7 @@ section {
         &#ecommerce {
             max-width: 1000px;
             align-self: center;
+            margin-top: 20px;
             section {
                 &#resume {
                     header {
@@ -127,6 +135,15 @@ section {
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
                         grid-gap: 40px;
+                    }
+                }
+                &#resource-table {
+                    header {
+                        box-shadow: none;
+                        background-color: initial
+                    }
+                    div {
+                        align-self: center;
                     }
                 }
             }
