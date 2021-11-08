@@ -17,6 +17,8 @@ const Body = lazy(()=>import('./Components/Body'));
 const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
 
+const Footer = lazy(()=>import('./Components/Footer'));
+
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
 			<Route path='/load' element={<Loading/>} />
 
 		</Routes>
+		<Footer/>
 		</Suspense>
 	</Router>
   );

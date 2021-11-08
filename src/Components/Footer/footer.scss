@@ -1,0 +1,33 @@
+footer {
+    div {
+        &.goToUp {
+            opacity: 0;
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+            bottom: 0;
+            transition: all 0.5s;
+            &.scroll {
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+        div {
+            &.icon {
+                border: 1px solid var(--marine);
+                padding: 5px;
+                background-color: var(--marine-2);
+                border-radius: 100%;
+                margin: 10px;
+                height: 48px;
+                width: 48px;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 1px 1px 5px rgb(0 0 0 / 50%);
+                color: #FFF;
+            }
+        }
+    }
+}
