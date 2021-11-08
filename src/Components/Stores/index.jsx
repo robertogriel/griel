@@ -188,7 +188,23 @@ const resources = [
         title:'Receber pagamentos pelo PicPay',
         basic: false,
         complete: true
-    }
+    },
+    {
+        title:'Treinamento presencial ou remoto',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Suporte para tirar suas dúvidas',
+        basic: true,
+        complete: true
+    },
+    {
+        title:'Backup de arquivos e banco de dados frequentemente',
+        basic: true,
+        complete: true
+    },
+    
 ];  
 
 const Stores = ()=>{
@@ -199,7 +215,8 @@ const Stores = ()=>{
                 <header>
                     <h1>loja virtual</h1>
                     <h2>Tenha sua própria loja virtual e venda muito mais!</h2>
-                    <p>Adquirindo sua loja virtual, você terá controle total de seu estoque, gerenciamento de clientes, gerenciamento de vendas, e muito mais! Tudo isso sem taxa de comissão, sem limites de produtos e sem pagar nada a mais por venda.</p>
+                    <p>Possuindo uma loja virtual, você terá controle total de seu estoque, gerenciamento de clientes, gerenciamento de vendas, e muito mais! Tudo isso sem taxa de comissão, sem limites de produtos e sem pagar nada a mais por venda.</p>
+                    <h3>Compare os&nbsp;<a href="#resource-table">recursos</a></h3>
                 </header>
             </section>
 
@@ -237,9 +254,11 @@ const Stores = ()=>{
                 <div>
                     <table className="table table-striped table-hover align-middle">
                         <thead className="align-middle text-center">
+                            <tr>
                             <th>Recurso</th>
                             <th>Loja Básica</th>
                             <th>Loja Completa</th>
+                            </tr>
                         </thead>
                         <tbody className="text-center">
                             {resources.map((item, index)=>(
@@ -249,6 +268,11 @@ const Stores = ()=>{
                                     <td>{item.complete ? <CheckCircleIcon color="success"/> : <RadioButtonUncheckedIcon/>}</td>
                                 </tr> 
                             ))}
+                            <tr>
+                                <td></td>
+                                <td><strong>R$ 1.500,00</strong><br/><span>ou 12x de R$158,63</span></td>
+                                <td><strong>R$ 2.000,00</strong><br/><span>ou 12x de R$211,44</span></td>
+                            </tr>
                         </tbody>
 
                     </table>
