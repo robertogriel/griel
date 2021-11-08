@@ -66,8 +66,10 @@ const Footer = ()=>{
                     </ul>
                 </div>
             </section>
-            <p>&copy; Roberto Griel Filho - Todos os direitos reservados</p>
-            <p>Feito com muito 💙 e ☕ diretamente de Nova Serrana, Minas Gerais.</p>
+            <section id="final">
+                <p>&copy; Roberto Griel Filho - Todos os direitos reservados</p>
+                <p>Feito com muito 💙 e ☕ diretamente de Nova Serrana, Minas Gerais.</p>
+            </section>
         </footer>
     );
 }

@@ -66,9 +66,42 @@ footer {
                 }
             }
         }
+        &#final {
+            p {
+                margin: 10px;
+                text-align: center;
+            }
+        }
     }
-    p {
-        margin: 10px;
-        text-align: center;
+
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        align-items: center;
+        section {
+            &#contents {
+                flex-direction: row;
+                flex: 1;
+                justify-content: space-around;
+                align-items: center;
+                div {
+                    &.logo {
+                        transform: none;
+                        img {
+                            height: 100%;
+                            width: auto;
+                            transform: none;
+                            max-height: 80px;
+                        }
+                    }
+                }
+            }
+            &#final {
+                flex-direction: column;
+                flex: 1;
+            }
+        }
     }
 }
