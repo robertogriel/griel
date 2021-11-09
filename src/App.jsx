@@ -16,7 +16,7 @@ const Header = lazy(()=>import('./Components/Header'));
 const Body = lazy(()=>import('./Components/Body'));
 const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
-
+const NotFound = lazy(()=>import('./Components/NotFound'));
 const Footer = lazy(()=>import('./Components/Footer'));
 
 
@@ -29,13 +29,15 @@ function App() {
 		<Routes>
 
 			
-			<Route path='/' element={<Body/>} />
+			<Route exact path='/' element={<Body/>} />
 			
-			<Route path='/sobre' element={<About/>} />
+			<Route exact path='/sobre' element={<About/>} />
 
-			<Route path='/loja-virtual' element={<Stores/>} />
+			<Route exact path='/loja-virtual' element={<Stores/>} />
 
-			<Route path='/load' element={<Loading/>} />
+			<Route exact path='/load' element={<Loading/>} />
+
+			<Route path='*' element={<NotFound/>}></Route>
 
 		</Routes>
 		<Footer/>

@@ -51,6 +51,10 @@ const Menu = ()=>{
             title:'loja virtual',
             link: '/loja-virtual'
         },
+        {
+            title:'contato',
+            link:'/contato'
+        }
         
     ]
 
