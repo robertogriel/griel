@@ -6,7 +6,7 @@ import './body.scss';
 
 const Body = ()=>{
 
-    const business = ['uma barberaria','um escritório','um petshop','uma mercearia','uma botique','um comércio','uma sapataria','uma farmacia', 'uma marca'];
+    const business = ['uma barbearia','um escritório','um petshop','uma mercearia','uma botique','um comércio','uma sapataria','uma farmacia', 'uma marca'];
 
     return (
         <>
