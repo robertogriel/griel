@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 
 import LoadingImg from '../../Assets/Images/SVG/loading.svg';
 
-const Loading = ()=>{
+const Loading:React.FunctionComponent<{}> = ()=>{
     return (
         <>
         <img style={{

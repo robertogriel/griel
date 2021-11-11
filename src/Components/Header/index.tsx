@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from "react-router-dom";
 
 //Custom Imports
@@ -7,7 +7,7 @@ import Logo from '../../Assets/Images/PNG/logo.png';
 import Menu from './Menu';
 import Wave from './Wave';
 
-const Header = ()=>{
+const Header:React.FunctionComponent<{}> = ()=>{
 
 	return (
 		<>

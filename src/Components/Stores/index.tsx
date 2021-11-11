@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Button from '@material-ui/core/Button';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -205,7 +205,7 @@ const resources = [
     
 ];  
 
-const Stores = ()=>{
+const Stores:React.FunctionComponent<{}> = ()=>{
     return (
         <>
         <main id="ecommerce">

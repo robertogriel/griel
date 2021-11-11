@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 
 //Custom imports
 import './404.scss';
 
-const NotFound = ()=>{
+const NotFound:React.FunctionComponent<{}> = ()=>{
     return (
         <h1>Essa página não existe</h1>
     );
