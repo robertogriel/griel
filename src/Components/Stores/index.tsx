@@ -266,11 +266,11 @@ const Stores:React.FunctionComponent<{}> = ()=>{
                                     <td>{item.complete ? <CheckCircleIcon color="success"/> : <RadioButtonUncheckedIcon/>}</td>
                                 </tr> 
                             ))}
-                            <tr>
+                            {/* <tr>
                                 <td></td>
                                 <td><strong>R$ 1.500,00</strong><br/><span>ou 12x de R$158,63</span></td>
                                 <td><strong>R$ 2.000,00</strong><br/><span>ou 12x de R$211,44</span></td>
-                            </tr>
+                            </tr> */}
                         </tbody>
 
                     </table>
