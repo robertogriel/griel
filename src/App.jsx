@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 /* Scss */
 import './Assets/Scss/reset.scss';
+import './Assets/Scss/mixin.scss';
 
 //Custom Imports
 //import Header from './Components/Header';

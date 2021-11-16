@@ -1,17 +1,10 @@
+@import '../../Assets/Scss/mixin.scss';
+
 main {
     &#ecommerce {
-        position: relative;
-        z-index: 0;
-        flex-direction: column;
-        margin-top: 10%;
-        width: 100%;
+        @include main-pages;
         section {
-            margin: 10px;
-            flex-direction: column;
-            background-color: #FFF;
-            border: 1px solid #eee;
-            border-radius: var(--space);
-            box-shadow: 1px 1px 2px #0000002e;
+            @include section;
             article {
                 flex-direction: column;
                 padding: calc(var(--space) * 2);
