@@ -71,7 +71,12 @@ main {
                     flex-direction: column;
                     padding: calc(var(--space) * 2);
                 }
-                
+                div {
+                    flex-direction: column;
+                    &.host {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

@@ -30,7 +30,7 @@ const Contact = ()=>{
 
         let input = document.querySelector("#formCode") as HTMLInputElement;
 
-        console.log(input, data.code)
+
         
     }
     
