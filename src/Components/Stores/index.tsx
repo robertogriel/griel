@@ -8,6 +8,7 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import './stores.scss';
 
 const sampleStoreUrl = 'https://sualoja.griel.dev.br';
+const sampleStoreAdminUrl = 'https://sualoja.griel.dev.br/admin';
 
 const list = [
     {
@@ -36,7 +37,7 @@ const list = [
     {
         title:'Receba por Cartão de Crédito e Boleto Bancário',
         description: `<p>Com a integração com o sistema Wirecard/MOIP, do PagSeguro, seu comprador pode pagar com segurança e comodidade dentro de sua própria loja. Além de contar com a menor taxa do mercado.</p>
-        <p>Todas as atualizações referênte ao pagamento são atualizadas de forma automática, seja por cartão de crédito ou boleto bancário.</p>
+        <p>Todas as atualizações referente ao pagamento são atualizadas de forma automática, seja por cartão de crédito ou boleto bancário.</p>
         <p>Você ainda pode oferecer parcelamento sem juros e/ou desconto para quem pagar no boleto bancário.</p>`
     },
     {
@@ -233,19 +234,27 @@ const Stores:React.FunctionComponent<{}> = ()=>{
                 </article>
                 <footer>
                     <p>Veja uma demonstração da loja virtual completa!</p>
-                    <a href={sampleStoreUrl} target="_blank" rel="noopener noreferrer">
-                    <Button variant="contained"  color="primary">
-                        Ver demonstração
-                    </Button>
-                    </a>
+                    <div className="btton-wrap">
+                        <a href={sampleStoreUrl} target="_blank" rel="noopener noreferrer">
+                            <Button variant="contained"  color="primary">
+                                Ver a loja
+                            </Button>
+                        </a>&nbsp;
+                        <a href={sampleStoreAdminUrl} target="_blank" rel="noopener noreferrer">
+                            <Button variant="contained"  color="primary">
+                                Ver a administração
+                            </Button>
+                        </a>                        
+                    </div>
+                    
                 </footer>
             </section>
 
             <section id="resource-table">
                 <header>
                     <h2>Diferenças de recursos entre as lojas</h2>
-                    <p>São duas opções de loja virtual, a Loja Bãsica e a Loja Completa.</p>
-                    <p>A <b>Loja Básica</b> oferece todos os recursos necessários para você começar a vender e definir a sua presença online. A <b>Loja Completa</b> oferece todos os recursos da Loja Bêsica e diversos outros recursos de automatização e personalização.</p>
+                    <p>São duas opções de loja virtual, a Loja Básica e a Loja Completa.</p>
+                    <p>A <b>Loja Básica</b> oferece todos os recursos necessários para você começar a vender e definir a sua presença online. A <b>Loja Completa</b> oferece todos os recursos da Loja Básica e diversos outros recursos de automatização e personalização.</p>
                     <p>Confira na tabela abaixo a diferença entre as lojas:</p>
                 </header>
 
