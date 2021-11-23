@@ -37,6 +37,8 @@ function App() {
 
 			<Route exact path='/loja-virtual' element={<Stores/>} />
 
+			
+
 			<Route exact path='/load' element={<Loading/>} />
 
 			<Route path='*' element={<NotFound/>}></Route>

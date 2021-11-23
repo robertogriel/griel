@@ -51,7 +51,6 @@ const Menu = ()=>{
             title:'loja virtual',
             link: '/loja-virtual'
         }
-        
     ]
 
     return (

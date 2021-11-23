@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './contact.scss';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,35 +7,38 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 const Contact = ()=>{
 
     
+    const [formSecuryCode, setFormCode] = useState('');
+
+    useEffect(() => {
+
+        const getFormCode = async ()=>{
 
     
+            await fetch('http://127.0.0.1:8000/form-code', {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'default',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).
+            then(response => response.json()).
+            then(data => {
     
-    async function getFormCode(){
-
-        let formCode = '';
-        
-
-        await fetch('http://127.0.0.1:8000/form-code', {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'default',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).
-        then(response => response.json()).
-        then(data => {
-            return data.code
-        })
-
-        let input = document.querySelector("#formCode") as HTMLInputElement;
-
-
-        
-    }
+                if (data.code) {
+                    setFormCode(data.code);
+                }
+                
+            })
     
-    getFormCode()
-    
+            //let input = document.querySelector("#formCode") as HTMLInputElement;
+
+            
+        }
+
+        getFormCode();
+
+    }, []);
 
 
 
@@ -67,7 +70,10 @@ const Contact = ()=>{
                         <label className="form-label" htmlFor="message">Seu nome:</label>
                         <textarea className="form-control" name="message" id="message" rows={5}></textarea>
                     </div>
-                    <input type="text" id="formCode" />
+                    {formSecuryCode && 
+                        <input type="hidden" readOnly id="formCode" value={formSecuryCode} />
+                    }
+                    
                     <br/>
                     <div className="form-group">
                         <button type="submit" className="btn btn-lg btn-primary">Enviar</button>
