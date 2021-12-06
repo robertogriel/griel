@@ -18,6 +18,7 @@ const Body = lazy(()=>import('./Components/Body'));
 const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
 const NotFound = lazy(()=>import('./Components/NotFound'));
+const Domains = lazy(()=>import('./Components/Domains'));
 //const Contact = lazy(()=>import('./Components/Contact'));
 const Footer = lazy(()=>import('./Components/Footer'));
 
@@ -37,7 +38,7 @@ function App() {
 
 			<Route exact path='/loja-virtual' element={<Stores/>} />
 
-			
+			<Route exact path='/dominios' element={<Domains/>} />
 
 			<Route exact path='/load' element={<Loading/>} />
 
