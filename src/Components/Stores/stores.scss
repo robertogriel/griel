@@ -83,10 +83,10 @@ main {
 }
 
 section {
-    &#ecommerce {
-        f
+    &#ecommerce, &#hosting {
         header, article {
             flex-direction: column;
+            box-shadow: none;
         }
 
         article {

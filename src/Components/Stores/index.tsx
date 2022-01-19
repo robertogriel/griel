@@ -277,19 +277,25 @@ const Stores:React.FunctionComponent<{}> = ()=>{
                             ))}
                             <tr>
                                 <td></td>
-                                <td><strong>R$ 1.500,00</strong><br/><span>ou 12x de R$158,63</span></td>
-                                <td><strong>R$ 2.000,00</strong><br/><span>ou 12x de R$211,44</span></td>
+                                <td><strong>R$ 1.800,00</strong><br/><span>ou 12x de R$180,72</span></td>
+                                <td><strong>R$ 2.300,00</strong><br/><span>ou 12x de R$230,92</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div className="host">
-                    <h4>Hospedagem</h4>
-                    <p>Sua loja ficará em um VPS, com alta disponibilidade e performance.</p>
-                    <p>O custo da hospedagem é de <b>R$60,00</b> por mês.</p>
+            </section>
+
+            <section id="hosting">
+                <header>
+                    <h2>Hospedagem</h2>
+                    <p>A hospedagem é onde ficam armazenados os conteúdos de sua loja.</p>
+                    <p>Sua loja ficará em um VPS (Virtual Private Server ou Servidor Privado Virtual) de alta performance e disponibilidade.</p>
+                </header>
+                <div>
+                    <p>A hospedagem é renovada todos os meses e tem o custo de <b>R$60,00</b>/mês.</p>
                 </div>
-                <small>Valores válidos até o dia 31/12/2021</small>
+                <small>Valores válidos até o dia 30/04/2022.</small>
             </section>
 
         </main>
