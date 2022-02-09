@@ -1,4 +1,4 @@
-import React, {useState, Suspense} from 'react';
+import React, {useState} from 'react';
 import Loading from './Loading';
 import Button from '@material-ui/core/Button';
 import './domains.scss';
@@ -89,7 +89,7 @@ const Domains = ()=>{
                 <article>
 
                     <form>
-                        <input type="text" type="text" name="domain" className="form-control" />
+                        <input type="text" name="domain" className="form-control" />
                         <br/>
                         <Button type="button" variant="contained" id="search-domain-button" color="primary" onClick={(e)=>{
 
