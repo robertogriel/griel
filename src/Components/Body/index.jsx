@@ -3,6 +3,7 @@ import Typewriter from 'typewriter-effect';
 
 //Custom Imports
 import './body.scss';
+import About from './about';
 
 const Body = ()=>{
 
@@ -30,11 +31,7 @@ const Body = ()=>{
 
             <hr/>
 
-            <section id="about">
-                <div>
-                
-                </div>
-            </section>
+            <About />
 
             
         </main>
