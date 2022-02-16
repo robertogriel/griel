@@ -84,12 +84,6 @@ const list = [
         <p>Se um produto ou opção de um produto esgotar-se, o seu comprador poderá solicitar o aviso, informando o e-mail.</p>`
     },
     {
-        title: 'Receba pagamentos pelo PicPay',
-        description: `<p>O PicPay é atualmente a maior plataforma de pagamentos do Brasil, ultrapassando a marca de 50 milhões de usuários.</p>
-        <p>Com este recurso seu comprador poderá pagar o pedido pelo aplicativo PicPay ou através de um QRCode ou notificação.</p>
-        <p>Este recurso utiliza a plataforma PicPay Ecommerce para o processo de pagamentos.</p>`
-    },
-    {
         title: 'Checkout em uma página',
         description: `<p>Aumente as chances de conversão com uma página de finalização de pedido simples e com menos distrações, onde seu cliente está a poucos cliques para finalizar o pedido.</p>`
     }
@@ -183,11 +177,6 @@ const resources = [
     },
     {
         title: 'Checkout de uma página',
-        basic: false,
-        complete: true
-    },
-    {
-        title: 'Receber pagamentos pelo PicPay',
         basic: false,
         complete: true
     },
