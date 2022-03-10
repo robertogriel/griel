@@ -224,7 +224,7 @@ const Stores: React.FunctionComponent<{}> = () => {
 
         console.log(url);
 
-        fetch(`https://www.griel.dev.br/api/domains?d=${url}.com.br`, {
+        fetch(`${process.env.API_URL}/domains?d=${url}.com.br`, {
             method: 'GET',
             mode: 'no-cors'
         })
@@ -239,7 +239,7 @@ const Stores: React.FunctionComponent<{}> = () => {
                 }
             });
 
-        fetch(`https://www.griel.dev.br/api/domains?d=${url}.com`, {
+        fetch(`${process.env.API_URL}/domains?d=${url}.com`, {
             method: 'GET'
         })
             .then((resp) => resp.json())
