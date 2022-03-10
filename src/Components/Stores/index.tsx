@@ -208,6 +208,13 @@ const Stores: React.FunctionComponent<{}> = () => {
 
         let url = '';
 
+        if (!domain) {
+            
+            const input = document.querySelector("input#domain") as HTMLInputElement;
+
+            input.focus()
+        }
+
         if (domain.split('.')[0] === 'www') {
             url = domain.split('.')[1];
         } else {
@@ -221,8 +228,6 @@ const Stores: React.FunctionComponent<{}> = () => {
         }*/
 
         setDomain(domain.split('.')[0])
-
-        console.log(url);
 
         fetch(`${process.env.API_URL}/domains?d=${url}.com.br`, {
             method: 'GET',
@@ -377,8 +382,8 @@ const Stores: React.FunctionComponent<{}> = () => {
                                 {resources.map((item, index) => (
                                     <tr key={index}>
                                         <td>{item.title}</td>
-                                        <td>{item.basic ? <CheckCircleIcon color="success" /> : <RadioButtonUncheckedIcon />}</td>
-                                        <td>{item.complete ? <CheckCircleIcon color="success" /> : <RadioButtonUncheckedIcon />}</td>
+                                        <td>{item.basic ? <CheckCircleIcon htmlColor="green" /> : <RadioButtonUncheckedIcon />}</td>
+                                        <td>{item.complete ? <CheckCircleIcon htmlColor="green" /> : <RadioButtonUncheckedIcon />}</td>
                                     </tr>
                                 ))}
                                 <tr>

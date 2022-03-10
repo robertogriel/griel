@@ -1,3 +1,4 @@
+import React from 'react';
 import './whatsapp.scss';
 
 const WhatsApp = () => {
