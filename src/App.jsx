@@ -9,14 +9,14 @@ import './Assets/Scss/mixin.scss';
 //Custom Imports
 import Loading from './Components/Loading';
 
-const Header = lazy(()=>import('./Components/Header'));
+
 const Body = lazy(()=>import('./Components/Body'));
 const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
 const NotFound = lazy(()=>import('./Components/NotFound'));
 const Domains = lazy(()=>import('./Components/Domains'));
 //const Contact = lazy(()=>import('./Components/Contact'));
-const Footer = lazy(()=>import('./Components/Footer'));
+
 
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
 	  
 	  <Router>
 		<Suspense fallback={<Loading/>}>
-		<Header/>
 		<Routes>
+		
 
 			
 			<Route exact path='/' element={<Body/>} />
@@ -41,7 +41,7 @@ function App() {
 			<Route path='*' element={<NotFound/>}></Route>
 
 		</Routes>
-		<Footer/>
+		
 		</Suspense>
 	</Router>
   );

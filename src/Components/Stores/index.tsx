@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import Button from '@material-ui/core/Button';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -10,6 +10,9 @@ import axios from 'axios';
 
 //Custom imports
 import './stores.scss';
+
+const Header = lazy(()=>import('../Header'));
+const Footer = lazy(()=>import('../Footer'));
 
 const sampleStoreUrl = 'https://sualoja.griel.dev.br';
 const sampleStoreAdminUrl = 'https://sualoja.griel.dev.br/admin';
@@ -253,6 +256,7 @@ const Stores: React.FunctionComponent<{}> = () => {
 
     return (
         <>
+        <Header/>
             <main id="ecommerce">
                 <section id="resume">
                     <header>
@@ -403,7 +407,7 @@ const Stores: React.FunctionComponent<{}> = () => {
             </main>
 
 
-
+            <Footer/>
 
         </>
     );
