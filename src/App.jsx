@@ -2,12 +2,9 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-/* Scss */
-import './Assets/Scss/reset.scss';
-import './Assets/Scss/mixin.scss';
-
 //Custom Imports
 import Loading from './Components/Loading';
+import Admin from './Components/Admin';
 
 
 const Body = lazy(()=>import('./Components/Body'));
@@ -26,7 +23,7 @@ function App() {
 		<Suspense fallback={<Loading/>}>
 		<Routes>
 		
-
+			<Route exact path='/admin' element={<Admin />} />
 			
 			<Route exact path='/' element={<Body/>} />
 			

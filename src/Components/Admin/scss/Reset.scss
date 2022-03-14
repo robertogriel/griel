@@ -1,0 +1,23 @@
+div {
+    &#root {
+        width: 100%;
+    }
+}
+
+div {
+    &.wrapper {
+        button {
+            &.nav-link {
+                border: none;
+                background-color: transparent;
+                text-align: inherit;
+                i {
+                    color: #c2c7d0;
+                }
+                p {
+                    color: #c2c7d0;
+                }
+            }
+        }
+    }
+}
