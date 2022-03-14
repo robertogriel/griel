@@ -7,11 +7,7 @@ import './Assets/Scss/reset.scss';
 import './Assets/Scss/mixin.scss';
 
 //Custom Imports
-//import Header from './Components/Header';
-//import Body from './Components/Body';
-//import About from './Components/About';
 import Loading from './Components/Loading';
-//import Stores from './Components/Stores';
 
 const Header = lazy(()=>import('./Components/Header'));
 const Body = lazy(()=>import('./Components/Body'));
