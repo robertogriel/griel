@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Custom Imports
 import Loading from './Components/Loading';
-import Admin from './Components/Admin';
 
 
 const Body = lazy(()=>import('./Components/Body'));
@@ -12,6 +11,8 @@ const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
 const NotFound = lazy(()=>import('./Components/NotFound'));
 const Domains = lazy(()=>import('./Components/Domains'));
+const Admin = lazy(()=>import('./Components/Admin'));
+const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
 //const Contact = lazy(()=>import('./Components/Contact'));
 
 
@@ -22,8 +23,8 @@ function App() {
 	  <Router>
 		<Suspense fallback={<Loading/>}>
 		<Routes>
-		
-			<Route exact path='/admin' element={<Admin />} />
+			
+			<Route path='*' element={<NotFound/>}></Route>
 			
 			<Route exact path='/' element={<Body/>} />
 			
@@ -35,7 +36,12 @@ function App() {
 
 			<Route exact path='/load' element={<Loading/>} />
 
-			<Route path='*' element={<NotFound/>}></Route>
+			<Route exact path='/admin' element={<Admin />} />
+
+			<Route exact path='/admin/clientes' element={<Customers  title="Clientes" />} />
+			
+			<Route exact path='/admin/clientes' element={<Customers  title="Clientes" />} />
+
 
 		</Routes>
 		

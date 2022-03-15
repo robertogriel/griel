@@ -21,3 +21,12 @@ div {
         }
     }
 }
+
+li {
+    &.nav-item {
+        button {
+            width: 100%;
+            display: flex;
+        }
+    }
+}

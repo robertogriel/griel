@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const Header = (props: any) => {
+const Header = (props) => {
     return (
         <>
             <Helmet>

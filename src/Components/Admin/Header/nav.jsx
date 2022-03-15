@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Nav = (props: any) => {
+const Nav = (props) => {
   return (
     <>
 

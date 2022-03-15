@@ -10,7 +10,7 @@ const Aside = () => {
 
     useEffect(() => {
 
-        let token: any = '';
+        let token = '';
 
         if (localStorage.getItem('access') === null) {
             token = sessionStorage.getItem('access')
@@ -20,7 +20,7 @@ const Aside = () => {
 
         if (token) {
 
-            const data:any = jwt_decode(token);
+            const data = jwt_decode(token);
 
             setUsername(data.name)
             setUserphoto(data.photo)
@@ -32,12 +32,12 @@ const Aside = () => {
 
 
 
-    
 
 
 
-        
-        
+
+
+
 
     // }
 
@@ -83,15 +83,23 @@ const Aside = () => {
                         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                             <li className="nav-item">
-                                <Link to="/admin" className="nav-link">
+                                <Link to="/admin/" className="nav-link">
                                     <i className="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Painel
                                     </p>
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link title="Clientes" to="/admin/clientes" className="nav-link">
+                                    <i className="nav-icon fa fa-user fw"></i>
+                                    <p>
+                                        Clientes
+                                    </p>
+                                </Link>
+                            </li>
                             <li className={(catalogMenu) ? 'nav-item menu-open' : 'nav-item'}>
-                                <button id="catalog" className="nav-link" onClick={menuHandler}>
+                                <button className="nav-link" onClick={menuHandler}>
                                     <i className="nav-icon fas fa-copy"></i>
                                     <p>
                                         Catálogo
