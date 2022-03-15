@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import Button from '@material-ui/core/Button';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -6,9 +6,13 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import Loading from '../Domains/Loading';
 import dotcombr from '../../Assets/Images/PNG/dotcombr.png';
 import dotcom from '../../Assets/Images/PNG/dotcom.png';
+import axios from 'axios';
 
 //Custom imports
 import './stores.scss';
+
+const Header = lazy(()=>import('../Header'));
+const Footer = lazy(()=>import('../Footer'));
 
 const sampleStoreUrl = 'https://sualoja.griel.dev.br';
 const sampleStoreAdminUrl = 'https://sualoja.griel.dev.br/admin';
@@ -204,9 +208,13 @@ const Stores: React.FunctionComponent<{}> = () => {
     const [getDomainCOM, setDomainCOM] = useState('');
     const [getDomain, setDomain] = useState('');
 
-    const checkDomain = (domain: any) => {
+    const checkDomain = (domain: string) => {
+
+        console.log(process.env.API_URL);
 
         let url = '';
+
+        let avaliabity = '';
 
         if (!domain) {
             
@@ -221,12 +229,6 @@ const Stores: React.FunctionComponent<{}> = () => {
             url = domain.split('.')[0];
         }
 
-        /*if (domain.split('.')[1]) {
-            url = `${domain.split('.')[1]}`
-        } else {
-            url = `${domain.split('.')[0]}`
-        }*/
-
         setDomain(domain.split('.')[0])
 
         fetch(`${process.env.API_URL}/domains?d=${url}.com.br`, {
@@ -236,32 +238,35 @@ const Stores: React.FunctionComponent<{}> = () => {
             .then((resp) => resp.json())
             .then(function (data) {
 
-                if (data.res === 'ok') {
+                if (avaliabity === 'ok') {
                     setDomainBR(`O domínio ${url}.com.br está disponível!`);
                 }
-                if (data.res === 'nok') {
+                if (avaliabity === 'nok') {
                     setDomainBR(`O domínio ${url}.com.br NÃO está disponível!`);
                 }
-            });
 
-        fetch(`${process.env.API_URL}/domains?d=${url}.com`, {
-            method: 'GET'
+
         })
-            .then((resp) => resp.json())
-            .then(function (data) {
+        axios.get(`http://localhost:8080/domains?d=${url}.com`)
+            .then(result => {
 
-                if (data.res === 'ok') {
+                const avaliabity = result.data.res;
+
+                if (avaliabity === 'ok') {
                     setDomainCOM(`O domínio ${url}.com está disponível!`);
                 }
-                if (data.res === 'nok') {
+                if (avaliabity === 'nok') {
                     setDomainCOM(`O domínio ${url}.com NÃO está disponível!`);
                 }
-            });
+
+
+        })
 
     }
 
     return (
         <>
+        <Header/>
             <main id="ecommerce">
                 <section id="resume">
                     <header>
@@ -412,7 +417,7 @@ const Stores: React.FunctionComponent<{}> = () => {
             </main>
 
 
-
+            <Footer/>
 
         </>
     );

@@ -1,20 +1,27 @@
-import React, {useState} from 'react';
+import React, { lazy, useState } from 'react';
 import Loading from './Loading';
 import Button from '@material-ui/core/Button';
 import './domains.scss';
 import dotcombr from '../../Assets/Images/PNG/dotcombr.png';
 import dotcom from '../../Assets/Images/PNG/dotcom.png';
+import axios from 'axios';
+
 
 //import CheckDomains from './CheckDomains.jsx';
 
+const Header = lazy(()=>import('../Header'));
+const Footer = lazy(()=>import('../Footer'));
 
-const Domains = ()=>{
+
+const Domains = () => {
 
     const [getDomainBR, setDomainBR] = useState(null);
     const [getDomainCOM, setDomainCOM] = useState(null);
     const [getDomain, setDomain] = useState(null);
 
-    const checkDomain = (domain)=>{
+    const checkDomain = (domain) => {
+
+        console.log(process.env.API_URL);
 
         let url = '';
 
@@ -24,50 +31,43 @@ const Domains = ()=>{
             url = domain.split('.')[0];
         }
 
-        /*if (domain.split('.')[1]) {
-            url = `${domain.split('.')[1]}`
-        } else {
-            url = `${domain.split('.')[0]}`
-        }*/
-
         setDomain(domain.split('.')[0])
 
-        console.log(url);
 
-        fetch(`${process.env.API_URL}/domains?d=${url}.com.br`, {
-            method: 'GET',
-            mode: 'no-cors'
+        axios.get(`http://localhost:8080/domains?d=${url}.com.br`)
+            .then(result => {
+
+                const avaliabity = result.data.res;
+
+                if (avaliabity === 'ok') {
+                    setDomainBR(`O domínio ${url}.com.br está disponível!`);
+                }
+                if (avaliabity === 'nok') {
+                    setDomainBR(`O domínio ${url}.com.br NÃO está disponível!`);
+                }
+
+
         })
-        .then((resp) => resp.json())
-        .then(function(data) {
+        axios.get(`http://localhost:8080/domains?d=${url}.com`)
+            .then(result => {
 
-            if (data.res === 'ok') {
-                setDomainBR(`O domínio ${url}.com.br está disponível!`);
-            }
-            if (data.res === 'nok') {
-                setDomainBR(`O domínio ${url}.com.br NÃO está disponível!`);
-            }
-        });
+                const avaliabity = result.data.res;
 
-        fetch(`${process.env.API_URL}/domains?d=${url}.com`, {
-            method: 'GET'
+                if (avaliabity === 'ok') {
+                    setDomainCOM(`O domínio ${url}.com está disponível!`);
+                }
+                if (avaliabity === 'nok') {
+                    setDomainCOM(`O domínio ${url}.com NÃO está disponível!`);
+                }
+
+
         })
-        .then((resp) => resp.json())
-        .then(function(data) {
-
-            if (data.res === 'ok') {
-                setDomainCOM(`O domínio ${url}.com está disponível!`);
-            }
-            if (data.res === 'nok') {
-                setDomainCOM(`O domínio ${url}.com NÃO está disponível!`);
-            }
-        });
 
     }
 
-    window.addEventListener("load", function(){
+    window.addEventListener("load", function () {
         if (window.location.search && window.location.search.split('=')[0] === '?domain') {
-            
+
             checkDomain(window.location.search.split('=')[1]);
 
             document.querySelector("input[name=domain]").value = window.location.search.split('=')[1];
@@ -76,9 +76,11 @@ const Domains = ()=>{
 
 
 
-    
+
 
     return (
+        <>
+        <Header/>
         <main id="domains">
 
             <section id="domain-search">
@@ -90,14 +92,14 @@ const Domains = ()=>{
 
                     <form>
                         <input type="text" name="domain" className="form-control" />
-                        <br/>
-                        <Button type="button" variant="contained" id="search-domain-button" color="primary" onClick={(e)=>{
+                        <br />
+                        <Button type="button" variant="contained" id="search-domain-button" color="primary" onClick={(e) => {
 
                             e.preventDefault();
 
-                        let domain = document.querySelector("input[name=domain]").value;
+                            let domain = document.querySelector("input[name=domain]").value;
 
-                        checkDomain(domain)
+                            checkDomain(domain)
                         }}>Checar</Button>
                     </form>
 
@@ -105,38 +107,40 @@ const Domains = ()=>{
 
             </section>
             {getDomain &&
-            <section id="results">
-                
-                <div className="ext">
+                <section id="results">
 
-                    <div className="title">
-                        <img src={dotcombr} alt="Domínio .com.br" />
-                        <p>{getDomain}.com.br</p>
-                    </div>
-                    <div className="text">
-                        <p>{getDomainBR ? getDomainBR : <Loading/>}</p>
-                    </div>
+                    <div className="ext">
 
-                </div>
+                        <div className="title">
+                            <img src={dotcombr} alt="Domínio .com.br" />
+                            <p>{getDomain}.com.br</p>
+                        </div>
+                        <div className="text">
+                            <p>{getDomainBR ? getDomainBR : <Loading />}</p>
+                        </div>
 
-                <div className="ext">
-
-                    <div className="title">
-                        <img src={dotcom} alt="Domínio .com" />
-                        <p>{getDomain}.com</p>
-                    </div>
-                    <div className="text">
-                        <p>{getDomainCOM ? getDomainCOM : <Loading/>}</p>
                     </div>
 
-                </div>
-                
+                    <div className="ext">
 
-            </section>
+                        <div className="title">
+                            <img src={dotcom} alt="Domínio .com" />
+                            <p>{getDomain}.com</p>
+                        </div>
+                        <div className="text">
+                            <p>{getDomainCOM ? getDomainCOM : <Loading />}</p>
+                        </div>
+
+                    </div>
+
+
+                </section>
             }
-            
+
 
         </main>
+        <Footer/>
+        </>
     );
 }
 

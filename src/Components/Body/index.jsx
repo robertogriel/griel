@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import Typewriter from 'typewriter-effect';
 
 //Custom Imports
 import './body.scss';
 import About from './about';
+
+
+const Header = lazy(()=>import('../Header'));
+const Footer = lazy(()=>import('../Footer'));
 
 const Body = ()=>{
 
@@ -11,6 +15,7 @@ const Body = ()=>{
 
     return (
         <>
+        <Header/>
         <main id="index">
             <section id="top">
                 <div className="typing">
@@ -35,6 +40,7 @@ const Body = ()=>{
 
             
         </main>
+        <Footer/>
         </>
     );
 

@@ -7,7 +7,8 @@ import WhatsApp from './WhatsApp';
 //Custom Imports
 import './footer.scss';
 import Logo from '../../Assets/Images/PNG/logo.png';
-
+import '../../Assets/Scss/reset.scss';
+import '../../Assets/Scss/mixin.scss';
 
 const ShowGoToTop = ()=>{
     let [scrollPosition, setScrollPosition] = useState(false);
