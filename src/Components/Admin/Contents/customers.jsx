@@ -13,22 +13,38 @@ const Customers = (props) => {
 
     const [ customers, setCustomers ] = useState([]);
 
-    useEffect(()=>{
+    const token = getToken()
 
-        const token = getToken()
-
-        fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/listar`, {
+    const getCustomers = async()=>{
+        await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/listar`, {
             headers: { "Authorization": `Bearer ${token}` }
         })
         .then((response) => response.json())
         .then((result)=>{
             setCustomers(result)
         })
+    }
+    
+    useEffect(() => {
+        getCustomers();
+    }, [])
 
-    },[]);
+    const removeCustomer = async (e)=>{
+
+        const id = e.target.getAttribute('data-id');
+
+        await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/apagar/${id}`, {
+            headers: { "Authorization": `Bearer ${token}` },
+            method: 'DELETE'
+        })
+
+        getCustomers();
+    }
+
 
 
     return (
+        
         
         <>
             <Header title="Início - " /><Nav /><Aside />
@@ -95,7 +111,7 @@ const Customers = (props) => {
                                                                 <td>{customer.name}</td>
                                                                 <td>{customer.email}</td>
                                                                 <td>{customer.phone}</td>
-                                                                <td><Link to={`admin/clientes/atualizar/${customer.id}`} className="btn btn-primary btn-xs">Editar</Link> <a href={`admin/clientes/apagar/${customer.id}`} className="btn btn-danger btn-xs">Apagar</a></td>
+                                                                <td><Link to={`/admin/editar-cliente-${customer.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={customer.id} onClick={removeCustomer} className="btn btn-danger btn-xs">Apagar</button></td>
                                                             </tr>
                                                         ))
                                                     }
@@ -111,7 +127,7 @@ const Customers = (props) => {
                         </div>
 
                         <div className="card-footer">
-                            <Link className="btn btn-lg btn-primary" to="/admin/clientes/criar">Novo Cliente</Link>
+                            <Link className="btn btn-lg btn-primary" to="/admin/novo-cliente">Novo Cliente</Link>
                         </div>
 
                     </div>
