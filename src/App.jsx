@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomerForm from './Components/Admin/Contents/edit-customer';
+import Services from './Components/Admin/Contents/services';
 
 
 //Custom Imports
@@ -44,6 +45,8 @@ function App() {
 			<Route exact path='/admin/novo-cliente' element={<CustomerForm act="new" title="Criar Cliente" />} />
 			
 			<Route exact path='/admin/editar-cliente-:id' element={<CustomerForm act="edit" title="Editar Cliente" />} />
+
+			<Route exact path='/admin/servicos' element={<Services  title="Serviços" />} />
 
 
 		</Routes>

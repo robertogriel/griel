@@ -14,11 +14,6 @@ const CustomerForm = (props) => {
 
 	const [customerData, setCustomerData] = useState();
 
-	const [inputName, setInputName] = useState('');
-	const [inputEmail, setInputEmail] = useState('');
-	const [inputPhone, setInputPhone] = useState('');
-	const [inputDocument, setInputDocument] = useState('');
-
 	let token = getToken();
 
 	const navigate = useNavigate();
@@ -38,7 +33,6 @@ const CustomerForm = (props) => {
 				.then((response) => response.json())
 				.then((result) => {
 					setCustomerData(result)
-					console.log(customerData)
 				})
 		}
 
@@ -123,6 +117,8 @@ const CustomerForm = (props) => {
 
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
+										&nbsp;
+										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
@@ -212,6 +208,8 @@ const CustomerForm = (props) => {
 
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
+										&nbsp;
+										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
