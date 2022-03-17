@@ -11,25 +11,25 @@ import Nav from "../Header/nav";
 
 const Services = (props) => {
 
-    const [ customers, setCustomers ] = useState([]);
+    const [ services, setServices ] = useState([]);
 
     const token = getToken()
 
-    const getCustomers = async()=>{
-        await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/listar`, {
+    const getServices = async()=>{
+        await fetch(`${process.env.REACT_APP_API_URL}/sistema/servicos/listar`, {
             headers: { "Authorization": `Bearer ${token}` }
         })
         .then((response) => response.json())
         .then((result)=>{
-            setCustomers(result)
+            setServices(result)
         })
     }
     
     useEffect(() => {
-        getCustomers();
+        getServices();
     }, [])
 
-    const removeCustomer = async (e)=>{
+    const removeService = async (e)=>{
 
         const id = e.target.getAttribute('data-id');
 
@@ -38,7 +38,7 @@ const Services = (props) => {
             method: 'DELETE'
         })
 
-        getCustomers();
+        getServices();
     }
 
 
@@ -98,20 +98,20 @@ const Services = (props) => {
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Nome</th>
-                                                        <th>E-Mail</th>
-                                                        <th>Telefone</th>
+                                                        <th>Valor</th>
+                                                        <th>Renovação</th>
                                                         <th>Ações</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {customers &&
-                                                        customers.map((customer, index) => (
+                                                    {services &&
+                                                        services.map((service, index) => (
                                                             <tr key={index}>
-                                                                <td>{customer.id}</td>
-                                                                <td>{customer.name}</td>
-                                                                <td>{customer.email}</td>
-                                                                <td>{customer.phone}</td>
-                                                                <td><Link to={`/admin/editar-cliente-${customer.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={customer.id} onClick={removeCustomer} className="btn btn-danger btn-xs">Apagar</button></td>
+                                                                <td>{service.id}</td>
+                                                                <td>{service.name}</td>
+                                                                <td>{service.price}</td>
+                                                                <td>{service.renew} dias</td>
+                                                                <td><Link to={`/admin/editar-servico-${service.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={service.id} onClick={removeService} className="btn btn-danger btn-xs">Apagar</button></td>
                                                             </tr>
                                                         ))
                                                     }
@@ -127,7 +127,7 @@ const Services = (props) => {
                         </div>
 
                         <div className="card-footer">
-                            <Link className="btn btn-lg btn-primary" to="/admin/novo-cliente">Novo Cliente</Link>
+                            <Link className="btn btn-lg btn-primary" to="/admin/novo-servico">Novo Serviço</Link>
                         </div>
 
                     </div>

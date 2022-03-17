@@ -98,6 +98,14 @@ const Aside = () => {
                                     </p>
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link title="Clientes" to="/admin/servicos" className="nav-link">
+                                    <i className="nav-icon nav-icon fa fa-solid fa-briefcase"></i>
+                                    <p>
+                                        Serviços
+                                    </p>
+                                </Link>
+                            </li>
                             <li className={(catalogMenu) ? 'nav-item menu-open' : 'nav-item'}>
                                 <button className="nav-link" onClick={menuHandler}>
                                     <i className="nav-icon fas fa-copy"></i>
