@@ -12,7 +12,7 @@ import Nav from "../Header/nav";
 
 const ServiceForm = (props) => {
 
-	const [customerData, setCustomerData] = useState();
+	const [serviceData, setServiceData] = useState();
 
 	let token = getToken();
 
@@ -27,12 +27,12 @@ const ServiceForm = (props) => {
 
 			const token = getToken()
 
-			fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/listar/${id}`, {
+			fetch(`${process.env.REACT_APP_API_URL}/sistema/servicos/listar/${id}`, {
 				headers: { "Authorization": `Bearer ${token}` }
 			})
 				.then((response) => response.json())
 				.then((result) => {
-					setCustomerData(result)
+					setServiceData(result)
 				})
 		}
 
@@ -48,16 +48,14 @@ const ServiceForm = (props) => {
 
 				const form = data.target;
 
-				const formData = new FormData(form);
-
-				await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/criar`, {
+				await fetch(`${process.env.REACT_APP_API_URL}/sistema/servicos/criar`, {
 					headers: { "Authorization": `Bearer ${token}` },
 					method: 'POST',
 					body: new FormData(form),
 				})
 
 
-				return navigate('/admin/clientes');
+				return navigate('/admin/servicos');
 
 			}
 
@@ -89,28 +87,21 @@ const ServiceForm = (props) => {
 
 								<div className="card">
 									<div className="card-body">
+										<div className="row">
 
-										<div className="row">
-											<div className="col-sm-12">
-												<div className="form-group">
-													<label htmlFor="name">Nome:</label>
-													<input className="form-control" type="text" name="name" id="name" required />
-												</div>
-											</div>
-										</div>
-										<div className="row">
 											<div className="col-sm-4">
-												<label htmlFor="email">E-Mail</label>
-												<input className="form-control" type="email" name="email" id="email" required />
+												<label htmlFor="name">Nome do Serviço:</label>
+												<input className="form-control" type="text" name="name" id="new-name" required />
 											</div>
 											<div className="col-sm-4">
-												<label htmlFor="phone">Telefone</label>
-												<input className="form-control" type="phone" name="phone" id="text" required />
+												<label htmlFor="price">Valor</label>
+												<input className="form-control" type="text" name="price" id="new-price" required />
 											</div>
 											<div className="col-sm-4">
-												<label htmlFor="document">Documento</label>
-												<input className="form-control" type="document" name="document" id="text" required />
+												<label htmlFor="renew">Renovação</label>
+												<input className="form-control" type="number" name="renew" id="new-renew" required />
 											</div>
+
 										</div>
 
 									</div>
@@ -118,7 +109,7 @@ const ServiceForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
+										<Link to="/admin/servicos" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
@@ -139,16 +130,14 @@ const ServiceForm = (props) => {
 
 				const form = data.target;
 
-				const formData = new FormData(form);
-
-				await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/atualizar/${id}`, {
+				await fetch(`${process.env.REACT_APP_API_URL}/sistema/servicos/atualizar/${id}`, {
 					headers: { "Authorization": `Bearer ${token}` },
 					method: 'POST',
 					body: new FormData(form),
 				})
 
 
-				return navigate('/admin/clientes');
+				return navigate('/admin/servicos');
 
 			}
 
@@ -174,46 +163,38 @@ const ServiceForm = (props) => {
 							</div>
 						</section>
 
-						{customerData &&
-						<section className="content">
-							<form method="POST" onSubmit={submitUpdateForm}>
+						{serviceData &&
+							<section className="content">
+								<form method="POST" onSubmit={submitUpdateForm}>
 
-								<div className="card">
-									<div className="card-body">
+									<div className="card">
+										<div className="card-body">
 
-										<div className="row">
-											<div className="col-sm-12">
-												<div className="form-group">
-													<label htmlFor="name">Nome:</label>
-													<input className="form-control" type="text" name="name" id="name" defaultValue={customerData.name} required />
+											<div className="row">
+												<div className="col-sm-4">
+													<label htmlFor="name">Nome do Serviço:</label>
+													<input className="form-control" type="text" name="name" defaultValue={serviceData.name} id="new-name" required />
+												</div>
+												<div className="col-sm-4">
+													<label htmlFor="price">Valor</label>
+													<input className="form-control" type="text" name="price" defaultValue={serviceData.price} id="new-price" required />
+												</div>
+												<div className="col-sm-4">
+													<label htmlFor="renew">Renovação</label>
+													<input className="form-control" type="number" name="renew" defaultValue={serviceData.renew} id="new-renew" required />
 												</div>
 											</div>
-										</div>
-										<div className="row">
-											<div className="col-sm-4">
-												<label htmlFor="email">E-Mail</label>
-												<input className="form-control" type="email" name="email" id="email" defaultValue={customerData.email}  required />
-											</div>
-											<div className="col-sm-4">
-												<label htmlFor="phone">Telefone</label>
-												<input className="form-control" type="phone" name="phone" id="text" defaultValue={customerData.phone}  required />
-											</div>
-											<div className="col-sm-4">
-												<label htmlFor="document">Documento</label>
-												<input className="form-control" type="document" name="document" id="text" defaultValue={customerData.phone}  required />
-											</div>
+
 										</div>
 
+										<div className="card-footer">
+											<button id="save" className="btn btn-primary" type="submit">Salvar</button>
+											&nbsp;
+											<Link to="/admin/servicos" className="btn btn-default">Cancelar</Link>
+										</div>
 									</div>
-
-									<div className="card-footer">
-										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
-										&nbsp;
-										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
-									</div>
-								</div>
-							</form>
-						</section>
+								</form>
+							</section>
 						}
 
 					</div >
