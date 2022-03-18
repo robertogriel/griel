@@ -48,8 +48,6 @@ const CustomerForm = (props) => {
 
 				const form = data.target;
 
-				const formData = new FormData(form);
-
 				await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/criar`, {
 					headers: { "Authorization": `Bearer ${token}` },
 					method: 'POST',
@@ -94,22 +92,22 @@ const CustomerForm = (props) => {
 											<div className="col-sm-12">
 												<div className="form-group">
 													<label htmlFor="name">Nome:</label>
-													<input className="form-control" type="text" name="name" id="name" required />
+													<input className="form-control" type="text" name="name" id="new-name" required />
 												</div>
 											</div>
 										</div>
 										<div className="row">
 											<div className="col-sm-4">
 												<label htmlFor="email">E-Mail</label>
-												<input className="form-control" type="email" name="email" id="email" required />
+												<input className="form-control" type="email" name="email" id="new-email" required />
 											</div>
 											<div className="col-sm-4">
 												<label htmlFor="phone">Telefone</label>
-												<input className="form-control" type="phone" name="phone" id="text" required />
+												<input className="form-control" type="text" name="phone" id="new-phone" required />
 											</div>
 											<div className="col-sm-4">
 												<label htmlFor="document">Documento</label>
-												<input className="form-control" type="document" name="document" id="text" required />
+												<input className="form-control" type="text" name="document" id="new-document" required />
 											</div>
 										</div>
 
@@ -138,8 +136,6 @@ const CustomerForm = (props) => {
 				data.preventDefault();
 
 				const form = data.target;
-
-				const formData = new FormData(form);
 
 				await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/atualizar/${id}`, {
 					headers: { "Authorization": `Bearer ${token}` },
@@ -185,22 +181,22 @@ const CustomerForm = (props) => {
 											<div className="col-sm-12">
 												<div className="form-group">
 													<label htmlFor="name">Nome:</label>
-													<input className="form-control" type="text" name="name" id="name" defaultValue={customerData.name} required />
+													<input className="form-control" type="text" name="name" id="edit-name" defaultValue={customerData.name} required />
 												</div>
 											</div>
 										</div>
 										<div className="row">
 											<div className="col-sm-4">
 												<label htmlFor="email">E-Mail</label>
-												<input className="form-control" type="email" name="email" id="email" defaultValue={customerData.email}  required />
+												<input className="form-control" type="email" name="email" id="edit-email" defaultValue={customerData.email}  required />
 											</div>
 											<div className="col-sm-4">
 												<label htmlFor="phone">Telefone</label>
-												<input className="form-control" type="phone" name="phone" id="text" defaultValue={customerData.phone}  required />
+												<input className="form-control" type="text" name="phone" id="edit-phone" defaultValue={customerData.phone}  required />
 											</div>
 											<div className="col-sm-4">
 												<label htmlFor="document">Documento</label>
-												<input className="form-control" type="document" name="document" id="text" defaultValue={customerData.phone}  required />
+												<input className="form-control" type="text" name="document" id="edit-document" defaultValue={customerData.phone}  required />
 											</div>
 										</div>
 
