@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CustomerForm from './Components/Admin/Contents/edit-customer';
-import ServiceForm from './Components/Admin/Contents/edit-service';
-import Services from './Components/Admin/Contents/services';
+
+
 
 
 //Custom Imports
@@ -16,6 +15,10 @@ const NotFound = lazy(()=>import('./Components/NotFound'));
 const Domains = lazy(()=>import('./Components/Domains'));
 const Admin = lazy(()=>import('./Components/Admin'));
 const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
+const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'));
+const ServiceForm = lazy(()=>import('./Components/Admin/Contents/edit-service'));
+const Services = lazy(()=>import('./Components/Admin/Contents/services'));
+const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
 //const Contact = lazy(()=>import('./Components/Contact'));
 
 
@@ -52,6 +55,8 @@ function App() {
 			<Route exact path='/admin/novo-servico' element={<ServiceForm act="new"  title="Novo Serviço" />} />
 
 			<Route exact path='/admin/editar-servico-:id' element={<ServiceForm act="edit"  title="Editar Serviço" />} />
+
+			<Route exact path='/admin/contratos' element={<Contracts  title="Contratos" />} />
 
 
 		</Routes>
