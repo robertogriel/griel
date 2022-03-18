@@ -47,12 +47,12 @@ const Aside = () => {
 
             <aside className="main-sidebar sidebar-dark-primary elevation-4">
 
-                <a href="assets/index3.html" className="brand-link">
+                <Link to="/admin/" className="brand-link">
                     <img src="./assets/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{
                         opacity: .8
                     }} />
                     <span className="brand-text font-weight-light">Administração</span>
-                </a>
+                </Link>
 
 
                 <div className="sidebar">
@@ -106,24 +106,15 @@ const Aside = () => {
                                     </p>
                                 </Link>
                             </li>
-                            <li className={(catalogMenu) ? 'nav-item menu-open' : 'nav-item'}>
-                                <button className="nav-link" onClick={menuHandler}>
-                                    <i className="nav-icon fas fa-copy"></i>
+                            <li className="nav-item">
+                                <Link title="Clientes" to="/admin/contratos" className="nav-link">
+                                    <i className="nav-icon nav-icon fa fa-solid fa-file-contract"></i>
                                     <p>
-                                        Catálogo
-                                        <i className="fas fa-angle-left right"></i>
+                                        Contratos
                                     </p>
-                                </button>
-                                <ul className="nav nav-treeview" style={(catalogMenu) ? { display: 'flex' } : { display: 'none' }}>
-                                    <li className="nav-link">
-                                        <Link to="/categorias" className="nav-item">
-                                            <i className="nav-icon far fa-circle"></i>
-                                            <p>  Categorias</p>
-                                        </Link>
-                                    </li>
-
-                                </ul>
+                                </Link>
                             </li>
+                            
                         </ul>
                     </nav>
 
