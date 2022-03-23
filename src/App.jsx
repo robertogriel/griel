@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ContractForm from './Components/Admin/Contents/edit-contract';
 
 
 
@@ -58,6 +59,7 @@ function App() {
 
 			<Route exact path='/admin/contratos' element={<Contracts  title="Contratos" />} />
 
+			<Route exact path='/admin/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} />
 
 		</Routes>
 		

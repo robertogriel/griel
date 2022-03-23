@@ -92,6 +92,7 @@ const Contracts = (props)=>{
                                         <table className="table table-hover text-nowrap">
                                             <thead>
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Cliente</th>
                                                     <th>Serviço</th>
                                                     <th>Valor</th>
@@ -103,6 +104,7 @@ const Contracts = (props)=>{
                                                 {contracts &&
                                                     contracts.map((contract, index) => (
                                                         <tr key={index}>
+                                                            <td>{contract.id}</td>
                                                             <td>{contract.customer_name}</td>
                                                             <td>{contract.service_name}</td>
                                                             <td>{contract.service_price}</td>
