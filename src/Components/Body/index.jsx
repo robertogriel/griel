@@ -8,6 +8,7 @@ import About from './about';
 
 const Header = lazy(()=>import('../Header'));
 const Footer = lazy(()=>import('../Footer'));
+const Portfolio = lazy(()=>import('./portfolio'));
 
 const Body = ()=>{
 
@@ -38,6 +39,7 @@ const Body = ()=>{
 
             <About />
 
+            <Portfolio />
             
         </main>
         <Footer/>
