@@ -1,6 +1,5 @@
 main {
     &#index {
-        height: 100%;
         width: 100%;
         flex-direction: column;
         hr {
@@ -26,6 +25,12 @@ main {
             &#about {
                 background: #2072a7;
                 margin-top: 15px;
+            }
+            &#portfolio {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 10px;
             }
             
         }
