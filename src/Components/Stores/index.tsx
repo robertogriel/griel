@@ -210,7 +210,7 @@ const Stores: React.FunctionComponent<{}> = () => {
 
     const checkDomain = (domain: string) => {
 
-        console.log(process.env.API_URL);
+        const API_URL = 'http://localhost:8080';
 
         let url = '';
 
@@ -231,7 +231,7 @@ const Stores: React.FunctionComponent<{}> = () => {
 
         setDomain(domain.split('.')[0])
 
-        fetch(`${process.env.API_URL}/domains?d=${url}.com.br`, {
+        fetch(`${API_URL}/domains?d=${url}.com.br`, {
             method: 'GET',
             mode: 'no-cors'
         })
@@ -247,10 +247,12 @@ const Stores: React.FunctionComponent<{}> = () => {
 
 
         })
-        axios.get(`http://localhost:8080/domains?d=${url}.com`)
-            .then(result => {
-
-                const avaliabity = result.data.res;
+        fetch(`${API_URL}/domains?d=${url}.com`, {
+            method: 'GET',
+            mode: 'no-cors'
+        })
+            .then((resp) => resp.json())
+            .then(function (data) {
 
                 if (avaliabity === 'ok') {
                     setDomainCOM(`O domínio ${url}.com está disponível!`);

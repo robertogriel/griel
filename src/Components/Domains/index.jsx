@@ -19,9 +19,9 @@ const Domains = () => {
     const [getDomainCOM, setDomainCOM] = useState(null);
     const [getDomain, setDomain] = useState(null);
 
-    const checkDomain = (domain) => {
+    const API_URL = 'http://localhost:8080';
 
-        console.log(process.env.API_URL);
+    const checkDomain = (domain) => {
 
         let url = '';
 
@@ -34,7 +34,7 @@ const Domains = () => {
         setDomain(domain.split('.')[0])
 
 
-        axios.get(`http://localhost:8080/domains?d=${url}.com.br`)
+        axios.get(`${API_URL}/domains?d=${url}.com.br`)
             .then(result => {
 
                 const avaliabity = result.data.res;
@@ -48,7 +48,7 @@ const Domains = () => {
 
 
         })
-        axios.get(`http://localhost:8080/domains?d=${url}.com`)
+        axios.get(`${API_URL}/domains?d=${url}.com`)
             .then(result => {
 
                 const avaliabity = result.data.res;
