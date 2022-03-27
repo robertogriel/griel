@@ -6,7 +6,6 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import Loading from '../Domains/Loading';
 import dotcombr from '../../Assets/Images/PNG/dotcombr.png';
 import dotcom from '../../Assets/Images/PNG/dotcom.png';
-import axios from 'axios';
 
 //Custom imports
 import './stores.scss';
