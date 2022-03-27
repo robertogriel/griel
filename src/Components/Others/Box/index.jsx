@@ -15,11 +15,11 @@ const Box = (props)=>{
 
                 </div>
             </a>
-            <a href={props.link} target="_blank" alt={props.name}>
+            <a href={props.link} class="name" target="_blank" alt={props.name}>
                 <p>{props.name}</p>
                 <small>{props.type}</small>
             </a>
-            <a href={props.link} target="_blank" alt={props.name}>
+            <a href={props.link} class="link" target="_blank" alt={props.name}>
                 {props.link}
             </a>
         </div>

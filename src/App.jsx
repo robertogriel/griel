@@ -8,12 +8,14 @@ import ContractForm from './Components/Admin/Contents/edit-contract';
 //Custom Imports
 import Loading from './Components/Loading';
 
-
 const Body = lazy(()=>import('./Components/Body'));
 const About = lazy(()=>import('./Components/About'));
 const Stores = lazy(()=>import('./Components/Stores'));
 const NotFound = lazy(()=>import('./Components/NotFound'));
 const Domains = lazy(()=>import('./Components/Domains'));
+const PortfolioPage = lazy(()=>import('./Components/Portfolio'));
+
+
 const Admin = lazy(()=>import('./Components/Admin'));
 const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
 const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'));
@@ -40,6 +42,8 @@ function App() {
 			<Route exact path='/loja-virtual' element={<Stores/>} />
 
 			<Route exact path='/dominios' element={<Domains/>} />
+			
+			<Route exact path='/portfolio' element={<PortfolioPage />} />
 
 			<Route exact path='/load' element={<Loading/>} />
 
