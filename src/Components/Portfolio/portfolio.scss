@@ -15,6 +15,9 @@ main {
             background-color: #fefefe;
             padding: 20px;
             margin: 20px 0;
+            p {
+                text-align: center;
+            }
             div {
                 &.boxes {
                     div {
