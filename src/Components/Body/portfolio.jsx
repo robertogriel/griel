@@ -52,6 +52,7 @@ const Portfolio = () => {
                     )}
 
                 </div>
+                <br/>
                 <Link to="/portfolio">
                     <Button variant="contained" color="primary">Ver todos</Button>
                 </Link>

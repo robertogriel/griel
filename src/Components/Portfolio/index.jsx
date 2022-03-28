@@ -18,8 +18,8 @@ const stores = [
     },
     {
         name: "Life Shoes",
-        link: "https://www.lifeshoesns.com",
-        img: "https://www.lifeshoesns.com/image/catalog/Sistema/logo100.png"
+        link: "https://www.lojalifeshoes.com",
+        img: "https://www.lojalifeshoes.com/image/catalog/Sistema/logo100.png"
     },
     {
         name: "Life Kids",
