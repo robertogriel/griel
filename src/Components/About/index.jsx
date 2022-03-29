@@ -85,25 +85,26 @@ const About = () => {
 
         setCertificate(e.target.dataset.medium);
         setFullCertificate(e.target.dataset.full);
-        
+
     }
 
     useEffect(() => {
         const modal = document.querySelector('.certificate-modal');
         if (modal) {
-    
-           
-    
+
+
+
             modal.addEventListener('click', () => {
                 modal.classList.add('close')
                 setTimeout(() => {
-                setModalStatus(false);
-                modal.classList.remove('close')
+                    setModalStatus(false);
+                    modal.classList.remove('close')
+                    setCertificate('')
                 }, 1000)
-                setCertificate('')
+                
             });
         }
-    },[]);
+    }, []);
 
 
 
@@ -145,14 +146,14 @@ const About = () => {
                                     </picture>
                                 </div>
                                 <div className="certificate-name">
-                                <p>{certificate.name}</p>
+                                    <p>{certificate.name}</p>
                                 </div>
 
                             </div>
 
                         ))}
 
-                        
+
                     </div>
 
                 </section>
