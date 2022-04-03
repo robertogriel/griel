@@ -60,6 +60,11 @@ const stores = [
 
 const sites = [
     {
+        name: "BR Entregas",
+        link: "https://www.brentregas.com.br",
+        img: "https://www.brentregas.com.br/public/assets/page/images/png/logo.png"
+    },
+    {
         name: "Rhastreio - Rastreamento Veicular",
         link: "https://www.rhastreio.com.br",
         img: "https://www.rhastreio.com.br/html/res/images/logosite.png"

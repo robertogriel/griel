@@ -48,13 +48,17 @@ const Menu = ()=>{
             link: '/'
         },
         {
-            title:'loja virtual',
-            link: '/loja-virtual'
+            title:'quem sou',
+            link: '/sobre'
         },
         {
             title:'portfólio',
             link: '/portfolio'
-        }
+        },
+        {
+            title:'loja virtual',
+            link: '/loja-virtual'
+        },
     ]
 
     return (
