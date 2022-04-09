@@ -394,8 +394,8 @@ const Stores: React.FunctionComponent<{}> = () => {
                                 ))}
                                 <tr>
                                     <td></td>
-                                    <td><strong>R$ 1.800,00</strong><br /><span>ou 12x de R$180,72</span></td>
-                                    <td><strong>R$ 2.300,00</strong><br /><span>ou 12x de R$230,92</span></td>
+                                    <td><strong>R$ 2.000,00</strong><br /><span>ou 12x de R$200,80</span></td>
+                                    <td><strong>R$ 2.500,00</strong><br /><span>ou 12x de R$251,00</span></td>
                                 </tr>
                             </tbody>
                         </table>
