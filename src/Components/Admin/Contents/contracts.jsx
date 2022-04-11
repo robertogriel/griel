@@ -30,10 +30,10 @@ const Contracts = (props)=>{
 
     const removeContract = async (e)=>{
 
-        const service_id = e.target.getAttribute('data-service_id');
+        const id = e.target.getAttribute('data-id');
         const customer_id = e.target.getAttribute('data-customer_id');
 
-        await fetch(`${process.env.REACT_APP_API_URL}/sistema/contratos/apagar/${customer_id}-${service_id}`, {
+        await fetch(`${process.env.REACT_APP_API_URL}/sistema/contratos/apagar/${customer_id}-${id}`, {
             headers: { "Authorization": `Bearer ${token}` },
             method: 'DELETE'
         })
@@ -109,7 +109,7 @@ const Contracts = (props)=>{
                                                             <td>{contract.service_name}</td>
                                                             <td>{contract.service_price}</td>
                                                             <td>{contract.created}</td>
-                                                            <td><button data-service_id={contract.service_id} data-customer_id={contract.customer_id} onClick={removeContract} className="btn btn-danger btn-xs">Cancelar</button></td>
+                                                            <td><button data-id={contract.id} data-customer_id={contract.customer_id} onClick={removeContract} className="btn btn-danger btn-xs">Cancelar</button></td>
                                                         </tr>
                                                     ))
                                                 }
