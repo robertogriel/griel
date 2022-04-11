@@ -16,13 +16,13 @@ const Domains = lazy(()=>import('./Components/Domains'));
 const PortfolioPage = lazy(()=>import('./Components/Portfolio'));
 
 
-//const Admin = lazy(()=>import('./Components/Admin'));
-//const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
-//const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'));
-//const ServiceForm = lazy(()=>import('./Components/Admin/Contents/edit-service'));
-//const Services = lazy(()=>import('./Components/Admin/Contents/services'));
-//const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
-//const Contact = lazy(()=>import('./Components/Contact'));
+const Admin = lazy(()=>import('./Components/Admin'));
+const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
+const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'));
+const ServiceForm = lazy(()=>import('./Components/Admin/Contents/edit-service'));
+const Services = lazy(()=>import('./Components/Admin/Contents/services'));
+const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
+const Contact = lazy(()=>import('./Components/Contact'));
 
 
 
@@ -47,7 +47,7 @@ function App() {
 
 			<Route exact path='/load' element={<Loading/>} />
 
-			{/* <Route exact path='/admin' element={<Admin />} />
+			<Route exact path='/admin' element={<Admin />} />
 
 			<Route exact path='/admin/clientes' element={<Customers  title="Clientes" />} />
 			
@@ -63,7 +63,7 @@ function App() {
 
 			<Route exact path='/admin/contratos' element={<Contracts  title="Contratos" />} />
 
-			<Route exact path='/admin/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} /> */}
+			<Route exact path='/admin/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} />
 
 		</Routes>
 		

@@ -14,11 +14,24 @@ const ContractForm = (props) => {
 
 	const [contractData, setContractData] = useState();
 
+	const [serviceList, setServiceList] = useState([]);
+
 	let token = getToken();
 
 	const navigate = useNavigate();
 
 	const { id } = useParams();
+
+	useEffect(()=>{
+
+		fetch(`${process.env.REACT_APP_API_URL}/sistema/servicos/listar`, {
+			headers: { "Authorization": `Bearer ${token}` }
+		})
+		.then((response) => response.json())
+		.then((result)=>{
+			setServiceList(result);
+		})
+	},[]);
 
 
 	useEffect(() => {
@@ -48,14 +61,23 @@ const ContractForm = (props) => {
 
 				const form = data.target;
 
-				await fetch(`${process.env.REACT_APP_API_URL}/sistema/clientes/novo-servico`, {
+				await fetch(`${process.env.REACT_APP_API_URL}/sistema/contratos/novo`, {
 					headers: { "Authorization": `Bearer ${token}` },
 					method: 'POST',
 					body: new FormData(form),
 				})
+					.then((response) => response.text())
+					.then((result) => {
+						if (result == 400) {
+							alert("deu erro")
+						} else {
+							return navigate('/admin/contratos');
+						}
+					})
+			
 
 
-				return navigate('/admin/contratos');
+				//
 
 			}
 
@@ -98,7 +120,17 @@ const ContractForm = (props) => {
                                             <div className="col-sm-6">
                                                 <div className="form-group">
                                                     <label htmlFor="id_service">Tipo do Serviço</label>
-                                                    <input type="number" className="form-control" name="id_service" id="id_service" required="true" />
+													
+													<select className="form-control" name="id_service" id="id_service">
+
+														{serviceList.map((service) => {
+															return (
+																<option key={service.id} value={service.id}>{service.name}</option>
+															)
+														})}
+
+													</select>
+
                                                 </div>
                                             </div>
                                         </div>
