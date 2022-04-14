@@ -109,7 +109,10 @@ const Services = (props) => {
                                                             <tr key={index}>
                                                                 <td>{service.id}</td>
                                                                 <td>{service.name}</td>
-                                                                <td>{service.price}</td>
+                                                                <td>{parseFloat(service.price).toLocaleString('pt-br', {
+                                                                    style: 'currency',
+                                                                    currency: 'BRL'
+                                                                })}</td>
                                                                 <td>{service.renew} dias</td>
                                                                 <td><Link to={`/admin/editar-servico-${service.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={service.id} onClick={removeService} className="btn btn-danger btn-xs">Apagar</button></td>
                                                             </tr>
