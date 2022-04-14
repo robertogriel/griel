@@ -114,6 +114,14 @@ const Aside = () => {
                                     </p>
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link title="Clientes" to="/admin/faturas" className="nav-link">
+                                    <i className="nav-icon nav-icon fas fa-wallet"></i>
+                                    <p>
+                                        Faturas
+                                    </p>
+                                </Link>
+                            </li>
                             
                         </ul>
                     </nav>
