@@ -31,7 +31,7 @@ const ContractForm = (props) => {
 		.then((result)=>{
 			setServiceList(result);
 		})
-	},[]);
+	},[token]);
 
 
 	useEffect(() => {
@@ -68,7 +68,7 @@ const ContractForm = (props) => {
 				})
 					.then((response) => response.text())
 					.then((result) => {
-						if (result == 400) {
+						if (result === 400) {
 							alert("deu erro")
 						} else {
 							return navigate('/admin/contratos');

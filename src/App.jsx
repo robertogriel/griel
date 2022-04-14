@@ -21,6 +21,7 @@ const Services = lazy(()=>import('./Components/Admin/Contents/services'));
 const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
 const ContractForm = lazy(()=>import('./Components/Admin/Contents/edit-contract'));
 const Bills = lazy(()=>import('./Components/Admin/Contents/bills'));
+const BillForm = lazy(()=>import('./Components/Admin/Contents/edit-bill'));
 // const Contact = lazy(()=>import('./Components/Contact'));
 
 
@@ -65,6 +66,8 @@ function App() {
 			<Route exact path='/admin/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} />
 			
 			<Route exact path='/admin/faturas' element={<Bills  title="Faturas" />} />
+			
+			<Route exact path='/admin/nova-fatura' element={<BillForm act="new" title="Nova Fatura" />} />
 
 		</Routes>
 		
