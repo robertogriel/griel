@@ -89,17 +89,21 @@ const ServiceForm = (props) => {
 									<div className="card-body">
 										<div className="row">
 
-											<div className="col-sm-4">
+											<div className="col-sm-3">
 												<label htmlFor="name">Nome do Serviço:</label>
 												<input className="form-control" type="text" name="name" id="new-name" required />
 											</div>
-											<div className="col-sm-4">
+											<div className="col-sm-3">
 												<label htmlFor="price">Valor</label>
 												<input className="form-control" type="text" name="price" id="new-price" required />
 											</div>
-											<div className="col-sm-4">
-												<label htmlFor="renew">Renovação</label>
+											<div className="col-sm-3">
+												<label htmlFor="renew">Duração em Dias</label>
 												<input className="form-control" type="number" name="renew" id="new-renew" required />
+											</div>
+											<div className="col-sm-3">
+												<label htmlFor="has_day">Data de Renovação</label>
+												<input className="form-control" type="number" name="has_day" id="new-has_day" required />
 											</div>
 
 										</div>
@@ -171,17 +175,21 @@ const ServiceForm = (props) => {
 										<div className="card-body">
 
 											<div className="row">
-												<div className="col-sm-4">
+												<div className="col-sm-3">
 													<label htmlFor="name">Nome do Serviço:</label>
 													<input className="form-control" type="text" name="name" defaultValue={serviceData.name} id="new-name" required />
 												</div>
-												<div className="col-sm-4">
+												<div className="col-sm-3">
 													<label htmlFor="price">Valor</label>
 													<input className="form-control" type="text" name="price" defaultValue={serviceData.price} id="new-price" required />
 												</div>
-												<div className="col-sm-4">
-													<label htmlFor="renew">Renovação</label>
+												<div className="col-sm-3">
+													<label htmlFor="renew">Duração em Dias</label>
 													<input className="form-control" type="number" name="renew" defaultValue={serviceData.renew} id="new-renew" required />
+												</div>
+												<div className="col-sm-3">
+													<label htmlFor="has_day">Data de Renovação</label>
+													<input className="form-control" type="number" name="has_day" defaultValue={serviceData.has_day} id="new-has_day" required />
 												</div>
 											</div>
 
