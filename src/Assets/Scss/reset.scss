@@ -20,6 +20,9 @@ body, header, footer, main, div, section, article, form, input, ul, li, img, pic
 
 body {
 	background-color: var(--bg-color)!important;
+	&.certificate-modal {
+		overflow: hidden;
+	}
 }
 
 #root {
