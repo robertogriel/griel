@@ -2,9 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-
-
-
 //Custom Imports
 import Loading from './Components/Loading';
 
@@ -22,8 +19,9 @@ const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'
 const ServiceForm = lazy(()=>import('./Components/Admin/Contents/edit-service'));
 const Services = lazy(()=>import('./Components/Admin/Contents/services'));
 const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
+const ContractForm = lazy(()=>import('./Components/Admin/Contents/edit-contract'));
 const Bills = lazy(()=>import('./Components/Admin/Contents/bills'));
-const Contact = lazy(()=>import('./Components/Contact'));
+// const Contact = lazy(()=>import('./Components/Contact'));
 
 
 
