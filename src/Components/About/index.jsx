@@ -80,11 +80,12 @@ const About = () => {
 
     const openModal = (e) => {
 
-
         setModalStatus(true)
 
         setCertificate(e.target.dataset.medium);
         setFullCertificate(e.target.dataset.full);
+
+        document.body.classList.add('certificate-modal');
 
     }
 
@@ -92,14 +93,13 @@ const About = () => {
         const modal = document.querySelector('.certificate-modal');
         if (modal) {
 
-
-
             modal.addEventListener('click', () => {
                 modal.classList.add('close')
                 setTimeout(() => {
                     setModalStatus(false);
                     modal.classList.remove('close')
                     setCertificate('')
+                    document.body.classList.remove('certificate-modal');
                 }, 1000)
                 
             });
@@ -164,10 +164,10 @@ const About = () => {
 
             <div className={modalStatus ? 'certificate-modal open' : 'certificate-modal'}>
                 <div className="certificate-modal-body">
-                    <img src={certificate} />
+                    <img src={certificate} alt="Certificado de Conclusão de Curso" />
                 </div>
                 <div className="certificate-modal-footer">
-                    <a className='btn btn-primary' href={fullCertificate} target="_blank">Qualidade máxima</a>
+                    <a className='btn btn-primary' href={fullCertificate} rel="noreferrer" target="_blank">Qualidade máxima</a>
                 </div>
             </div>
         </>
