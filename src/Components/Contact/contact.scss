@@ -1,0 +1,57 @@
+@import '../../Assets/Scss/mixin.scss';
+
+main {
+    &#contact {
+        @include main-pages;
+        header {
+            @include section;
+            width: initial;
+            align-items: center;
+            h1 {
+                text-transform: uppercase;
+                margin: calc(var(--space) * 2) 0;
+                font-weight: 700;
+            }
+            h2 {
+                text-align: center;
+            }
+        }
+        section {
+            @include section;
+            &#form {
+                flex-direction: column;
+                h2 {
+                    text-align: center;
+                }
+                form {
+                    flex-direction: column;
+                    input {
+                        font-size: 1.5rem;
+                    }
+                    div {
+                        &.form-group {
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        &#contact {
+            section {
+                &#form {
+                    form {
+                        label {
+                            margin-top: 10px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
