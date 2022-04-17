@@ -47,7 +47,7 @@ const Aside = () => {
 
             <aside className="main-sidebar sidebar-dark-primary elevation-4">
 
-                <Link to="/admin/" className="brand-link">
+                <Link to="/sistema/" className="brand-link">
                     <img src="./assets/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{
                         opacity: .8
                     }} />
@@ -83,7 +83,7 @@ const Aside = () => {
                         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                             <li className="nav-item">
-                                <Link to="/admin/" className="nav-link">
+                                <Link to="/sistema/" className="nav-link">
                                     <i className="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Painel
@@ -91,7 +91,7 @@ const Aside = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link title="Clientes" to="/admin/clientes" className="nav-link">
+                                <Link title="Clientes" to="/sistema/clientes" className="nav-link">
                                     <i className="nav-icon fa fa-user fw"></i>
                                     <p>
                                         Clientes
@@ -99,7 +99,7 @@ const Aside = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link title="Clientes" to="/admin/servicos" className="nav-link">
+                                <Link title="Clientes" to="/sistema/servicos" className="nav-link">
                                     <i className="nav-icon nav-icon fa fa-solid fa-briefcase"></i>
                                     <p>
                                         Serviços
@@ -107,7 +107,7 @@ const Aside = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link title="Clientes" to="/admin/contratos" className="nav-link">
+                                <Link title="Clientes" to="/sistema/contratos" className="nav-link">
                                     <i className="nav-icon nav-icon fa fa-solid fa-file-contract"></i>
                                     <p>
                                         Contratos
@@ -115,7 +115,7 @@ const Aside = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link title="Clientes" to="/admin/faturas" className="nav-link">
+                                <Link title="Clientes" to="/sistema/faturas" className="nav-link">
                                     <i className="nav-icon nav-icon fas fa-wallet"></i>
                                     <p>
                                         Faturas

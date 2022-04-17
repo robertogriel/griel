@@ -55,7 +55,7 @@ const CustomerForm = (props) => {
 				})
 
 
-				return navigate('/admin/clientes');
+				return navigate('/sistema/clientes');
 
 			}
 
@@ -116,7 +116,7 @@ const CustomerForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
+										<Link to="/sistema/clientes" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
@@ -144,7 +144,7 @@ const CustomerForm = (props) => {
 				})
 
 
-				return navigate('/admin/clientes');
+				return navigate('/sistema/clientes');
 
 			}
 
@@ -205,7 +205,7 @@ const CustomerForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/clientes" className="btn btn-default">Cancelar</Link>
+										<Link to="/sistema/clientes" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>

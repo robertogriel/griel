@@ -111,7 +111,7 @@ const Customers = (props) => {
                                                                 <td>{customer.name}</td>
                                                                 <td>{customer.email}</td>
                                                                 <td>{customer.phone}</td>
-                                                                <td><Link to={`/admin/editar-cliente-${customer.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={customer.id} onClick={removeCustomer} className="btn btn-danger btn-xs">Apagar</button></td>
+                                                                <td><Link to={`/sistema/editar-cliente-${customer.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={customer.id} onClick={removeCustomer} className="btn btn-danger btn-xs">Apagar</button></td>
                                                             </tr>
                                                         ))
                                                     }
@@ -127,7 +127,7 @@ const Customers = (props) => {
                         </div>
 
                         <div className="card-footer">
-                            <Link className="btn btn-lg btn-primary" to="/admin/novo-cliente">Novo Cliente</Link>
+                            <Link className="btn btn-lg btn-primary" to="/sistema/novo-cliente">Novo Cliente</Link>
                         </div>
 
                     </div>

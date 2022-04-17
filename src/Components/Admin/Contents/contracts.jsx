@@ -125,7 +125,7 @@ const Contracts = (props)=>{
                     </div>
 
                     <div className="card-footer">
-                        <Link className="btn btn-lg btn-primary" to="/admin/novo-contrato">Novo Contrato</Link>
+                        <Link className="btn btn-lg btn-primary" to="/sistema/novo-contrato">Novo Contrato</Link>
                     </div>
 
                 </div>

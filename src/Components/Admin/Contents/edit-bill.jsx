@@ -65,7 +65,7 @@ const BillForm = (props) => {
 						if (result === 400) {
 							alert("deu erro")
 						} else {
-							return navigate('/admin/faturas');
+							return navigate('/sistema/faturas');
 						}
 					})
 			
@@ -142,7 +142,7 @@ const BillForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/faturas" className="btn btn-default">Cancelar</Link>
+										<Link to="/sistema/faturas" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
