@@ -114,7 +114,7 @@ const Services = (props) => {
                                                                     currency: 'BRL'
                                                                 })}</td>
                                                                 <td>{service.renew} dias</td>
-                                                                <td><Link to={`/admin/editar-servico-${service.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={service.id} onClick={removeService} className="btn btn-danger btn-xs">Apagar</button></td>
+                                                                <td><Link to={`/sistema/editar-servico-${service.id}`} className="btn btn-primary btn-xs">Editar</Link> <button data-id={service.id} onClick={removeService} className="btn btn-danger btn-xs">Apagar</button></td>
                                                             </tr>
                                                         ))
                                                     }
@@ -130,7 +130,7 @@ const Services = (props) => {
                         </div>
 
                         <div className="card-footer">
-                            <Link className="btn btn-lg btn-primary" to="/admin/novo-servico">Novo Serviço</Link>
+                            <Link className="btn btn-lg btn-primary" to="/sistema/novo-servico">Novo Serviço</Link>
                         </div>
 
                     </div>

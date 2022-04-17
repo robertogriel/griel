@@ -71,7 +71,7 @@ const ContractForm = (props) => {
 						if (result === 400) {
 							alert("deu erro")
 						} else {
-							return navigate('/admin/contratos');
+							return navigate('/sistema/contratos');
 						}
 					})
 			
@@ -140,7 +140,7 @@ const ContractForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/contratos" className="btn btn-default">Cancelar</Link>
+										<Link to="/sistema/contratos" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>

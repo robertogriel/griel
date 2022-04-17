@@ -159,7 +159,7 @@ const Bills = (props) => {
                         </div>
 
                         <div className="card-footer">
-                            <Link className="btn btn-lg btn-primary" to="/admin/nova-fatura">Nova Fatura</Link>
+                            <Link className="btn btn-lg btn-primary" to="/sistema/nova-fatura">Nova Fatura</Link>
                         </div>
 
                     </div>

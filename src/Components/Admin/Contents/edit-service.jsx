@@ -55,7 +55,7 @@ const ServiceForm = (props) => {
 				})
 
 
-				return navigate('/admin/servicos');
+				return navigate('/sistema/servicos');
 
 			}
 
@@ -113,7 +113,7 @@ const ServiceForm = (props) => {
 									<div className="card-footer">
 										<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 										&nbsp;
-										<Link to="/admin/servicos" className="btn btn-default">Cancelar</Link>
+										<Link to="/sistema/servicos" className="btn btn-default">Cancelar</Link>
 									</div>
 								</div>
 							</form>
@@ -141,7 +141,7 @@ const ServiceForm = (props) => {
 				})
 
 
-				return navigate('/admin/servicos');
+				return navigate('/sistema/servicos');
 
 			}
 
@@ -198,7 +198,7 @@ const ServiceForm = (props) => {
 										<div className="card-footer">
 											<button id="save" className="btn btn-primary" type="submit">Salvar</button>
 											&nbsp;
-											<Link to="/admin/servicos" className="btn btn-default">Cancelar</Link>
+											<Link to="/sistema/servicos" className="btn btn-default">Cancelar</Link>
 										</div>
 									</div>
 								</form>
