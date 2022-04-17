@@ -47,27 +47,27 @@ function App() {
 
 			<Route exact path='/load' element={<Loading/>} />
 
-			<Route exact path='/admin' element={<Admin />} />
+			<Route exact path='/sistema' element={<Admin />} />
 
-			<Route exact path='/admin/clientes' element={<Customers  title="Clientes" />} />
+			<Route exact path='/sistema/clientes' element={<Customers  title="Clientes" />} />
 			
-			<Route exact path='/admin/novo-cliente' element={<CustomerForm act="new" title="Criar Cliente" />} />
+			<Route exact path='/sistema/novo-cliente' element={<CustomerForm act="new" title="Criar Cliente" />} />
 			
-			<Route exact path='/admin/editar-cliente-:id' element={<CustomerForm act="edit" title="Editar Cliente" />} />
+			<Route exact path='/sistema/editar-cliente-:id' element={<CustomerForm act="edit" title="Editar Cliente" />} />
 
-			<Route exact path='/admin/servicos' element={<Services  title="Serviços" />} />
+			<Route exact path='/sistema/servicos' element={<Services  title="Serviços" />} />
 
-			<Route exact path='/admin/novo-servico' element={<ServiceForm act="new"  title="Novo Serviço" />} />
+			<Route exact path='/sistema/novo-servico' element={<ServiceForm act="new"  title="Novo Serviço" />} />
 
-			<Route exact path='/admin/editar-servico-:id' element={<ServiceForm act="edit"  title="Editar Serviço" />} />
+			<Route exact path='/sistema/editar-servico-:id' element={<ServiceForm act="edit"  title="Editar Serviço" />} />
 
-			<Route exact path='/admin/contratos' element={<Contracts  title="Contratos" />} />
+			<Route exact path='/sistema/contratos' element={<Contracts  title="Contratos" />} />
 
-			<Route exact path='/admin/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} />
+			<Route exact path='/sistema/novo-contrato' element={<ContractForm act="new"  title="Novo Contrato" />} />
 			
-			<Route exact path='/admin/faturas' element={<Bills  title="Faturas" />} />
+			<Route exact path='/sistema/faturas' element={<Bills  title="Faturas" />} />
 			
-			<Route exact path='/admin/nova-fatura' element={<BillForm act="new" title="Nova Fatura" />} />
+			<Route exact path='/sistema/nova-fatura' element={<BillForm act="new" title="Nova Fatura" />} />
 
 		</Routes>
 		
