@@ -14,14 +14,14 @@ const PortfolioPage = lazy(()=>import('./Components/Portfolio'));
 
 
 const Admin = lazy(()=>import('./Components/Admin'));
-const Customers = lazy(()=>import('./Components/sistema/Contents/customers'));
-const CustomerForm = lazy(()=>import('./Components/sistema/Contents/edit-customer'));
-const ServiceForm = lazy(()=>import('./Components/sistema/Contents/edit-service'));
-const Services = lazy(()=>import('./Components/sistema/Contents/services'));
-const Contracts = lazy(()=>import('./Components/sistema/Contents/contracts'));
-const ContractForm = lazy(()=>import('./Components/sistema/Contents/edit-contract'));
-const Bills = lazy(()=>import('./Components/sistema/Contents/bills'));
-const BillForm = lazy(()=>import('./Components/sistema/Contents/edit-bill'));
+const Customers = lazy(()=>import('./Components/Admin/Contents/customers'));
+const CustomerForm = lazy(()=>import('./Components/Admin/Contents/edit-customer'));
+const ServiceForm = lazy(()=>import('./Components/Admin/Contents/edit-service'));
+const Services = lazy(()=>import('./Components/Admin/Contents/services'));
+const Contracts = lazy(()=>import('./Components/Admin/Contents/contracts'));
+const ContractForm = lazy(()=>import('./Components/Admin/Contents/edit-contract'));
+const Bills = lazy(()=>import('./Components/Admin/Contents/bills'));
+const BillForm = lazy(()=>import('./Components/Admin/Contents/edit-bill'));
 // const Contact = lazy(()=>import('./Components/Contact'));
 
 
