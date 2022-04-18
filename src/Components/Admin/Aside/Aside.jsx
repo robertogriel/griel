@@ -48,7 +48,7 @@ const Aside = () => {
             <aside className="main-sidebar sidebar-dark-primary elevation-4">
 
                 <Link to="/sistema/" className="brand-link">
-                    <img src="./assets/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{
+                    <img src="../assets/admin-lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{
                         opacity: .8
                     }} />
                     <span className="brand-text font-weight-light">Administração</span>
@@ -59,7 +59,7 @@ const Aside = () => {
 
                     <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div className="image">
-                            <img src={(userPhoto) ? userPhoto : `./assets/images/no-photo.png`} className="img-circle elevation-2" alt={username} />
+                            <img src={(userPhoto) ? userPhoto : `../assets/images/PNG/no-photo.png`} className="img-circle elevation-2" alt={username} />
                         </div>
                         <div className="info">
                             <a href="/" className="d-block">{username}</a>
