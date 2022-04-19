@@ -58,33 +58,22 @@ const Admin = ()=>{
 
 	}
 
-    switch (authorization) {
-		case 401:
-			return <Login api={api_url} />
+	return (
+		<>
+		<Header title="Início - " />
 
-		case 404:
+			{authorization === 200 ? 
+				<Wrapper />
+			 : 
+			 	<Login api={api_url}
+			/>}
 
-			setTimeout(()=>{
-				checkToken();
-			}, 30000)
-			return "Não foi possível conectar-se ao servidor"
+		<Footer />
+		<AsideControl />
+		</>
+	);
 
-
-
-		case 200:
-
-			return <>
-            <Header title="Início - " />
-            <Wrapper />
-            <Footer />
-            <AsideControl />
-            </>
-
-
-
-		default:
-			return <Loading />
-	}
+   
 
 }
 

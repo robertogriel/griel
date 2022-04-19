@@ -142,7 +142,7 @@ const Bills = (props) => {
                                                                     day: "2-digit"
                                                                 }).format(new Date(bill.next_bill))
                                                                 }</td>
-                                                                <td>{bill.is_payied ? <span class="badge bg-success">Pago</span> : <span class="badge bg-warning">Não pago</span>}</td>
+                                                                <td>{bill.is_payied ? <span className="badge bg-success">Pago</span> : <span className="badge bg-warning">Não pago</span>}</td>
                                                                 <td><button data-id={bill.id} onClick={payBill} className="btn btn-success">Pagar</button> <button data-id={bill.id} onClick={deleteBill} className="btn btn-danger">Cancelar</button></td>
                                                             </tr>
                                                         ))
