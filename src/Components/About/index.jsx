@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../Footer';
-import Header from '../Header';
 import H2 from '../Others/h2';
 import './certificate.scss';
 
@@ -110,7 +108,6 @@ const About = () => {
 
     return (
         <>
-            <Header />
             <main id="about">
                 <H2 text="Quem sou eu?" />
 
@@ -159,7 +156,7 @@ const About = () => {
                 </section>
             </main>
 
-            <Footer />
+            
 
 
             <div className={modalStatus ? 'certificate-modal open' : 'certificate-modal'}>
