@@ -1,5 +1,6 @@
 header {
-	width: 100%;
+	&#top-header {
+		width: 100%;
 	justify-content: space-between;
 	position: relative;
 	z-index: 2;
@@ -9,7 +10,8 @@ header {
 			display: flex;
 			position: absolute;
 			width: 100%;
-			padding-bottom: 200px;
+			//padding-bottom: 200px;
+			height: 90px;
 			overflow: hidden;
 			top: 0;
 			left: 0;
@@ -36,20 +38,25 @@ header {
 				transition: all 0.9s ease-in-out;
 			}
 			&.menu {
+				padding: 0;
 				img {
-					transition: all 0.9s ease-in-out;
+					transition: all 0.5s ease-in-out;
 					margin-left: auto;
     				margin-right: auto;
-					transform: scale(0.9);
+					transform: scale(0.9) translateX(140px);
 				}
 			}
 		}
 	}
+
+	}
+	
 }
 
 @media (min-width: 768px) {
 	header {
-        background-color: #FFF;
+		&#top-header {
+			background-color: #FFF;
         box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
         div {
             &.background {
@@ -74,5 +81,8 @@ header {
 				}
 			}
         }
+
+		}
+        
     }
 }

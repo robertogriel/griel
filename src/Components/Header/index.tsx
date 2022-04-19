@@ -24,7 +24,7 @@ const Header: React.FunctionComponent<{}> = () => {
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9499283313908117" crossOrigin="anonymous"></script>
 				<title>Griel Dev</title>
 			</Helmet>
-			<header>
+			<header id="top-header">
 				<div className="background">
 					<Wave />
 				</div>

@@ -1,16 +1,10 @@
-import React, { lazy, useState } from 'react';
+import React, { useState } from 'react';
 import Loading from './Loading';
 import Button from '@material-ui/core/Button';
 import './domains.scss';
 import dotcombr from '../../Assets/Images/PNG/dotcombr.png';
 import dotcom from '../../Assets/Images/PNG/dotcom.png';
 import axios from 'axios';
-
-
-//import CheckDomains from './CheckDomains.jsx';
-
-const Header = lazy(()=>import('../Header'));
-const Footer = lazy(()=>import('../Footer'));
 
 
 const Domains = () => {
@@ -80,7 +74,6 @@ const Domains = () => {
 
     return (
         <>
-        <Header/>
         <main id="domains">
 
             <section id="domain-search">
@@ -139,7 +132,7 @@ const Domains = () => {
 
 
         </main>
-        <Footer/>
+
         </>
     );
 }

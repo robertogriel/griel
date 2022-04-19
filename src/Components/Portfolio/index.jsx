@@ -1,12 +1,9 @@
 import { Button } from '@material-ui/core';
-import React, { lazy } from 'react';
+import React from 'react';
 import Box from '../Others/Box';
 import H1 from '../Others/h1';
 import H2 from '../Others/h2';
 import './portfolio.scss';
-
-const Header = lazy(() => import('../Header'));
-const Footer = lazy(() => import('../Footer'));
 
 
 
@@ -91,7 +88,6 @@ const sites = [
 const PortfolioPage = () => {
     return (
         <>
-            <Header />
             <main id="portfolio">
                 <H1 text="Portfólio" />
                 <p>Conheça meu trabalho. Nesta página estão meus projetos rodando em produção.</p>
@@ -138,8 +134,6 @@ const PortfolioPage = () => {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </>
     );
 }

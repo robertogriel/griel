@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 
-const Header = lazy(() => import('../Header'));
-const Footer = lazy(() => import('../Footer'));
 const Portfolio = lazy(() => import('./portfolio'));
 
 const Body = () => {
@@ -19,7 +17,7 @@ const Body = () => {
 
     return (
         <>
-            <Header />
+            
             <main id="index">
                 <section id="top">
                     <div className="typing">
@@ -46,7 +44,7 @@ const Body = () => {
                     <div className="me">
                         <div className="img">
                             <picture>
-                                <source srcset="assets/images/roberto-griel-filho.webp" type="image/webp" />
+                                <source srcSet="assets/images/roberto-griel-filho.webp" type="image/webp" />
                                 <img loading="lazy" src="assets/images/roberto-griel-filho.jpg" alt="Roberto Griel Filho" />
                             </picture>
                         </div>
@@ -70,7 +68,7 @@ const Body = () => {
                 <Portfolio />
 
             </main>
-            <Footer />
+
         </>
     );
 

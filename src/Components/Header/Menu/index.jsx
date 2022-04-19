@@ -17,10 +17,14 @@ const Menu = ()=>{
 
         let logoImage = document.querySelector("header div.content");
 
+        const root = document.querySelector("div#root");
+
         if (!menuStatus) {
             logoImage.classList.add('menu')
+            root.style.overflow = 'hidden';
         } else {
-            logoImage.classList.remove('menu')
+            logoImage.classList.remove('menu');
+            root.style.overflow = '';
         }
 
     }
