@@ -1,8 +1,8 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
-import Box from '../Others/Box';
-import H1 from '../Others/h1';
-import H2 from '../Others/h2';
+import Box from '../../Components/Box';
+import H1 from '../../Components/h1';
+import H2 from '../../Components/h2';
 import './portfolio.scss';
 
 

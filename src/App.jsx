@@ -5,28 +5,28 @@ import Header from './Components/Header';
 
 
 //Custom Imports
-import Loading from './Components/Loading';
+import Loading from './Routes/Loading';
 
-const Body = lazy(()=>import('./Components/Body'));
-const About = lazy(()=>import('./Components/About'));
-const Stores = lazy(()=>import('./Components/Stores'));
-const NotFound = lazy(()=>import('./Components/NotFound'));
-const Domains = lazy(()=>import('./Components/Domains'));
-const PortfolioPage = lazy(()=>import('./Components/Portfolio'));
+const Body = lazy(()=>import('./Routes/Body'));
+const About = lazy(()=>import('./Routes/About'));
+const Stores = lazy(()=>import('./Routes/Stores'));
+const NotFound = lazy(()=>import('./Routes/NotFound'));
+const Domains = lazy(()=>import('./Routes/Domains'));
+const PortfolioPage = lazy(()=>import('./Routes/Portfolio'));
 
 
-const AdminLTE = lazy(()=>import('./Components/AdminLTE'));
-const CustomersLTE = lazy(()=>import('./Components/AdminLTE/Contents/customers'));
-const CustomerFormLTE = lazy(()=>import('./Components/AdminLTE/Contents/edit-customer'));
-const ServiceFormLTE = lazy(()=>import('./Components/AdminLTE/Contents/edit-service'));
-const ServicesLTE = lazy(()=>import('./Components/AdminLTE/Contents/services'));
-const ContractsLTE = lazy(()=>import('./Components/AdminLTE/Contents/contracts'));
-const ContractFormLTE = lazy(()=>import('./Components/AdminLTE/Contents/edit-contract'));
-const BillsLTE = lazy(()=>import('./Components/AdminLTE/Contents/bills'));
-const BillFormLTE = lazy(()=>import('./Components/AdminLTE/Contents/edit-bill'));
+const AdminLTE = lazy(()=>import('./Routes/AdminLTE'));
+const CustomersLTE = lazy(()=>import('./Routes/AdminLTE/Contents/customers'));
+const CustomerFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-customer'));
+const ServiceFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-service'));
+const ServicesLTE = lazy(()=>import('./Routes/AdminLTE/Contents/services'));
+const ContractsLTE = lazy(()=>import('./Routes/AdminLTE/Contents/contracts'));
+const ContractFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-contract'));
+const BillsLTE = lazy(()=>import('./Routes/AdminLTE/Contents/bills'));
+const BillFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-bill'));
 // const Contact = lazy(()=>import('./Components/Contact'));
 
-const Admin = lazy(()=>import('./Components/Admin'));
+const Admin = lazy(()=>import('./Routes/Admin'));
 
 
 

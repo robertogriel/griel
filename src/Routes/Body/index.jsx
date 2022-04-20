@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 //Custom Imports
 import './body.scss';
 
-import H2 from '../Others/h2';
+import H2 from '../../Components/h2';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 

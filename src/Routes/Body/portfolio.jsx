@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from '../Others/Box';
-import H2 from '../Others/h2';
+import Box from '../../Components/Box';
+import H2 from '../../Components/h2';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 

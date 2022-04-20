@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faBriefcase, faFileContract, faWallet } from '@fortawesome/free-solid-svg-icons'
 
 import './admin.scss';
-import { Route, Router, Routes } from 'react-router-dom';
-
-
 
 
 export default function Admin() {
@@ -16,8 +13,8 @@ export default function Admin() {
 
   const lateralMenuHandler = () => {
 
-    const lateralMenuAside = document.querySelector("main#admin aside") as HTMLElement;
-    const lateralMenuBtn = document.querySelector("div.lateral-menu") as HTMLElement;
+    const lateralMenuAside = document.querySelector("main#admin aside");
+    const lateralMenuBtn = document.querySelector("div.lateral-menu");
 
     setLateralMenu(!lateralMenu);
 
@@ -63,14 +60,9 @@ export default function Admin() {
         </ul>
       </aside>
       <section>
-        <Router location={'admin'} navigator={'/'}>
-          <Routes>
-            <Route>
+        
 
-            </Route>
-          </Routes>
 
-        </Router>
       </section>
     </main>
   )

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import H2 from '../Others/h2';
+import H2 from '../../Components/h2';
 import './certificate.scss';
 
 import './about.scss';

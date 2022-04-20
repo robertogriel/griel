@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from '../Header';
-import Alerts from '../../Utils/Alerts';
+import Alerts from '../../../Components/Alerts';
 
 import '../scss/index.scss';
 import Wrapper from '../wrapper';
