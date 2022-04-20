@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fa-user } from '@fortawesome/free-solid-svg-icons'
 
 import './admin.scss';
 
@@ -14,11 +16,9 @@ export default function Admin() {
   const lateralMenuHandler = () => {
 
     const lateralMenuAside = document.querySelector("main#admin aside") as HTMLElement;
-    const lateralMenuBtn = document.querySelector("div#lateral-menu") as HTMLElement;
+    const lateralMenuBtn = document.querySelector("div.lateral-menu") as HTMLElement;
 
     setLateralMenu(!lateralMenu);
-
-    console.log(lateralMenu)
 
     if (lateralMenu) {
       lateralMenuAside.classList.add('open');
@@ -44,7 +44,17 @@ export default function Admin() {
         </header>
         <ul>
           <li>
-            <a href="/">link</a>
+          <FontAwesomeIcon icon={faUser} />
+            <a href="/admin/clientes">Clientes</a>
+          </li>
+          <li>
+            <a href="/admin/servicos">Serviços</a>
+          </li>
+          <li>
+            <a href="/admin/contratos">Contratos</a>
+          </li>
+          <li>
+            <a href="/admin/fatura">Faturas</a>
           </li>
         </ul>
       </aside>

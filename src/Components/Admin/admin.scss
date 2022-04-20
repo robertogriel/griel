@@ -14,11 +14,9 @@ main {
             transition: all 0.7s ease;
             padding-top: 100px;
             padding-left: 1em;
-
             &.open {
                 left: 0;
             }
-
             header {
                 justify-content: space-between;
                 box-shadow: none;
@@ -49,6 +47,17 @@ main {
                         svg {
                             opacity: 1;
                         }
+                    }
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                flex-direction: column;
+                li {
+                    margin: 10px 0;
+                    a {
+                        text-decoration: none;
                     }
                 }
             }
