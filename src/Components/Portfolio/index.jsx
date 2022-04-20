@@ -51,7 +51,7 @@ const stores = [
     {
         name: "E-Multi Stock",
         link: "https://www.emultistock.com",
-        img: "https://www.emultistock.com/image/catalog/Sistema/logo4.png"
+        img: "https://www.emultistock.com/image/catalog/Sistema/logo5.png"
     },
 ];
 
