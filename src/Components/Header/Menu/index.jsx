@@ -11,21 +11,25 @@ const Menu = ()=>{
 
     const menuHandler = ()=>{
 
-        let changeMenuStatus = !menuStatus;
+        if (window.innerWidth < 768) {
 
-        setMenuStatus(changeMenuStatus);
+            setMenuStatus(!menuStatus);
+    
+            let logoImage = document.querySelector("header div.content");
+    
+            const root = document.querySelector("div#root");
+    
+            if (!menuStatus) {
+                logoImage.classList.add('menu')
+                root.style.overflow = 'hidden';
+            } else {
+                logoImage.classList.remove('menu');
+                root.style.overflow = '';
+            }
 
-        let logoImage = document.querySelector("header div.content");
-
-        const root = document.querySelector("div#root");
-
-        if (!menuStatus) {
-            logoImage.classList.add('menu')
-            root.style.overflow = 'hidden';
-        } else {
-            logoImage.classList.remove('menu');
-            root.style.overflow = '';
         }
+
+
 
     }
 
