@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fa-user } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBriefcase, faFileContract, faWallet } from '@fortawesome/free-solid-svg-icons'
 
 import './admin.scss';
+import { Route, Router, Routes } from 'react-router-dom';
 
 
 
@@ -48,18 +49,28 @@ export default function Admin() {
             <a href="/admin/clientes">Clientes</a>
           </li>
           <li>
+            <FontAwesomeIcon icon={faBriefcase} />
             <a href="/admin/servicos">Serviços</a>
           </li>
           <li>
+            <FontAwesomeIcon icon={faFileContract} />
             <a href="/admin/contratos">Contratos</a>
           </li>
           <li>
+            <FontAwesomeIcon icon={faWallet} />
             <a href="/admin/fatura">Faturas</a>
           </li>
         </ul>
       </aside>
       <section>
-        fdfs
+        <Router location={'admin'} navigator={'/'}>
+          <Routes>
+            <Route>
+
+            </Route>
+          </Routes>
+
+        </Router>
       </section>
     </main>
   )
