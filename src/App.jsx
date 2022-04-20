@@ -34,8 +34,8 @@ function App() {
   return (
 	  
 	  <Router>
-		<Suspense fallback={<Loading/>}>
 		<Header />
+		<Suspense fallback={<Loading/>}>
 		<Routes>
 			
 			<Route path='*' element={<NotFound/>}></Route>
@@ -82,8 +82,8 @@ function App() {
 				<Route exact path='/sistema/nova-fatura' element={<BillFormLTE act="new" title="Nova Fatura" />} />
 
 		</Routes>
-		<Footer />
 		</Suspense>
+		<Footer />
 	</Router>
   );
 }
