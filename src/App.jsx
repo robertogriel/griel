@@ -6,6 +6,7 @@ import Header from './Components/Header';
 
 //Custom Imports
 import Loading from './Routes/Loading';
+import { login } from './Functions/login'
 
 const Body = lazy(()=>import('./Routes/Body'));
 const About = lazy(()=>import('./Routes/About'));
@@ -28,6 +29,7 @@ const BillFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-bill'));
 
 const Admin = lazy(()=>import('./Routes/Admin'));
 
+const api_url = process.env.REACT_APP_API_URL;
 
 
 function App() {
