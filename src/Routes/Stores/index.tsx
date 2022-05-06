@@ -408,9 +408,9 @@ const Stores: React.FunctionComponent<{}> = () => {
                         <p>Sua loja ficará em um VPS (Virtual Private Server ou Servidor Privado Virtual) de alta performance e disponibilidade.</p>
                     </header>
                     <div>
-                        <p>A hospedagem é renovada todos os meses e tem o custo de <b>R$60,00</b>/mês.</p>
+                        <p>A hospedagem é renovada todos os meses e tem o custo de <b>R$70,00</b>/mês.</p>
                     </div>
-                    <small>Valores válidos até o dia 30/04/2022.</small>
+                    <small>Valores válidos até o dia 31/12/2022.</small>
                 </section>
 
             </main>

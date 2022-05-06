@@ -27,7 +27,7 @@ const BillsLTE = lazy(()=>import('./Routes/AdminLTE/Contents/bills'));
 const BillFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-bill'));
 // const Contact = lazy(()=>import('./Components/Contact'));
 
-const Admin = lazy(()=>import('./Routes/Admin'));
+//const Admin = lazy(()=>import('./Routes/Admin'));
 
 const api_url = process.env.REACT_APP_API_URL;
 
@@ -54,10 +54,10 @@ function App() {
 
 			<Route exact path='/load' element={<Loading/>} />
 
-			<Route exact path='/admin' element={<Admin/>} >
+			{/* <Route exact path='/admin' element={<Admin/>} >
 
 
-			</Route>
+			</Route> */}
 
 
 
