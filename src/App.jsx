@@ -6,7 +6,7 @@ import Header from './Components/Header';
 
 //Custom Imports
 import Loading from './Routes/Loading';
-import { login } from './Functions/login'
+//import { login } from './Functions/login'
 
 const Body = lazy(()=>import('./Routes/Body'));
 const About = lazy(()=>import('./Routes/About'));
@@ -15,7 +15,7 @@ const NotFound = lazy(()=>import('./Routes/NotFound'));
 const Domains = lazy(()=>import('./Routes/Domains'));
 const PortfolioPage = lazy(()=>import('./Routes/Portfolio'));
 
-
+/*
 const AdminLTE = lazy(()=>import('./Routes/AdminLTE'));
 const CustomersLTE = lazy(()=>import('./Routes/AdminLTE/Contents/customers'));
 const CustomerFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-customer'));
@@ -24,12 +24,12 @@ const ServicesLTE = lazy(()=>import('./Routes/AdminLTE/Contents/services'));
 const ContractsLTE = lazy(()=>import('./Routes/AdminLTE/Contents/contracts'));
 const ContractFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-contract'));
 const BillsLTE = lazy(()=>import('./Routes/AdminLTE/Contents/bills'));
-const BillFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-bill'));
+const BillFormLTE = lazy(()=>import('./Routes/AdminLTE/Contents/edit-bill'));*/
 // const Contact = lazy(()=>import('./Components/Contact'));
 
 //const Admin = lazy(()=>import('./Routes/Admin'));
 
-const api_url = process.env.REACT_APP_API_URL;
+
 
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
 			{/* <Route exact path='/admin' element={<Admin/>} >
 
 
-			</Route> */}
+			</Route> 
 
 
 
@@ -82,6 +82,8 @@ function App() {
 				<Route exact path='/sistema/faturas' element={<BillsLTE  title="Faturas" />} />
 				
 				<Route exact path='/sistema/nova-fatura' element={<BillFormLTE act="new" title="Nova Fatura" />} />
+				
+				*/}
 
 		</Routes>
 		</Suspense>

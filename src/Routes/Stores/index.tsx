@@ -9,6 +9,7 @@ import dotcom from '../../Assets/Images/PNG/dotcom.png';
 
 //Custom imports
 import './stores.scss';
+import axios from 'axios';
 
 
 
@@ -200,7 +201,11 @@ const resources = [
 
 ];
 
+
+
 const Stores: React.FunctionComponent<{}> = () => {
+
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const [getDomainBR, setDomainBR] = useState('');
     const [getDomainCOM, setDomainCOM] = useState('');
@@ -208,18 +213,7 @@ const Stores: React.FunctionComponent<{}> = () => {
 
     const checkDomain = (domain: string) => {
 
-        const API_URL = 'http://localhost:8080';
-
         let url = '';
-
-        let avaliabity = '';
-
-        if (!domain) {
-            
-            const input = document.querySelector("input#domain") as HTMLInputElement;
-
-            input.focus()
-        }
 
         if (domain.split('.')[0] === 'www') {
             url = domain.split('.')[1];
@@ -229,12 +223,11 @@ const Stores: React.FunctionComponent<{}> = () => {
 
         setDomain(domain.split('.')[0])
 
-        fetch(`${API_URL}/domains?d=${url}.com.br`, {
-            method: 'GET',
-            mode: 'no-cors'
-        })
-            .then((resp) => resp.json())
-            .then(function (data) {
+
+        axios.get(`${API_URL}/domains?d=${url}.com.br`)
+            .then(result => {
+
+                const avaliabity = result.data.res;
 
                 if (avaliabity === 'ok') {
                     setDomainBR(`O domínio ${url}.com.br está disponível!`);
@@ -245,12 +238,10 @@ const Stores: React.FunctionComponent<{}> = () => {
 
 
         })
-        fetch(`${API_URL}/domains?d=${url}.com`, {
-            method: 'GET',
-            mode: 'no-cors'
-        })
-            .then((resp) => resp.json())
-            .then(function (data) {
+        axios.get(`${API_URL}/domains?d=${url}.com`)
+            .then(result => {
+
+                const avaliabity = result.data.res;
 
                 if (avaliabity === 'ok') {
                     setDomainCOM(`O domínio ${url}.com está disponível!`);
@@ -263,7 +254,6 @@ const Stores: React.FunctionComponent<{}> = () => {
         })
 
     }
-
     return (
         <>
             <main id="ecommerce">
