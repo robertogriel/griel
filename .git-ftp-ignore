@@ -1,0 +1,8 @@
+package.json
+package-lock.json
+README.md
+.github/*
+node_modules/*
+.git-ftp-ignore.txt
+react-app-env.d.ts
+tsconfig.json
