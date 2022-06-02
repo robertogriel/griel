@@ -28,8 +28,6 @@ const Home: NextPage = () => {
     <>
       <HtmlHead title="Griel Developer" metaDescription="Transformo sua ideia em uma aplicação incrível" />
 
-      
-
       <Container>
       
         <Hero>
@@ -41,8 +39,6 @@ const Home: NextPage = () => {
 
       </Container>
 
-      <hr />
-      <h1>teste</h1>
     </>
   )
 }
