@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Typewritter from './typewriter';
 
 
 const AboutTag = styled.section`
@@ -11,6 +12,8 @@ const AboutTag = styled.section`
 `
 
 const Header = styled.header`
+    padding: 10px 0;
+    justify-content: center;
     > h1 {
         font-size: 2.5rem;
         color: var(--white);
@@ -43,7 +46,7 @@ export default function About() {
     return (
         <AboutTag>
             <Header>
-                <h1>Roberto Griel Filho</h1>
+                <Typewritter />
             </Header>
             <div className="detail">
                 <Image>

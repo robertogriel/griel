@@ -40,6 +40,9 @@ const Home: NextPage = () => {
         </Hero>
 
       </Container>
+
+      <hr />
+      <h1>teste</h1>
     </>
   )
 }
