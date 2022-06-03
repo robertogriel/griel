@@ -5,6 +5,9 @@ import Typed from 'typed.js';
 const Writer = styled.span`
     font-size: 6vw;
     color: var(--white);
+    @media (min-width: 500px) {
+        text-shadow: 2px 2px 5px #000000;
+    }
 `
 
 /**

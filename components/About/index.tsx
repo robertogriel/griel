@@ -25,9 +25,13 @@ const Header = styled.header`
 
 const Text = styled.div`
     flex-direction: column;
+    justify-content: center;
     p {
         color: var(--white);
-        font-size: 1.2em;
+        font-size: calc(1rem + ((1vw - 10px) * 0.6944));
+        @media (min-width: 500px) {
+            text-shadow: 2px 2px 5px #000000;
+        }
     }
 `
 

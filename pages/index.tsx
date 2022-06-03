@@ -21,6 +21,9 @@ const Hero = styled.section`
   background-repeat: no-repeat;
   flex-direction: column;
   position: relative;
+  @media (min-width: 500px) {
+    background-image: url('./images/background-alpha.webp');
+  }
 `
 
 const Home: NextPage = () => {

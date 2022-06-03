@@ -24,6 +24,13 @@ const MenuText = styled.div`
     }
 `
 
+const MenuIcon = styled.div`
+    > img {
+        width: 7vw;
+        max-width: 40px;
+    }
+`
+
 export default function MenuItem({href, icon, alt, strong, small}:MenuItemTypes) {
 
     let iconSelected:string = '';
@@ -54,9 +61,9 @@ export default function MenuItem({href, icon, alt, strong, small}:MenuItemTypes)
                 <Link href={href}>
                 <a>
                     <div className="item">
-                        <div className="icon">
+                        <MenuIcon className="icon">
                             <img src={`./images/svg/${iconSelected}.svg`} alt={alt} />
-                        </div>
+                        </MenuIcon>
                         <MenuText className="text">
                             <strong>{strong}</strong>
                             <small>{small}</small>
