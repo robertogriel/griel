@@ -2,29 +2,53 @@ import type { NextPage } from 'next'
 import styled from 'styled-components'
 import About from '../components/About'
 import Header from '../components/Header'
-
 import { HtmlHead } from '../components/Html/Head'
+import Typewritter from '../components/Typewritter'
+
 
 const Container = styled.main`
-  background-color: #01303f;
-  width: 100%;
+  background-image: url('/images/png/background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: -20px;
   flex-direction: column;
+  border: 1px solid var(--blue-1);
+  border-radius: var(--space);
+  height: 96vh;
+  margin: 10px;
+`
+
+const Wrappper = styled.div`
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  @media only screen and (orientation:landscape)  {
+    flex-direction: row;
+  }
 `
 
 const Hero = styled.section`
-  height: 100vh;
-  background-image: url('./images/background.webp');
   width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-position-y: 0px;
-  background-repeat: no-repeat;
+  height: 300px;
   flex-direction: column;
-  position: relative;
-  @media (min-width: 500px) {
-    background-image: url('./images/background-alpha.webp');
+  padding: var(--space);
+  padding-top: 60px;
+  p, h1 {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0;
+  }
+  h1 {
+    font-family: 'FiraCode', serif;
+    font-size: 23px;
+  }
+  @media only screen and (orientation: landscape) {
+    flex: 1;
   }
 `
+
+
 
 const Home: NextPage = () => {
   return (
@@ -32,15 +56,23 @@ const Home: NextPage = () => {
       <HtmlHead title="Griel Developer" metaDescription="Transformo sua ideia em uma aplicação incrível" />
 
       <Container>
-      
-        <Hero>
         <Header />
 
-        <About />
+        <Wrappper>
+          <Hero>
+            <p>Olá, eu sou</p>
+            <h1>Roberto Griel Filho</h1>
+            <Typewritter />
 
-        </Hero>
+          </Hero>
+
+          <About />
+
+        </Wrappper>
+
 
       </Container>
+
 
     </>
   )

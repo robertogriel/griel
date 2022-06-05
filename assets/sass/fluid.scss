@@ -1,0 +1,22 @@
+.fluid {
+    font-size: calc(32px + 16 * ((100vw - 500px) / 190)) !important;
+}
+
+@media screen and (min-width: 568px) {
+    .fluid {
+        font-size: calc(32px + 16 * ((100vw - 568px) / (768 - 568))) !important;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .fluid {
+        font-size: 48px !important;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .fluid {
+        font-size: calc(32px + 16 * (100vw - 700px) / 250) !important;
+    }
+}

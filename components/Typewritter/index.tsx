@@ -4,9 +4,15 @@ import Typed from 'typed.js';
 
 const Writer = styled.span`
     font-size: 6vw;
-    color: var(--white);
-    @media (min-width: 500px) {
-        text-shadow: 2px 2px 5px #000000;
+    font-family: 'FiraCode';
+    color: var(--blue-2);
+    &::before {
+        content: '>';
+        color: var(--green);
+        font-weight: 200;
+        position: relative;
+        top: -2px;
+        margin-right: 5px;
     }
 `
 
@@ -22,7 +28,6 @@ export default function Typewritter() {
     useEffect(() => {
         const options = {
             strings: [
-                'Roberto Griel Filho',
                 'Front End HTML5/CSS3',
                 'Front End React Developer',
                 'Back End NodeJS Developer',
@@ -46,7 +51,9 @@ export default function Typewritter() {
 
     return (
         <>
-            <Writer ref={el} />
+        <div className="wrapper">
+            <Writer className="fluid" ref={el} />
+        </div>
         </>
     )
 }
