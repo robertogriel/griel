@@ -1,13 +1,14 @@
-import Link from "next/link"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components"
+import { MenuItem } from "../Menu/MenuItem";
+import axios from 'axios';
 
 const HeaderTag = styled.header`
   height: 50px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 10px;
+  padding: 5px var(--space);
   border-bottom: 1px solid var(--blue-1);
   > picture { 
     img, source {
@@ -51,6 +52,42 @@ const Menu = styled.nav`
         padding: 0;
         flex-direction: column;
     }
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: var(--space);
+        padding: 5px;
+        li {
+            a {
+                background-color: var(--blue-1);
+                padding: var(--space);
+                align-items: center;
+                border-radius: var(--space);
+                min-height: 73px;
+                box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
+                img {
+                    margin-right: var(--space);
+                }
+                div {
+                    &.wrap {
+                        flex-direction: column;
+                        strong, small {
+                            color: var(--white);
+                        }
+                        strong {
+                            font-size: 18px;
+                            margin: var(--space) 0;
+                        }
+                        small {
+                            font-size: 17px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
     footer {
         border-top: 1px solid var(--blue-1);
         color: var(--white);
@@ -58,12 +95,12 @@ const Menu = styled.nav`
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
-        padding: 10px 10px;
+        padding: var(--space) var(--space);
         div {
             &.icons {
                 a {
                     img {
-                        margin-left: 10px;
+                        margin-left: var(--space);
                     }
                 }
             }
@@ -74,6 +111,27 @@ const Menu = styled.nav`
 export default function Header() {
 
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [menuList, setMenuList] = useState<any[]>()
+
+    const getMenuList = async ()=>{
+
+        console.log('chegou no menulist')
+
+        await axios.get(`/api/menu`)
+        .then(({data})=>{
+            console.log(data)
+        })
+        .catch((e:any)=>{
+            console.log(e.message)
+        })
+
+    }
+
+    useEffect(()=>{
+        getMenuList();
+
+
+    },[])
 
     return (
         <>
@@ -89,39 +147,7 @@ export default function Header() {
             </HeaderTag>
             <Menu className={menuOpen ? 'open' : ''}>
                 <ul>
-                    <li>
-                        <Link href='/'>
-                            <a>
-                                <img src="/images/svg/menu-home.svg" alt="Página inicial" />
-                                <div className="wrap">
-                                    <strong>Home</strong>
-                                    <small>Volte para a página inicial</small>
-                                </div>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href='/'>
-                            <a>
-                                <img src="/images/svg/menu-home.svg" alt="Página inicial" />
-                                <div className="wrap">
-                                    <strong>Home</strong>
-                                    <small>Volte para a página inicial</small>
-                                </div>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href='/'>
-                            <a>
-                                <img src="/images/svg/menu-home.svg" alt="Página inicial" />
-                                <div className="wrap">
-                                    <strong>Home</strong>
-                                    <small>Volte para a página inicial</small>
-                                </div>
-                            </a>
-                        </Link>
-                    </li>
+                    <MenuItem href="/" icon="home" alt="Página Inicial" strong="Home" small="Volte para a página inicial" />
                 </ul>
                 <footer>
                     <p>Onde me encontrar?</p>
