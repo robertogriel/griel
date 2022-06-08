@@ -47,6 +47,10 @@ const list = [
         <p>Você ainda pode oferecer parcelamento sem juros e/ou desconto para quem pagar no boleto bancário.</p>`
     },
     {
+        title: 'Receba por por PIX',
+        description: `<p>Receba seus pegamentos via PIX com aprovação automática, através do sistema PagHiper.</p><p>Não se preocupe com comprovantes e confirmações manuais, se o cliente efetuar o pagamento, o pedido é aprovado automaticamente.</p>`
+    },
+    {
         title: 'Carrinho abandonado',
         description: `<p>Seu cliente abandonou a compra momentos antes de finalizar? Com o recurso de carrinho abandonado a sua loja irá lembrar seu comprador para finalizar a compra, podendo inclusive oferecer cupons de descontos para aumentar a chance de conversão.</p>`
     },
@@ -130,6 +134,11 @@ const resources = [
     },
     {
         title: 'Receba pagamentos no cartão de crédito e boleto bancário',
+        basic: true,
+        complete: true
+    },
+    {
+        title: 'Receba pagamentos via PIX',
         basic: true,
         complete: true
     },
@@ -237,7 +246,7 @@ const Stores: React.FunctionComponent<{}> = () => {
                 }
 
 
-        })
+            })
         axios.get(`${API_URL}/domains?d=${url}.com`)
             .then(result => {
 
@@ -251,7 +260,7 @@ const Stores: React.FunctionComponent<{}> = () => {
                 }
 
 
-        })
+            })
 
     }
     return (
@@ -292,35 +301,35 @@ const Stores: React.FunctionComponent<{}> = () => {
                     </article>
 
                     {getDomain &&
-            <article id="results">
-                
-                <div className="ext">
+                        <article id="results">
 
-                    <div className="title">
-                        <img src={dotcombr} alt="Domínio .com.br" />
-                        <p>{getDomain}.com.br</p>
-                    </div>
-                    <div className="text">
-                        <p>{getDomainBR ? getDomainBR : <Loading/>}</p>
-                    </div>
+                            <div className="ext">
 
-                </div>
+                                <div className="title">
+                                    <img src={dotcombr} alt="Domínio .com.br" />
+                                    <p>{getDomain}.com.br</p>
+                                </div>
+                                <div className="text">
+                                    <p>{getDomainBR ? getDomainBR : <Loading />}</p>
+                                </div>
 
-                <div className="ext">
+                            </div>
 
-                    <div className="title">
-                        <img src={dotcom} alt="Domínio .com" />
-                        <p>{getDomain}.com</p>
-                    </div>
-                    <div className="text">
-                        <p>{getDomainCOM ? getDomainCOM : <Loading/>}</p>
-                    </div>
+                            <div className="ext">
 
-                </div>
-                
+                                <div className="title">
+                                    <img src={dotcom} alt="Domínio .com" />
+                                    <p>{getDomain}.com</p>
+                                </div>
+                                <div className="text">
+                                    <p>{getDomainCOM ? getDomainCOM : <Loading />}</p>
+                                </div>
 
-            </article>
-            }
+                            </div>
+
+
+                        </article>
+                    }
 
                 </section>
 
@@ -401,6 +410,22 @@ const Stores: React.FunctionComponent<{}> = () => {
                         <p>A hospedagem é renovada todos os meses e tem o custo de <b>R$70,00</b>/mês.</p>
                     </div>
                     <small>Valores válidos até o dia 31/12/2022.</small>
+                </section>
+
+                <section id="contact">
+                    <header>
+                        <h2>Quer ter a sua própria loja virtual?</h2>
+                    </header>
+                    <p>Entre em contato agora mesmo através do WhatsApp (37) 9.9184-8312</p>
+                    <div className="contact">
+                        <a href="https://api.whatsapp.com/send?phone=55379991848312&text=Eu%20quero%20ter%20minha%20loja%20virtual" target="_blank" rel="noopener noreferrer">
+                            <Button variant="contained" color="primary">
+                                Entrar em contato
+                            </Button>
+                        </a>
+                    </div>
+
+
                 </section>
 
             </main>
