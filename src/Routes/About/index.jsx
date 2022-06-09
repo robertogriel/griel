@@ -6,14 +6,21 @@ import './about.scss';
 
 const certificates = [
     {
-        name: 'Hcode Lab Back End Developer',
+        name: 'Hcode Lab Front End React NextJS Developer',
+        jpg: '../../assets/images/JPG/react.jpg',
+        webp: '../../assets/images/WEBP/react.webp',
+        medium: '../../assets/images/certificates/react@1x.jpg',
+        full: '../../assets/images/certificates/react@2x.jpg'
+    },
+    {
+        name: 'Hcode Lab Back End Node NestJS Developer',
         jpg: '../../assets/images/JPG/backend.jpg',
         webp: '../../assets/images/WEBP/backend.webp',
         medium: '../../assets/images/certificates/backend@1x.jpg',
         full: '../../assets/images/certificates/backend@2x.jpg'
     },
     {
-        name: 'Hcode Lab Database Developer',
+        name: 'Hcode Lab Database MySQL Developer',
         jpg: '../../assets/images/JPG/database.jpg',
         webp: '../../assets/images/WEBP/database.webp',
         medium: '../../assets/images/certificates/database@1x.jpg',
@@ -32,6 +39,13 @@ const certificates = [
         webp: '../../assets/images/WEBP/html.webp',
         medium: '../../assets/images/certificates/html@1x.jpg',
         full: '../../assets/images/certificates/html@2x.jpg'
+    },
+    {
+        name: 'Curso TypeScript',
+        jpg: '../../assets/images/JPG/curso-typescript.jpg',
+        webp: '../../assets/images/WEBP/curso-typescript.webp',
+        medium: '../../assets/images/certificates/curso-typescript@1x.jpg',
+        full: '../../assets/images/certificates/curso-typescript@2x.jpg',
     },
     {
         name: 'Curso Design com Figma',
