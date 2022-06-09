@@ -17,7 +17,7 @@ export const connect = async ()=>{
         small: String
     })
 
-    const List = mongoose.models.Menu || mongoose.model('Menu', MenuSchema, 'list')
+    const List = mongoose.models.Menu || mongoose.model('Menu', MenuSchema, 'menu')
 
     return { conn, List }
 
