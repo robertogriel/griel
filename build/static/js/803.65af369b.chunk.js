@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgriel_site_front=self.webpackChunkgriel_site_front||[]).push([[803],{3803:function(e,n,t){t.r(n),t.d(n,{default:function(){return i}});t(2791);var r=t(184),i=function(){return(0,r.jsx)("h1",{children:"Essa p\xe1gina n\xe3o existe"})}}}]);
+//# sourceMappingURL=803.65af369b.chunk.js.map
