@@ -7,8 +7,9 @@ const AboutTag = styled.section`
   padding: var(--space);
   height: 100%;
   img {
-    width: 138px;
+    width: 100%;
     height: auto;
+    max-height: 40vh;
   }
   p {
     color: var(--white);

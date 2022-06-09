@@ -47,7 +47,6 @@ const Menu = styled.nav`
     z-index: 2;
     transition: all 1s ease-in;
     justify-content: space-between;
-    
     border-radius: 0 0 var(--space) var(--space);
     &.open {
         overflow: auto;
@@ -117,6 +116,11 @@ const Menu = styled.nav`
                     }
                 }
             }
+        }
+    }
+    @media only screen and (orientation: landscape) {
+        &.open {
+            height: calc(100vh - 61px);
         }
     }
 `

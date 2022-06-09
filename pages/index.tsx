@@ -29,7 +29,8 @@ const Wrappper = styled.div`
 
 const Hero = styled.section`
   width: 100%;
-  height: 300px;
+  height: fit-content;
+  min-height: 130px;
   flex-direction: column;
   padding: var(--space);
   padding-top: 60px;
