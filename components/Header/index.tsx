@@ -24,12 +24,19 @@ const HeaderTag = styled.header`
     background-color: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1);
+        opacity: 0.9;
+    }
   }
 `
 
 const Menu = styled.nav`
     flex-direction: column;
-    background-color: rgba(1,48,63,0.95);
+    background-color: rgba(1,48,63,0.75);
     backdrop-filter: blur(5px);
     width: calc(100vw - 23px);
     left: 11px;
@@ -40,12 +47,13 @@ const Menu = styled.nav`
     z-index: 2;
     transition: all 1s ease-in;
     justify-content: space-between;
-    border-bottom: 1px solid var(--blue-1);
+    
     border-radius: 0 0 var(--space) var(--space);
     &.open {
         overflow: auto;
         height: 370px;
         transition: all 1s ease-out;
+        border-bottom: 1px solid var(--blue-1);
     }
     ul, li {
         margin: 0;
@@ -54,7 +62,7 @@ const Menu = styled.nav`
     }
     ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, auto);
         grid-template-rows: auto;
         grid-gap: var(--space);
         padding: 5px;
@@ -62,12 +70,14 @@ const Menu = styled.nav`
             a {
                 background-color: var(--blue-1);
                 padding: var(--space);
-                align-items: center;
+                align-items: flex-start;
                 border-radius: var(--space);
                 min-height: 73px;
                 box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
                 img {
                     margin-right: var(--space);
+                    margin-top: var(--space);
+                    width: 30px;
                 }
                 div {
                     &.wrap {
@@ -84,6 +94,9 @@ const Menu = styled.nav`
                             font-weight: 300;
                         }
                     }
+                }
+                &:hover {
+                    background-color: #0474a3;
                 }
             }
         }
@@ -119,7 +132,7 @@ export default function Header() {
 
         await axios.get(`/api/menu`)
         .then(({data})=>{
-            console.log(data)
+            setMenuList(data)
         })
         .catch((e:any)=>{
             console.log(e.message)
@@ -129,8 +142,6 @@ export default function Header() {
 
     useEffect(()=>{
         getMenuList();
-
-
     },[])
 
     return (
@@ -147,7 +158,9 @@ export default function Header() {
             </HeaderTag>
             <Menu className={menuOpen ? 'open' : ''}>
                 <ul>
-                    <MenuItem href="/" icon="home" alt="Página Inicial" strong="Home" small="Volte para a página inicial" />
+                    {menuList && menuList.map((item, index)=>(
+                        <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
+                    ))}
                 </ul>
                 <footer>
                     <p>Onde me encontrar?</p>
