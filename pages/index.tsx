@@ -18,10 +18,11 @@ const Container = styled.main`
   margin: 10px;
 `
 
-const Wrappper = styled.div`
+const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  overflow-y: auto;
   @media only screen and (orientation:landscape)  {
     flex-direction: row;
   }
@@ -29,11 +30,10 @@ const Wrappper = styled.div`
 
 const Hero = styled.section`
   width: 100%;
-  height: fit-content;
+  height: 100%;
   min-height: 130px;
   flex-direction: column;
   padding: var(--space);
-  padding-top: 60px;
   p, h1 {
     color: var(--white);
     font-weight: 600;
@@ -48,7 +48,18 @@ const Hero = styled.section`
     flex: 1;
   }
 `
+const AboutCode = styled.section`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 20px;
+    picture {
+      justify-content: flex-end;
+      width: 465px;
 
+    }
+  }
+`
 
 
 const Home: NextPage = () => {
@@ -59,17 +70,23 @@ const Home: NextPage = () => {
       <Container>
         <Header />
 
-        <Wrappper>
+        <Wrapper>
           <Hero>
             <p>Olá, eu sou</p>
             <h1>Roberto Griel Filho</h1>
             <Typewritter />
 
+            <About />
           </Hero>
 
-          <About />
+          <AboutCode>
+            <picture>
+              <source srcSet="/images/webp/code.webp" type="image/webp" />
+              <img loading="lazy" src="/images/png/code.png" alt="Sobre" />
+            </picture>
+          </AboutCode>
 
-        </Wrappper>
+        </Wrapper>
 
 
       </Container>

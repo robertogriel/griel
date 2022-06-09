@@ -12,9 +12,8 @@ const HeaderTag = styled.header`
   border-bottom: 1px solid var(--blue-1);
   > picture { 
     img, source {
-      height: 35px;
+        height: 35px;
     }
-    
   }
   > button {
     width: 20px;
@@ -32,6 +31,20 @@ const HeaderTag = styled.header`
         opacity: 0.9;
     }
   }
+  @media (min-width: 768px) {
+        height: 100px;
+        flex-direction: row;
+        padding: 0;
+        padding-left: var(--space);
+        > picture { 
+            img, source {
+                height: 65px;
+            }
+        }
+        > button {
+            display: none;
+        }
+    }
 `
 
 const Menu = styled.nav`
@@ -123,6 +136,70 @@ const Menu = styled.nav`
             height: calc(100vh - 61px);
         }
     }
+    @media (min-width: 768px) {
+        display: flex;
+        position: relative;
+        left: initial;
+        top: initial;
+        background-color: transparent;
+        backdrop-filter: none;
+        height: fit-content;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        ul, li {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+            grid-gap: unset;
+            height: 100%;
+        }
+        ul {
+            li {
+                a {
+                    flex-direction: column;
+                    width: 130px;
+                    background-color: transparent;
+                    box-shadow: none;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    border-radius: 0;
+                    border-left: 1px solid var(--blue-1);
+                    img {
+                        margin: 0;
+                        padding: 0;
+                        height: 50px;
+                    }
+                    div {
+                        &.wrap {
+                            strong {
+                                margin: 0;
+                                padding: 0;
+                                font-size: 20px;
+                                font-weight: 100;
+                            }
+                            small {
+                                display: none;
+                            }
+                        }
+                    }
+                    &:hover {
+                        background-color: #013646;
+                    }
+                    &:last-child {
+                    border-radius: 0 10px 0 0;
+                }
+                }
+                
+            }
+        }
+        footer {
+            display: none;
+        }
+    }
 `
 
 export default function Header() {
@@ -130,23 +207,23 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const [menuList, setMenuList] = useState<any[]>()
 
-    const getMenuList = async ()=>{
+    const getMenuList = async () => {
 
         console.log('chegou no menulist')
 
         await axios.get(`/api/menu`)
-        .then(({data})=>{
-            setMenuList(data)
-        })
-        .catch((e:any)=>{
-            console.log(e.message)
-        })
+            .then(({ data }) => {
+                setMenuList(data)
+            })
+            .catch((e: any) => {
+                console.log(e.message)
+            })
 
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getMenuList();
-    },[])
+    }, [])
 
     return (
         <>
@@ -158,26 +235,26 @@ export default function Header() {
                 <button accessKey="m" aria-label={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} onClick={() => { setMenuOpen(!menuOpen) }}>
                     <img src={menuOpen ? "/images/svg/menu-close.svg" : "/images/svg/menu-open.svg"} alt={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} />
                 </button>
-
+                <Menu className={menuOpen ? 'open' : ''}>
+                    <ul>
+                        {menuList && menuList.map((item, index) => (
+                            <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
+                        ))}
+                    </ul>
+                    <footer>
+                        <p>Onde me encontrar?</p>
+                        <div className="icons">
+                            <a href="linkedin">
+                                <img src="/images/svg/icon-linkedin.svg" alt="" />
+                            </a>
+                            <a href="github">
+                                <img src="/images/svg/icon-github.svg" alt="" />
+                            </a>
+                        </div>
+                    </footer>
+                </Menu>
             </HeaderTag>
-            <Menu className={menuOpen ? 'open' : ''}>
-                <ul>
-                    {menuList && menuList.map((item, index)=>(
-                        <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
-                    ))}
-                </ul>
-                <footer>
-                    <p>Onde me encontrar?</p>
-                    <div className="icons">
-                        <a href="linkedin">
-                            <img src="/images/svg/icon-linkedin.svg" alt="" />
-                        </a>
-                        <a href="github">
-                            <img src="/images/svg/icon-github.svg" alt="" />
-                        </a>
-                    </div>
-                </footer>
-            </Menu>
+
         </>
     )
 }
