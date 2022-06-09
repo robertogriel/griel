@@ -1,4 +1,4 @@
-import mongoose, { Model, Schema } from "mongoose"
+import mongoose, { Schema } from "mongoose"
 
 const { MONGODB_URL } = process.env;
 
@@ -17,7 +17,7 @@ export const connect = async ()=>{
         small: String
     })
 
-    const List = mongoose.models.List || mongoose.model('Menu', MenuSchema, 'list')
+    const List = mongoose.models.Menu || mongoose.model('Menu', MenuSchema, 'list')
 
     return { conn, List }
 
