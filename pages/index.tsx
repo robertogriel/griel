@@ -6,17 +6,6 @@ import { HtmlHead } from '../components/Html/Head'
 import Typewritter from '../components/Typewritter'
 
 
-const Container = styled.main`
-  background-image: url('/images/png/background.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: -20px;
-  flex-direction: column;
-  border: 1px solid var(--blue-1);
-  border-radius: var(--space);
-  height: 96vh;
-  margin: 10px;
-`
 
 const Wrapper = styled.div`
   flex-direction: column;
@@ -68,29 +57,23 @@ const Home: NextPage = () => {
     <>
       <HtmlHead title="Griel Developer" metaDescription="Transformo sua ideia em uma aplicação incrível" />
 
-      <Container>
-        <Header />
+      <Wrapper>
+        <Hero>
+          <p>Olá, eu sou</p>
+          <h1>Roberto Griel Filho</h1>
+          <Typewritter />
 
-        <Wrapper>
-          <Hero>
-            <p>Olá, eu sou</p>
-            <h1>Roberto Griel Filho</h1>
-            <Typewritter />
+          <About />
+        </Hero>
 
-            <About />
-          </Hero>
+        <AboutCode>
+          <picture>
+            <source srcSet="/images/webp/code.webp" type="image/webp" />
+            <img loading="lazy" src="/images/png/code.png" alt="Sobre" />
+          </picture>
+        </AboutCode>
 
-          <AboutCode>
-            <picture>
-              <source srcSet="/images/webp/code.webp" type="image/webp" />
-              <img loading="lazy" src="/images/png/code.png" alt="Sobre" />
-            </picture>
-          </AboutCode>
-
-        </Wrapper>
-
-
-      </Container>
+      </Wrapper>
 
 
     </>
