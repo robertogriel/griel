@@ -5,10 +5,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Container = styled.main`
-  background-image: url('/images/png/background.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: -20px;
   flex-direction: column;
   border: 1px solid var(--blue-1);
   border-radius: var(--space);

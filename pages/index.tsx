@@ -1,13 +1,16 @@
 import type { NextPage } from 'next'
 import styled from 'styled-components'
 import About from '../components/About'
-import Header from '../components/Header'
 import { HtmlHead } from '../components/Html/Head'
 import Typewritter from '../components/Typewritter'
 
 
 
 const Wrapper = styled.div`
+  background-image: url('/images/png/background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: -20px;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;

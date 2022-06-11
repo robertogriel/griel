@@ -209,8 +209,6 @@ export default function Header() {
 
     const getMenuList = async () => {
 
-        console.log('chegou no menulist')
-
         await axios.get(`/api/menu`)
             .then(({ data }) => {
                 setMenuList(data)
@@ -236,7 +234,7 @@ export default function Header() {
                     <img src={menuOpen ? "/images/svg/menu-close.svg" : "/images/svg/menu-open.svg"} alt={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} />
                 </button>
                 <Menu className={menuOpen ? 'open' : ''}>
-                    <ul>
+                    <ul onClick={() => { setMenuOpen(!menuOpen) }}>
                         {menuList && menuList.map((item, index) => (
                             <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
                         ))}
