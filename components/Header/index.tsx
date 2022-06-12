@@ -199,6 +199,11 @@ const Menu = styled.nav`
         footer {
             display: none;
         }
+        &.open {
+            height: 100%;
+            border-bottom: none;
+        }
+        
     }
 `
 

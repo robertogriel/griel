@@ -6,9 +6,9 @@ import { connect } from "../../utils/database/mongodb";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
    const get = async ()=>{
-      const { MenuList } = await connect()
+      const { CertificateList } = await connect()
    
-      res.status(200).json(await MenuList.find({}))
+      res.status(200).json(await CertificateList.find({}))
    }
 
    const { method } = req;

@@ -1,7 +1,10 @@
-import type { NextPage } from 'next'
+import axios from 'axios'
+import type { GetServerSidePropsContext, NextPage } from 'next'
 import styled from 'styled-components'
 import CertificateBox from '../components/Certificates'
 import { HtmlHead } from '../components/Html/Head'
+import { CertificateTypes } from '../types/certificates/Certificates'
+
 
 const Certificates = styled.section`
     height: calc(100vh - 50px);
@@ -16,7 +19,10 @@ const CertificateContainer = styled.div`
 `
 
 
-const Home: NextPage = () => {
+const Home: NextPage<any> = ({data}) => {
+
+  const certificates = data;
+
   return (
     <>
       <HtmlHead title="<Certificados /> ● Griel Developer" metaDescription="Conheça todas as minhas certificações" />
@@ -27,9 +33,9 @@ const Home: NextPage = () => {
 
         <CertificateContainer>
 
-          <CertificateBox image='backend' title='Backend' />
-          
-          <CertificateBox image='backend' title='Backend' />
+          {certificates && certificates.sort().reverse().map(({image, name}: CertificateTypes, index: number)=>(
+            <CertificateBox key={index} image={image} name={name} />
+          ))}
 
         </CertificateContainer>
 
@@ -39,3 +45,17 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getServerSideProps = async (context: GetServerSidePropsContext)=>{
+
+  const {data} = await axios.get('/api/certificates', {
+    baseURL: process.env.FRONT_API
+  });
+
+  return {
+    props: {
+      data
+    }
+  }
+
+}

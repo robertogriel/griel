@@ -6,7 +6,7 @@ export const connect = async ()=>{
 
     const conn = await mongoose.connect(MONGODB_URL as string).catch((err)=>console.error(err))
 
-    console.log('Mongoose connected')
+    console.log('Mongoose connected');
 
     const MenuSchema = new Schema({
         _id: String,
@@ -15,10 +15,18 @@ export const connect = async ()=>{
         alt: String,
         strong: String,
         small: String
-    })
+    });
 
-    const List = mongoose.models.Menu || mongoose.model('Menu', MenuSchema, 'menu')
+    const CertificateSchema = new Schema({
+        _id: String,
+        name: String,
+        image: String
+    });
 
-    return { conn, List }
+    const MenuList = mongoose.models.Menu || mongoose.model('Menu', MenuSchema, 'menu');
+    
+    const CertificateList = mongoose.models.Certificates || mongoose.model('Certificates', CertificateSchema, 'certificates');
+
+    return { conn, MenuList, CertificateList }
 
 }

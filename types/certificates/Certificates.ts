@@ -1,4 +1,7 @@
+import { ObjectId } from "mongodb";
+
 export type CertificateTypes = {
-    title: string;
+    _id?: string;
+    name: string;
     image: string;
 }

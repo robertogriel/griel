@@ -6,6 +6,7 @@ const CertificateTag = styled.div`
   border-radius: var(--space) var(--space) 0 0;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
   margin: 20px;
+  max-width: 501px;
   header {
     border: 1px solid var(--blue-5);
     border-radius: var(--space) var(--space) 0 0;
@@ -16,6 +17,7 @@ const CertificateTag = styled.div`
     h2 {
       margin: 0;
       color: var(--dark);
+      font-size: 20px;
     }
   }
 `
@@ -37,18 +39,18 @@ const CertificateImage = styled.div`
   }
 `
 
-export default function CertificateBox({ title, image }: CertificateTypes) {
+export default function CertificateBox({ name, image }: CertificateTypes) {
 
     return (
         <CertificateTag>
             <header>
-                <h2>{title}</h2>
+                <h2>{name}</h2>
             </header>
             <CertificateImage>
                 <picture>
 
                     <source srcSet={`/images/certificates/thumb/${image}.webp`} type="image/webp" />
-                    <img loading="lazy" src={`/images/certificates/thumb/${image}.jpg`} alt={title} />
+                    <img loading="lazy" src={`/images/certificates/thumb/${image}.jpg`} alt={name} />
 
                 </picture>
 
