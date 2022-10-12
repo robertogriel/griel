@@ -32,10 +32,11 @@ export default function Typewritter() {
     useEffect(() => {
         const options = {
             strings: [
+                'Mobile React Native',
+                'Front End NextJS',
+                'Back End PHP',
+                'MySQL Database Developer',
                 'Front End HTML5/CSS3',
-                'Front End React Developer',
-                'Back End NodeJS Developer',
-                'Back End PHP Developer',
             ],
             typeSpeed: 50,
             backSpeed: 50,
