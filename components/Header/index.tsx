@@ -2,6 +2,64 @@ import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { MenuItem } from "../Menu/MenuItem";
 import axios from 'axios';
+import Link from "next/link";
+
+export default function Header() {
+
+    const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [menuList, setMenuList] = useState<any[]>()
+
+    const getMenuList = async () => {
+
+        await axios.get(`/api/menu`)
+            .then(({ data }) => {
+                setMenuList(data)
+            })
+            .catch((e: any) => {
+                console.log(e.message)
+            })
+
+    }
+
+    useEffect(() => {
+        getMenuList();
+    }, [])
+
+    return (
+        <>
+            <HeaderTag>
+                <Link href="/">
+                <picture>
+                    <source srcSet="/images/webp/logo.webp" type="image/webp" />
+                    <img loading="lazy" src="/images/png/logo.png" alt="Griel Developer" />
+                </picture>
+                </Link>
+                <button accessKey="m" aria-label={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} onClick={() => { setMenuOpen(!menuOpen) }}>
+                    <img src={menuOpen ? "/images/svg/menu-close.svg" : "/images/svg/menu-open.svg"} alt={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} />
+                </button>
+                <Menu className={menuOpen ? 'open' : ''}>
+                    <ul onClick={() => { setMenuOpen(!menuOpen) }}>
+                        {menuList && menuList.map((item, index) => (
+                            <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
+                        ))}
+                    </ul>
+                    <footer>
+                        <p>Onde me encontrar?</p>
+                        <div className="icons">
+                            <a href="linkedin">
+                                <img src="/images/svg/icon-linkedin.svg" alt="" />
+                            </a>
+                            <a href="github">
+                                <img src="/images/svg/icon-github.svg" alt="" />
+                            </a>
+                        </div>
+                    </footer>
+                </Menu>
+            </HeaderTag>
+
+        </>
+    )
+}
 
 const HeaderTag = styled.header`
   height: 50px;
@@ -10,7 +68,7 @@ const HeaderTag = styled.header`
   justify-content: space-between;
   padding: 5px var(--space);
   border-bottom: 1px solid var(--blue-1);
-  > picture { 
+  > picture {
     img, source {
         height: 35px;
     }
@@ -36,7 +94,7 @@ const HeaderTag = styled.header`
         flex-direction: row;
         padding: 0;
         padding-left: var(--space);
-        > picture { 
+        > picture {
             img, source {
                 height: 65px;
             }
@@ -66,6 +124,7 @@ const Menu = styled.nav`
         height: 370px;
         transition: all 1s ease-out;
         border-bottom: 1px solid var(--blue-1);
+        margin-top: 1px;
     }
     ul, li {
         margin: 0;
@@ -79,6 +138,8 @@ const Menu = styled.nav`
         grid-gap: var(--space);
         padding: 5px;
         li {
+            min-width: 1em;
+            height: 73px;
             a {
                 background-color: var(--blue-1);
                 padding: var(--space);
@@ -94,15 +155,16 @@ const Menu = styled.nav`
                 div {
                     &.wrap {
                         flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
                         strong, small {
                             color: var(--white);
                         }
                         strong {
-                            font-size: 18px;
-                            margin: var(--space) 0;
+                            font-size: 1em;
                         }
                         small {
-                            font-size: 17px;
+                            font-size: 0.95em;
                             font-weight: 300;
                         }
                     }
@@ -158,6 +220,7 @@ const Menu = styled.nav`
         }
         ul {
             li {
+                height: initial;
                 a {
                     flex-direction: column;
                     width: 130px;
@@ -193,7 +256,6 @@ const Menu = styled.nav`
                     border-radius: 0 10px 0 0;
                 }
                 }
-                
             }
         }
         footer {
@@ -203,61 +265,5 @@ const Menu = styled.nav`
             height: 100%;
             border-bottom: none;
         }
-        
     }
 `
-
-export default function Header() {
-
-    const [menuOpen, setMenuOpen] = useState<boolean>(false);
-    const [menuList, setMenuList] = useState<any[]>()
-
-    const getMenuList = async () => {
-
-        await axios.get(`/api/menu`)
-            .then(({ data }) => {
-                setMenuList(data)
-            })
-            .catch((e: any) => {
-                console.log(e.message)
-            })
-
-    }
-
-    useEffect(() => {
-        getMenuList();
-    }, [])
-
-    return (
-        <>
-            <HeaderTag>
-                <picture>
-                    <source srcSet="/images/webp/logo.webp" type="image/webp" />
-                    <img loading="lazy" src="/images/png/logo.png" alt="Griel Developer" />
-                </picture>
-                <button accessKey="m" aria-label={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} onClick={() => { setMenuOpen(!menuOpen) }}>
-                    <img src={menuOpen ? "/images/svg/menu-close.svg" : "/images/svg/menu-open.svg"} alt={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'} />
-                </button>
-                <Menu className={menuOpen ? 'open' : ''}>
-                    <ul onClick={() => { setMenuOpen(!menuOpen) }}>
-                        {menuList && menuList.map((item, index) => (
-                            <MenuItem key={index} href={item.href} icon={item.icon} alt={item.alt} strong={item.strong} small={item.small} />
-                        ))}
-                    </ul>
-                    <footer>
-                        <p>Onde me encontrar?</p>
-                        <div className="icons">
-                            <a href="linkedin">
-                                <img src="/images/svg/icon-linkedin.svg" alt="" />
-                            </a>
-                            <a href="github">
-                                <img src="/images/svg/icon-github.svg" alt="" />
-                            </a>
-                        </div>
-                    </footer>
-                </Menu>
-            </HeaderTag>
-
-        </>
-    )
-}
