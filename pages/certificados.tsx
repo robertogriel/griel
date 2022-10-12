@@ -1,14 +1,50 @@
 import axios from "axios";
 import type { GetServerSidePropsContext, NextPage } from "next";
+import { useState } from "react";
 import styled from "styled-components";
 import CertificateBox from "../components/Certificates";
 import Modal from "../components/Certificates/modal";
 import { HtmlHead } from "../components/Html/Head";
-import { CertificateTypes } from "../types/certificates/Certificates";
-import CertificateModelContext, {
-  useCertificateModal,
-} from "../context/CertificateModal";
-import { useState } from "react";
+import { CertificateModalToOpenType, CertificateTypes } from "../types/certificates/Certificates";
+
+
+const CertificatePage: NextPage<any> = ({ certificates }) => {
+
+  return (
+    <>
+      <HtmlHead
+        title="<Certificados /> ● Griel Developer"
+        metaDescription="Conheça todas as minhas certificações"
+      />
+
+      <Certificates>
+        <Title>certificados</Title>
+        <Paragraph>
+          Cada um destes certificados representam horas de estudos, muita
+          disciplina e vontade de aprender.
+        </Paragraph>
+
+        <CertificateContainer>
+          {certificates &&
+            certificates
+              .sort()
+              .reverse()
+              .map(({ image, name }: CertificateTypes, index: number) => (
+                <CertificateBox key={index} image={image} name={name} />
+              ))}
+        </CertificateContainer>
+      </Certificates>
+    </>
+  );
+};
+
+const Home: NextPage<any> = ({ data }) => {
+  return (
+
+      <CertificatePage certificates={data} />
+
+  );
+};
 
 const Certificates = styled.section`
   height: calc(100vh - 50px);
@@ -44,48 +80,6 @@ const Paragraph = styled.p`
     text-align: center;
   }
 `;
-
-const CertificatePage: NextPage<any> = ({ certificates }) => {
-  const { certImage, certName, open, setOpen, setCertImage, setCertName } =
-    useCertificateModal();
-
-  return (
-    <>
-      <HtmlHead
-        title="<Certificados /> ● Griel Developer"
-        metaDescription="Conheça todas as minhas certificações"
-      />
-
-      {open && <Modal image={certImage} name={certName} state={open} />}
-
-      <Certificates>
-        <Title>certificados</Title>
-        <Paragraph>
-          Cada um destes certificados representam horas de estudos, muita
-          disciplina e vontade de aprender.
-        </Paragraph>
-
-        <CertificateContainer>
-          {certificates &&
-            certificates
-              .sort()
-              .reverse()
-              .map(({ image, name }: CertificateTypes, index: number) => (
-                <CertificateBox key={index} image={image} name={name} />
-              ))}
-        </CertificateContainer>
-      </Certificates>
-    </>
-  );
-};
-
-const Home: NextPage<any> = ({ data }) => {
-  return (
-    <CertificateModelContext>
-      <CertificatePage certificates={data} />
-    </CertificateModelContext>
-  );
-};
 
 export default Home;
 

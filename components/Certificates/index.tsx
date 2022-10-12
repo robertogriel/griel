@@ -1,5 +1,37 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { CertificateTypes } from "../../types/certificates/Certificates";
+import { CertificateModalToOpenType, CertificateTypes } from "../../types/certificates/Certificates";
+import Modal from "./modal";
+
+export default function CertificateBox({ name, image }: CertificateTypes) {
+  const [modalToTopen, setModalToTopen] = useState<CertificateModalToOpenType | null>()
+
+  return (
+
+    <>
+      <Modal certificateImage={modalToTopen?.certificateImage} certificateName={modalToTopen?.certificateName} onClick={()=>setModalToTopen(null)} />
+
+      <CertificateTag onClick={() => setModalToTopen({certificateImage: image, certificateName: name})}>
+        <header>
+          <h2>{name}</h2>
+        </header>
+        <CertificateImage>
+          <picture>
+            <source
+              srcSet={`/images/certificates/thumb/${image}.webp`}
+              type="image/webp"
+            />
+            <img
+              loading="lazy"
+              src={`/images/certificates/thumb/${image}.jpg`}
+              alt={name}
+            />
+          </picture>
+        </CertificateImage>
+      </CertificateTag>
+    </>
+  );
+}
 
 const CertificateTag = styled.div`
   flex-direction: column;
@@ -39,26 +71,3 @@ const CertificateImage = styled.div`
     }
   }
 `;
-
-export default function CertificateBox({ name, image }: CertificateTypes) {
-  return (
-    <CertificateTag>
-      <header>
-        <h2>{name}</h2>
-      </header>
-      <CertificateImage>
-        <picture>
-          <source
-            srcSet={`/images/certificates/thumb/${image}.webp`}
-            type="image/webp"
-          />
-          <img
-            loading="lazy"
-            src={`/images/certificates/thumb/${image}.jpg`}
-            alt={name}
-          />
-        </picture>
-      </CertificateImage>
-    </CertificateTag>
-  );
-}

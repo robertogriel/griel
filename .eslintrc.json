@@ -1,6 +1,35 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "no-unused-vars": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "space-before-function-paren":"off",
+      "react/prop-types":"off",
+      "no-use-before-define":"off",
+      "react/no-unescaped-entities": "off",
+      "camelcase": "off",
+      "linebreak-style": 0,
+      "react/display-name": "off",
+      "prefer-const":"off",
+      "array-callback-return":"off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
+      "multiline-ternary":"off",
+      "max-len": ["error", {"code": 150, "ignoreUrls": true,"ignoreStrings": true}],
+      "no-useless-escape":"off"
   }
 }

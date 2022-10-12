@@ -1,28 +1,23 @@
-
-import { NextApiRequest, NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from "next";
 import { connect } from "../../utils/database/mongodb";
 
-
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const get = async () => {
+    const { MenuList } = await connect();
 
-   const get = async ()=>{
-      const { MenuList } = await connect()
-   
-      res.status(200).json(await MenuList.find({}))
-   }
+    res.status(200).json(await MenuList.find({}));
+  };
 
-   const { method } = req;
+  const { method } = req;
 
-   switch(method) {
-      case 'GET':
-         await get();
+  switch (method) {
+    case "GET":
+      await get();
       break;
 
-      default:
-         await get();
-   }
-
-
-}
+    default:
+      await get();
+  }
+};
 
 export default handler;
