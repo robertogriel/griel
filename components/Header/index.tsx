@@ -221,6 +221,8 @@ const Menu = styled.nav`
         ul {
             li {
                 height: initial;
+                border-left: 1px solid var(--blue-1);
+                align-items: center;
                 a {
                     flex-direction: column;
                     width: 130px;
@@ -230,7 +232,6 @@ const Menu = styled.nav`
                     justify-content: center;
                     padding: 0;
                     border-radius: 0;
-                    border-left: 1px solid var(--blue-1);
                     img {
                         margin: 0;
                         padding: 0;
