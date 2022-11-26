@@ -6,6 +6,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { MenuList } = await connect();
 
     res.status(200).json(await MenuList.find({}));
+
+    res.send('');
   };
 
   const { method } = req;
