@@ -6,7 +6,7 @@ export const connect = async ()=>{
 
     const conn = await mongoose.connect(MONGODB_URL as string).catch((err)=>console.error(err))
 
-    console.log('Mongoose connected');
+    if (conn) console.log("MongoDB Connected")
 
     const MenuSchema = new Schema({
         _id: String,
