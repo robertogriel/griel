@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json(await MenuList.find({}));
 
-    res.send('');
+    return res.send(MenuList);
   };
 
   const { method } = req;
