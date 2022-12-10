@@ -11,6 +11,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(200);
     res.end();
 
+    return res.send(json);
+
   };
 
   const { method } = req;
