@@ -30,12 +30,12 @@ export default function Footer(){
     return <FooterTag>
         <div className="icons">
             <div className="icon">
-                <a href="https://www.linkedin.com/in/roberto-griel-filho/" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/roberto-griel-filho/" target="_blank" rel="noreferrer" aria-label="Encontre-me no LinkedIn">
                     <img src="/images/svg/icon-linkedin.svg" alt="Encontre-me no LinkedIn" />
                 </a>
             </div>
             <div className="icon">
-                <a href="https://github.com/robertogriel" target="_blank" rel="noreferrer">
+                <a href="https://github.com/robertogriel" target="_blank" rel="noreferrer" aria-label="Encontre-me no Github">
                     <img src="/images/svg/icon-github.svg" alt="Encontre-me no Github" />
                 </a>
             </div>
