@@ -5,7 +5,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const get = async () => {
     const { MenuList } = await connect();
 
-    return res.status(200).json(await MenuList.find({}));
+    const json = await MenuList.find({});
+
+    res.send(json);
+    res.status(200);
+    res.end();
 
   };
 
