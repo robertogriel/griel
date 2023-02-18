@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 
-type SectionType = {
+type MainType = {
   children: ReactNode;
   class?: string
 };
 
-const Section: React.FC<SectionType> = (props) => {
-  return <SectionTag className={ (props.class) && props.class }>{props.children}</SectionTag>;
+const Main: React.FC<MainType> = (props) => {
+  return <MainTag className={ (props.class) && props.class }>{props.children}</MainTag>;
 };
 
-const SectionTag = styled.section`
+const MainTag = styled.main`
   display: flex;
   height: calc(100vh - 50px);
   flex-direction: column;
@@ -18,4 +18,4 @@ const SectionTag = styled.section`
   overflow-y: auto;
 `;
 
-export default Section;
+export default Main;

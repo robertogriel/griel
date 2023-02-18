@@ -3,7 +3,7 @@ import type { GetServerSidePropsContext, NextPage } from "next";
 import styled from "styled-components";
 import CertificateBox from "../components/Certificates";
 import { HtmlHead } from "../components/Html/Head";
-import Section from "../components/Html/Section";
+import Section from "../components/Html/Main";
 import { CertificateTypes } from "../types/certificates/Certificates";
 
 const CertificatePage: NextPage<any> = ({ certificates }) => {
