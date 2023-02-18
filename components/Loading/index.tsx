@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 type LoadingProps = {
-    width: string;
-    height: string;
-}
+  width: string;
+  height: string;
+};
 
 const Loading: React.FC<LoadingProps> = (props) => {
   return (
-    <Container>
+    <Container {...props}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -115,10 +115,13 @@ const Loading: React.FC<LoadingProps> = (props) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ height: string; width: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  max-height: ${({ height }) => height};
+  max-width: ${({ width }) => width};
   flex: 1;
 `;
 
