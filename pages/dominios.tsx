@@ -2,17 +2,82 @@ import { useState } from "react";
 import { HtmlHead } from "../components/Html/Head";
 import Main from "../components/Html/Main";
 import styles from "../styles/Domains.module.scss";
-import {  MdCancel, MdCheckCircle, MdSearch } from "react-icons/md";
+import { MdCancel, MdCheckCircle, MdSearch } from "react-icons/md";
+import Loading from "../components/Loading";
 
 const Dominios: React.FC = () => {
   const [domainInput, setDomainInput] = useState<string>("");
+  const [domainTrim, setDomainTrim] = useState<string>("");
+  const [domainResult, setDomainResult] = useState<boolean>(false);
+  const [domainDotCom, setDomainDotCom] = useState<string | null>(null);
+  const [domainDotComBr, setDomainDotComBr] = useState<string | null>(null);
+  const [errorHandler, setErrorHandler] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const checkDomain = async () => {
     if (!domainInput) return;
 
-    //const domain = 'teste12.com.br'
-    const response = await fetch(`api/domains?q=${domainInput}`);
-    //const data = await response.json();
+    setDomainDotCom(null);
+    setDomainDotComBr(null);
+    setDomainResult(false);
+    setErrorHandler(null);
+    setLoading(true);
+
+    let newDomain = "";
+
+    const domainSplit = domainInput.split(".");
+    if (domainSplit.length < 1) return;
+
+    if (domainSplit[0] === "www") {
+      newDomain = domainSplit[1];
+    } else {
+      newDomain = domainSplit[0];
+    }
+
+    setDomainTrim(newDomain);
+
+    try {
+      await fetch(`api/domains?q=${domainTrim}.com`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.message) {
+            setErrorHandler(data.message);
+          } else {
+            switch (data.res) {
+              case "ok":
+                setDomainDotCom("Disponível");
+                break;
+              case "nok":
+                setDomainDotCom("Indisponível");
+            }
+            setLoading(false);
+            setDomainResult(true);
+          }
+        });
+
+      await fetch(`api/domains?q=${domainTrim}.com.br`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.message) {
+            setErrorHandler(data.message);
+          } else {
+            switch (data.res) {
+              case "ok":
+                setDomainDotComBr("Disponível");
+                break;
+              case "nok":
+                setDomainDotComBr("Indisponível");
+            }
+            setLoading(false);
+            setDomainResult(true);
+          }
+        });
+
+      
+    } catch (error: any) {
+      setLoading(false);
+      setErrorHandler(error.message);
+    }
   };
 
   return (
@@ -40,29 +105,39 @@ const Dominios: React.FC = () => {
             autoCapitalize="off"
             spellCheck="false"
           />
-          <button className={styles.button} onClick={checkDomain}><MdSearch fontSize={25} /></button>
+          <button className={styles.button} onClick={checkDomain}>
+            <MdSearch fontSize={25} />
+          </button>
         </div>
       </section>
-      <section className={styles.domainResult}>
-        <div className={styles.result}>
-          <div className={styles.resultIcon}>
-            <MdCheckCircle fontSize={50} color="var(--success)"/>
-          </div>
-          <div className={styles.resultText}>
-            <h2>dominio.com.br</h2>
-            <p>Disponível</p>
-          </div>
+      {loading && <Loading height="100px" width="100px" />}
+      {errorHandler && (
+        <div className={styles.error}>
+          <p>{errorHandler}</p>
         </div>
-        <div className={styles.result}>
-          <div className={styles.resultIcon}>
-            <MdCancel fontSize={50} color="var(--fail)" />
+      )}
+      {domainResult && (
+        <section className={styles.domainResult}>
+          <div className={styles.result}>
+            <div className={styles.resultIcon}>
+              <MdCheckCircle fontSize={50} color="var(--success)" />
+            </div>
+            <div className={styles.resultText}>
+              <h2>{domainTrim}.com</h2>
+              <p>{domainDotCom}</p>
+            </div>
           </div>
-          <div className={styles.resultText}>
-            <h2>dominio.com.br</h2>
-            <p>Indisponível</p>
+          <div className={styles.result}>
+            <div className={styles.resultIcon}>
+              <MdCancel fontSize={50} color="var(--fail)" />
+            </div>
+            <div className={styles.resultText}>
+              <h2>{domainTrim}.com.br</h2>
+              <p>{domainDotComBr}</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </Main>
   );
 };
