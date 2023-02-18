@@ -1,0 +1,77 @@
+@import "../assets/sass/mixin.scss";
+
+header {
+  &.domains {
+    margin-top: calc(var(--space) * 2);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    > h1 {
+      color: var(--white);
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    > p {
+      color: var(--white);
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+section {
+  &.domainForm {
+    justify-content: center;
+    align-items: center;
+  }
+  &.domainResult {
+    flex-direction: column;
+    margin-top: calc(var(--space) * 2);
+  }
+}
+
+div {
+  &.inputArea {
+    border: 2px solid var(--blue-2);
+    border-radius: var(--space);
+    height: 3.5em;
+    width: 100%;
+    background-color: var(--white);
+    padding-left: var(--space);
+    justify-content: space-between;
+    input {
+      &.input {
+        border: none;
+        font-size: 1em;
+        flex: 1;
+        outline: none;
+        @include placeholder;
+      }
+    }
+    button {
+      &.button {
+        border: none;
+        outline: none;
+        margin: 3px;
+        justify-content: center;
+        align-items: center;
+        width: 4em;
+        background-color: var(--white);
+        cursor: pointer;
+      }
+    }
+  }
+  &.result {
+    margin: var(--space) 0;
+  }
+  &.resultText {
+    flex-direction: column;
+    h2, p {
+        margin: 0;
+        color: var(--white);
+    }
+  }
+  &.resultIcon {
+    margin-right: var(--space);
+  }
+}
