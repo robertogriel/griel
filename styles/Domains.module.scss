@@ -19,6 +19,7 @@ header {
     }
   }
 }
+
 section {
   &.domainForm {
     justify-content: center;
@@ -66,12 +67,31 @@ div {
   }
   &.resultText {
     flex-direction: column;
-    h2, p {
-        margin: 0;
-        color: var(--white);
+    h2,
+    p {
+      margin: 0;
+      color: var(--white);
     }
   }
   &.resultIcon {
     margin-right: var(--space);
+  }
+  &.error {
+    justify-content: center;
+    align-items: center;
+    max-width: 30em;
+    p {
+      font-size: 2em;
+      text-align: center;
+      color: var(--fail);
+    }
+  }
+}
+
+p {
+  &.loading {
+    font-size: 2em;
+    text-align: center;
+    color: var(--white);
   }
 }
