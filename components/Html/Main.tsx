@@ -16,6 +16,7 @@ const MainTag = styled.main`
   flex-direction: column;
   padding: var(--space);
   overflow-y: auto;
+  align-self: center;
 `;
 
 export default Main;
