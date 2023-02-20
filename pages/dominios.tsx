@@ -28,7 +28,7 @@ const Dominios: React.FC = () => {
     const domainSplit = domainInput.split(".");
     if (domainSplit.length < 1) return;
 
-    if (domainSplit[0] === "www") {
+    if (/www/i.test(domainSplit[0])) {
       newDomain = domainSplit[1];
     } else {
       newDomain = domainSplit[0];
@@ -37,7 +37,7 @@ const Dominios: React.FC = () => {
     setDomainTrim(newDomain);
 
     try {
-      await fetch(`api/domains?q=${domainTrim}.com`)
+      await fetch(`api/domains?q=${newDomain}.com`)
         .then((res) => res.json())
         .then((data) => {
           if (data.message) {
@@ -55,7 +55,7 @@ const Dominios: React.FC = () => {
           }
         });
 
-      await fetch(`api/domains?q=${domainTrim}.com.br`)
+      await fetch(`api/domains?q=${newDomain}.com.br`)
         .then((res) => res.json())
         .then((data) => {
           if (data.message) {
@@ -72,8 +72,6 @@ const Dominios: React.FC = () => {
             setDomainResult(true);
           }
         });
-
-      
     } catch (error: any) {
       setLoading(false);
       setErrorHandler(error.message);
@@ -104,6 +102,11 @@ const Dominios: React.FC = () => {
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                checkDomain();
+              }
+            }}
           />
           <button className={styles.button} onClick={checkDomain}>
             <MdSearch fontSize={25} />
