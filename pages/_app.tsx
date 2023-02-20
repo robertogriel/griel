@@ -14,7 +14,7 @@ const Container = styled.main`
 
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function GrielDev({ Component, pageProps }: AppProps) {
   return (
     <>
       <Container>
@@ -30,4 +30,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default GrielDev

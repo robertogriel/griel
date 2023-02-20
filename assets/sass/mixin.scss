@@ -1,0 +1,10 @@
+@mixin placeholder {
+  &::placeholder {
+    color: var(--placeholder);
+    font-weight: 100;
+  }
+  &::-webkit-input-placeholder {
+    color: var(--placeholder);
+    font-weight: 100;
+  }
+}
