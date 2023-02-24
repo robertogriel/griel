@@ -123,7 +123,7 @@ const Dominios: React.FC = () => {
         <section className={styles.domainResult}>
           <div className={styles.result}>
             <div className={styles.resultIcon}>
-              <MdCheckCircle fontSize={50} color="var(--success)" />
+              {domainDotCom === 'Disponível' ? (<MdCheckCircle fontSize={50} color="var(--success)" />) : (<MdCancel fontSize={50} color="var(--fail)" />)}
             </div>
             <div className={styles.resultText}>
               <h2>{domainTrim}.com</h2>
@@ -132,7 +132,7 @@ const Dominios: React.FC = () => {
           </div>
           <div className={styles.result}>
             <div className={styles.resultIcon}>
-              <MdCancel fontSize={50} color="var(--fail)" />
+              {domainDotComBr === 'Disponível' ? (<MdCheckCircle fontSize={50} color="var(--success)" />) : (<MdCancel fontSize={50} color="var(--fail)" />)}
             </div>
             <div className={styles.resultText}>
               <h2>{domainTrim}.com.br</h2>
