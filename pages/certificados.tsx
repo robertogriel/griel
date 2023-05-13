@@ -1,57 +1,40 @@
 import axios from "axios";
 import type { GetServerSidePropsContext, NextPage } from "next";
-import { useState } from "react";
 import styled from "styled-components";
 import CertificateBox from "../components/Certificates";
-import Modal from "../components/Certificates/modal";
 import { HtmlHead } from "../components/Html/Head";
-import { CertificateModalToOpenType, CertificateTypes } from "../types/certificates/Certificates";
-
+import Section from "../components/Html/Main";
+import { CertificateTypes } from "../types/certificates/Certificates";
 
 const CertificatePage: NextPage<any> = ({ certificates }) => {
-
   return (
-    <>
+    <Section>
       <HtmlHead
         title="<Certificados /> ● Griel Developer"
         metaDescription="Conheça todas as minhas certificações"
       />
+      <Title>certificados</Title>
+      <Paragraph>
+        Cada um destes certificados representam horas de estudos, muita
+        disciplina e vontade de aprender.
+      </Paragraph>
 
-      <Certificates>
-        <Title>certificados</Title>
-        <Paragraph>
-          Cada um destes certificados representam horas de estudos, muita
-          disciplina e vontade de aprender.
-        </Paragraph>
-
-        <CertificateContainer>
-          {certificates &&
-            certificates
-              .sort()
-              .reverse()
-              .map(({ image, name }: CertificateTypes, index: number) => (
-                <CertificateBox key={index} image={image} name={name} />
-              ))}
-        </CertificateContainer>
-      </Certificates>
-    </>
+      <CertificateContainer>
+        {certificates &&
+          certificates
+            .sort()
+            .reverse()
+            .map(({ image, name }: CertificateTypes, index: number) => (
+              <CertificateBox key={index} image={image} name={name} />
+            ))}
+      </CertificateContainer>
+    </Section>
   );
 };
 
 const Home: NextPage<any> = ({ data }) => {
-  return (
-
-      <CertificatePage certificates={data} />
-
-  );
+  return <CertificatePage certificates={data} />;
 };
-
-const Certificates = styled.section`
-  height: calc(100vh - 50px);
-  flex-direction: column;
-  padding: var(--space);
-  overflow-y: auto;
-`;
 
 const CertificateContainer = styled.div`
   flex-wrap: wrap;
