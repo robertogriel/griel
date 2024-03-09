@@ -1,25 +1,38 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @next/next/link-passhref */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { MenuItem } from '../Menu/MenuItem'
-import axios from 'axios'
-import Link from 'next/link'
+import { MenuTypes } from '../../types/menu/Menu'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
-  const [menuList, setMenuList] = useState<any[]>()
+  const [menuList, setMenuList] = useState<MenuTypes[]>()
 
   const getMenuList = async () => {
-    await axios
-      .get('/api/menu')
-      .then(({ data }) => {
-        setMenuList(data)
-      })
-      .catch((e: any) => {
-        console.log(e.message)
-      })
+    const items = [
+      {
+        href: '/',
+        icon: 'home',
+        alt: 'Voltar para a página inicial',
+        small: 'Voltar para a página inicial',
+        strong: 'Home'
+      },
+      {
+        href: '/certificados',
+        icon: 'certificates',
+        alt: 'Veja meus certificados',
+        small: 'Veja meus certificados',
+        strong: 'Certificados'
+      },
+      {
+        href: '/dominios',
+        icon: 'domains',
+        alt: 'Consulte a disponibilidade de um domínio',
+        small: 'Consulte um domínio',
+        strong: 'Domínios'
+      }
+    ]
+
+    setMenuList(items)
   }
 
   useEffect(() => {
@@ -29,12 +42,12 @@ export default function Header() {
   return (
     <>
       <HeaderTag>
-        <Link href="/">
+        <a href="/">
           <picture>
             <source srcSet="/images/webp/logo.webp" type="image/webp" />
             <img loading="lazy" src="/images/png/logo.png" alt="Griel Developer" />
           </picture>
-        </Link>
+        </a>
         <button
           accessKey="m"
           aria-label={menuOpen ? 'Abrir o Menu' : 'Fechar o Menu'}

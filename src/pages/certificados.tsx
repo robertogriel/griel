@@ -1,13 +1,37 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from 'axios'
-import type { NextPage } from 'next'
 import styled from 'styled-components'
 import CertificateBox from '../components/Certificates'
 import { HtmlHead } from '../components/Html/Head'
 import Section from '../components/Html/Main'
 import { CertificateTypes } from '../types/certificates/Certificates'
+import { useEffect, useState } from 'react'
 
-const CertificatePage: NextPage<any> = ({ certificates }) => {
+const CertificatePage: React.FC = () => {
+  const [certificates, setCertificates] = useState<CertificateTypes[]>()
+
+  useEffect(() => {
+    getCertificates()
+  }, [])
+
+  function getCertificates() {
+    const certificateList = [
+      { name: 'Hcode Lab Webstarter HTML5 & CSS3', image: 'html' },
+      { name: 'Hcode Lab JavaScript Developer', image: 'javascript' },
+      { name: 'Hcode Lab Database MySQL Developer', image: 'database' },
+      { name: 'Hcode Lab Back End Node NestJS Developer', image: 'backend' },
+      { name: 'Hcode Lab Front End React NextJS Developer', image: 'react' },
+      { name: 'Hcode Lab Mobile React Native Developer', image: 'mobile' },
+      { name: 'Curso NodeJS', image: 'curso-node' },
+      { name: 'Curso Design com Figma', image: 'design-figma' },
+      { name: 'Curso Completo de PHP7', image: 'curso-php7' },
+      { name: 'Curso Integrando PagSeguro com PHP7', image: 'curso-php7-pagseguro' },
+      { name: 'Curso Dominando Banco de Dados MySQL', image: 'curso-mysql' },
+      { name: 'Curso WSL2', image: 'curso-wsl2' },
+      { name: 'Curso Gestão de Ambiente Multigeracional', image: 'curso-ambiente-geracional' }
+    ]
+
+    setCertificates(certificateList)
+  }
+
   return (
     <Section>
       <HtmlHead title="<Certificados /> ● Griel Developer" metaDescription="Conheça todas as minhas certificações" />
@@ -27,10 +51,6 @@ const CertificatePage: NextPage<any> = ({ certificates }) => {
       </CertificateContainer>
     </Section>
   )
-}
-
-const Home: NextPage<any> = ({ data }) => {
-  return <CertificatePage certificates={data} />
 }
 
 const CertificateContainer = styled.div`
@@ -61,16 +81,4 @@ const Paragraph = styled.p`
   }
 `
 
-export default Home
-
-export const getServerSideProps = async () => {
-  const { data } = await axios.get('/api/certificates', {
-    baseURL: process.env.FRONT_API
-  })
-
-  return {
-    props: {
-      data
-    }
-  }
-}
+export default CertificatePage
