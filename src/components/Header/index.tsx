@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
@@ -11,7 +13,7 @@ export default function Header() {
 
   const getMenuList = async () => {
     await axios
-      .get(`/api/menu`)
+      .get('/api/menu')
       .then(({ data }) => {
         setMenuList(data)
       })
