@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
 import styled from 'styled-components'
 import { CertificateModalToOpenType, CertificateTypes } from '../../types/certificates/Certificates'
