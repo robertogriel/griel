@@ -8,8 +8,12 @@
   "extends": [
     "plugin:react/recommended",
     "eslint:recommended",
+    "standard",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:@next/next/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/standard",
+    "prettier/react"
   ],
   "settings": {
     "react": {
@@ -26,7 +30,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "no-unused-vars": "error",
     "prettier/prettier": [

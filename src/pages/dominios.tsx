@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { HtmlHead } from '../components/Html/Head'
 import Main from '../components/Html/Main'
-import styles from '../styles/Domains.module.scss'
 import { MdCancel, MdCheckCircle, MdSearch } from 'react-icons/md'
 import Loading from '../components/Loading'
 
@@ -86,14 +85,13 @@ const Dominios: React.FC = () => {
         metaDescription="Consulte aqui a disponibilidade de um domínio."
       />
 
-      <header className={styles.domains}>
+      <header>
         <h1>Domínios</h1>
         <p>Consulte aqui a disponibilidade de um domínio.</p>
       </header>
-      <section className={styles.domainForm}>
-        <div className={styles.inputArea}>
+      <section>
+        <div>
           <input
-            className={styles.input}
             type="text"
             placeholder="Ex.: www.dominio.com.br"
             name="domain"
@@ -109,41 +107,41 @@ const Dominios: React.FC = () => {
               }
             }}
           />
-          <button className={styles.button} onClick={checkDomain}>
+          <button onClick={checkDomain}>
             <MdSearch fontSize={25} />
           </button>
         </div>
       </section>
       {loading && <Loading height="100px" width="100px" />}
       {errorHandler && (
-        <div className={styles.error}>
+        <div>
           <p>{errorHandler}</p>
         </div>
       )}
       {domainResult && (
-        <section className={styles.domainResult}>
-          <div className={styles.result}>
-            <div className={styles.resultIcon}>
+        <section>
+          <div>
+            <div>
               {domainDotCom === 'Disponível' ? (
                 <MdCheckCircle fontSize={50} color="var(--success)" />
               ) : (
                 <MdCancel fontSize={50} color="var(--fail)" />
               )}
             </div>
-            <div className={styles.resultText}>
+            <div>
               <h2>{domainTrim}.com</h2>
               <p>{domainDotCom}</p>
             </div>
           </div>
-          <div className={styles.result}>
-            <div className={styles.resultIcon}>
+          <div>
+            <div>
               {domainDotComBr === 'Disponível' ? (
                 <MdCheckCircle fontSize={50} color="var(--success)" />
               ) : (
                 <MdCancel fontSize={50} color="var(--fail)" />
               )}
             </div>
-            <div className={styles.resultText}>
+            <div>
               <h2>{domainTrim}.com.br</h2>
               <p>{domainDotComBr}</p>
             </div>
