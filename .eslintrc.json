@@ -53,6 +53,9 @@
     "react/jsx-uses-react": "off",
     "multiline-ternary": "off",
     "max-len": ["error", { "code": 120, "ignoreUrls": true, "ignoreStrings": true }],
-    "no-useless-escape": "off"
+    "no-useless-escape": "off",
+    "@next/next/no-img-element": "off",
+    "@next/next/link-passhref": "off",
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
