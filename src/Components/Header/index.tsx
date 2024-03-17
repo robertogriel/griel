@@ -81,10 +81,10 @@ export default function Header() {
           <footer>
             <p>Onde me encontrar?</p>
             <div className="icons">
-              <a href="linkedin">
+              <a href="linkedin" aria-label="Siga-me no LinkedIn">
                 <img src="/images/svg/icon-linkedin.svg" alt="" />
               </a>
-              <a href="github">
+              <a href="github" aria-label="Siga-me no Github">
                 <img src="/images/svg/icon-github.svg" alt="" />
               </a>
             </div>
@@ -102,7 +102,7 @@ const HeaderTag = styled.header`
   justify-content: space-between;
   padding: 5px var(--space);
   border-bottom: 1px solid var(--blue-1);
-  > picture {
+  picture {
     img,
     source {
       height: 35px;
@@ -192,7 +192,7 @@ const Menu = styled.nav`
         div {
           &.wrap {
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             height: 100%;
             strong,
             small {

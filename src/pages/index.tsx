@@ -1,9 +1,33 @@
-/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import styled from 'styled-components'
 import About from '../components/About'
 import { HtmlHead } from '../components/Html/Head'
 import Typewritter from '../components/Typewritter'
+
+const Home: NextPage = () => {
+  return (
+    <>
+      <HtmlHead title="Griel Developer" metaDescription="Transformo sua ideia em uma aplicação incrível" />
+
+      <Wrapper>
+        <Hero>
+          <p>Olá, eu sou</p>
+          <h1>Roberto Griel Filho</h1>
+          <Typewritter />
+
+          <About />
+        </Hero>
+
+        <AboutCode>
+          <picture>
+            <source srcSet="/images/webp/code.webp" type="image/webp" />
+            <img loading="lazy" src="/images/png/code.png" alt="Sobre" />
+          </picture>
+        </AboutCode>
+      </Wrapper>
+    </>
+  )
+}
 
 const Wrapper = styled.div`
   background-image: url('/images/png/background.png');
@@ -52,30 +76,5 @@ const AboutCode = styled.section`
     }
   }
 `
-
-const Home: NextPage = () => {
-  return (
-    <>
-      <HtmlHead title="Griel Developer" metaDescription="Transformo sua ideia em uma aplicação incrível" />
-
-      <Wrapper>
-        <Hero>
-          <p>Olá, eu sou</p>
-          <h1>Roberto Griel Filho</h1>
-          <Typewritter />
-
-          <About />
-        </Hero>
-
-        <AboutCode>
-          <picture>
-            <source srcSet="/images/webp/code.webp" type="image/webp" />
-            <img loading="lazy" src="/images/png/code.png" alt="Sobre" />
-          </picture>
-        </AboutCode>
-      </Wrapper>
-    </>
-  )
-}
 
 export default Home
