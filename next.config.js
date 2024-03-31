@@ -4,10 +4,7 @@ const nextConfig = {
   env: {
     MONGODB_STRING: process.env.MONGODB_STRING,
     MONGODB_URL: process.env.MONGODB_URL,
-    FRONT_API: process.env.FRONT_API
-  },
-  compiler: {
-    styledComponents: true
+    FRONT_API: process.env.FRONT_API,
   }
 }
 
