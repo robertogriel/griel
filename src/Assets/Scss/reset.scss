@@ -1,0 +1,35 @@
+//Imports from other files
+@import 'fonts.scss';
+@import 'variables.scss';
+
+//All document
+* {
+    margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Segoe UI', 'Roboto', Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+//Set those tags to display flex default
+body, header, footer, main, div, section, article, form, input, ul, li, img, picture, source, button, h1, h2, h3, h4, h5, h6 {
+	display: flex;
+}
+
+body {
+	background-color: var(--bg-color)!important;
+	&.certificate-modal {
+		overflow: hidden;
+	}
+}
+
+#root {
+	width: 100%;
+    flex-direction: column;
+    height: 100vh;
+}
+a {
+	text-decoration: none;
+}
