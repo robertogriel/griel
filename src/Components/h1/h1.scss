@@ -1,0 +1,10 @@
+h1 {
+    &.component {
+        font-family: 'Roboto', sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        color: var(--dark-0);
+        text-transform: uppercase;
+        justify-content: center;
+    }
+}
