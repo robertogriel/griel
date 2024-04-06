@@ -268,38 +268,39 @@ const LojaVirtual: React.FC = () => {
           <br />
           <h2>Confira na tabela abaixo a diferença entre as lojas:</h2>
         </header>
-
-        <ResourcesTable border={1}>
-          <TableHead>
-            <tr>
-              <th>Recurso</th>
-              <th>Loja Básica</th>
-              <th>Loja Completa</th>
-            </tr>
-          </TableHead>
-          <TableBody>
-            {resources.map((item, index) => (
-              <tr key={index}>
-                <td>{item.title}</td>
-                <td>{item.basic ? <CheckCircleSharpIcon /> : <RadioButtonUncheckedSharpIcon />}</td>
-                <td>{item.complete ? <CheckCircleSharpIcon /> : <RadioButtonUncheckedSharpIcon />}</td>
+        <div style={{ overflowX: 'auto' }}>
+          <ResourcesTable border={1}>
+            <TableHead>
+              <tr>
+                <th>Recurso</th>
+                <th>Loja Básica</th>
+                <th>Loja Completa</th>
               </tr>
-            ))}
-            <tr>
-              <td></td>
-              <td>
-                <strong>R$ 2.500,00</strong>
-                <br />
-                <span>ou 12x de R$258,56</span>
-              </td>
-              <td>
-                <strong>R$ 3.000,00</strong>
-                <br />
-                <span>ou 12x de R$310,28</span>
-              </td>
-            </tr>
-          </TableBody>
-        </ResourcesTable>
+            </TableHead>
+            <TableBody>
+              {resources.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.title}</td>
+                  <td>{item.basic ? <CheckCircleSharpIcon /> : <RadioButtonUncheckedSharpIcon />}</td>
+                  <td>{item.complete ? <CheckCircleSharpIcon /> : <RadioButtonUncheckedSharpIcon />}</td>
+                </tr>
+              ))}
+              <tr>
+                <td></td>
+                <td>
+                  <strong>R$ 2.500,00</strong>
+                  <br />
+                  <span>ou 12x de R$258,56</span>
+                </td>
+                <td>
+                  <strong>R$ 3.000,00</strong>
+                  <br />
+                  <span>ou 12x de R$310,28</span>
+                </td>
+              </tr>
+            </TableBody>
+          </ResourcesTable>
+        </div>
       </ResourcesDifferences>
       <Hosting>
         <header>
@@ -363,10 +364,14 @@ const Resources = styled.section`
   border-radius: var(--space);
   background-color: var(--blue-4);
   max-width: 70rem;
+  width: 100%;
   article {
     grid-gap: 40px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 469px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .item {
       flex-direction: column;
       h3 {
@@ -393,6 +398,7 @@ const ResourcesDifferences = styled.section`
   border-radius: var(--space);
   background-color: var(--blue-4);
   max-width: 70rem;
+  width: 100%;
   align-self: center;
   header {
     flex-direction: column;
@@ -454,6 +460,7 @@ const Hosting = styled.section`
   border-radius: var(--space);
   background-color: var(--blue-4);
   max-width: 70rem;
+  width: 100%;
   align-self: center;
   header {
     flex-direction: column;
@@ -480,6 +487,7 @@ const Contact = styled.section`
   border-radius: var(--space);
   background-color: var(--blue-4);
   max-width: 70rem;
+  width: 100%;
   align-self: center;
   header {
     flex-direction: column;
