@@ -29,6 +29,13 @@ export default function Header() {
         alt: 'Consulte a disponibilidade de um domínio',
         small: 'Consulte um domínio',
         strong: 'Domínios'
+      },
+      {
+        href: '/loja-virtual',
+        icon: 'ecommerce',
+        alt: 'Tenha a sua própria loja virtual',
+        small: 'Tenha sua loja virtual',
+        strong: 'Lojas Virtuais'
       }
     ]
 
@@ -156,7 +163,7 @@ const Menu = styled.nav`
   justify-content: space-between;
   border-radius: 0 0 var(--space) var(--space);
   &.open {
-    overflow: auto;
+    overflow: hidden;
     height: 370px;
     transition: all 1s ease-out;
     border-bottom: 1px solid var(--blue-1);
@@ -258,10 +265,12 @@ const Menu = styled.nav`
       height: 100%;
     }
     ul {
+      align-items: center;
       li {
         height: initial;
         border-left: 1px solid var(--blue-1);
         align-items: center;
+        height: 100%;
         a {
           flex-direction: column;
           width: 130px;
@@ -271,10 +280,12 @@ const Menu = styled.nav`
           justify-content: center;
           padding: 0;
           border-radius: 0;
+          height: 100%;
           img {
             margin: 0;
             padding: 0;
             height: 50px;
+            margin-top: 1rem;
           }
           div {
             &.wrap {
@@ -289,11 +300,11 @@ const Menu = styled.nav`
               }
             }
           }
+        }
+        &:last-child {
+          border-radius: 0 10px 0 0;
           &:hover {
             background-color: #013646;
-          }
-          &:last-child {
-            border-radius: 0 10px 0 0;
           }
         }
       }

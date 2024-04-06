@@ -173,6 +173,9 @@ const Header = styled.header`
 const DomainForm = styled.section`
   justify-content: center;
   align-items: center;
+  align-self: center;
+  max-width: 40rem;
+  width: 100%;
   div {
     border: 2px solid var(--blue-2);
     border-radius: var(--space);
@@ -202,6 +205,9 @@ const DomainForm = styled.section`
 const DomainResults = styled.section`
   flex-direction: column;
   margin-top: calc(var(--space) * 2);
+  align-self: center;
+  max-width: 40rem;
+  width: 100%;
 `
 const DomainResult = styled.div`
   margin: var(--space) 0;
