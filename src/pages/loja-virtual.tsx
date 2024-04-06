@@ -229,7 +229,7 @@ const LojaVirtual: React.FC = () => {
 
   function openWhatsApp() {
     window.open(
-      'https://api.whatsapp.com/send?phone=55379991848312&text=Eu%20quero%20ter%20minha%20loja%20virtual',
+      'https://api.whatsapp.com/send?phone=5537991848312&text=Eu%20quero%20ter%20minha%20loja%20virtual',
       '_blank'
     )
   }
