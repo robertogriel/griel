@@ -43,7 +43,7 @@ const LojaVirtual: React.FC = () => {
     },
     {
       title: 'Receba por Cartão de Crédito e Boleto Bancário',
-      description: `<p>Com a integração com o sistema Wirecard/MOIP, do PagSeguro, seu comprador pode pagar com
+      description: `<p>Com a integração com o sistema do PagSeguro, seu comprador pode pagar com
       segurança e comodidade dentro de sua própria loja. Além de contar com a menor taxa do mercado.</p>
             <p>Todas as atualizações referente ao pagamento são atualizadas de forma automática, seja por cartão de
             crédito ou boleto bancário.</p>
