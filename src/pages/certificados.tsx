@@ -14,19 +14,20 @@ const CertificatePage: React.FC = () => {
 
   function getCertificates() {
     const certificateList = [
-      { name: 'Hcode Lab Webstarter HTML5 & CSS3', image: 'html' },
-      { name: 'Hcode Lab JavaScript Developer', image: 'javascript' },
-      { name: 'Hcode Lab Database MySQL Developer', image: 'database' },
-      { name: 'Hcode Lab Back End Node NestJS Developer', image: 'backend' },
-      { name: 'Hcode Lab Front End React NextJS Developer', image: 'react' },
-      { name: 'Hcode Lab Mobile React Native Developer', image: 'mobile' },
-      { name: 'Curso NodeJS', image: 'curso-node' },
-      { name: 'Curso Design com Figma', image: 'design-figma' },
-      { name: 'Curso Completo de PHP7', image: 'curso-php7' },
-      { name: 'Curso Integrando PagSeguro com PHP7', image: 'curso-php7-pagseguro' },
-      { name: 'Curso Dominando Banco de Dados MySQL', image: 'curso-mysql' },
-      { name: 'Curso WSL2', image: 'curso-wsl2' },
-      { name: 'Curso Gestão de Ambiente Multigeracional', image: 'curso-ambiente-geracional' }
+      { id: 1, name: 'Hcode Lab Webstarter HTML5 & CSS3', image: 'html' },
+      { id: 2, name: 'Hcode Lab JavaScript Developer', image: 'javascript' },
+      { id: 3, name: 'Hcode Lab Database MySQL Developer', image: 'database' },
+      { id: 4, name: 'Hcode Lab Back End Node NestJS Developer', image: 'backend' },
+      { id: 5, name: 'Hcode Lab Front End React NextJS Developer', image: 'react' },
+      { id: 6, name: 'Hcode Lab Mobile React Native Developer', image: 'mobile' },
+      { id: 7, name: 'Curso NodeJS', image: 'curso-node' },
+      { id: 8, name: 'Curso Design com Figma', image: 'design-figma' },
+      { id: 9, name: 'Curso Completo de PHP7', image: 'curso-php7' },
+      { id: 10, name: 'Curso Integrando PagSeguro com PHP7', image: 'curso-php7-pagseguro' },
+      { id: 11, name: 'Curso Dominando Banco de Dados MySQL', image: 'curso-mysql' },
+      { id: 12, name: 'Curso WSL2', image: 'curso-wsl2' },
+      { id: 13, name: 'Curso Gestão de Ambiente Multigeracional', image: 'curso-ambiente-geracional' },
+      { id: 14, name: 'Curso Docker Fundamentos', image: 'curso-docker' }
     ]
 
     setCertificates(certificateList)
@@ -43,10 +44,10 @@ const CertificatePage: React.FC = () => {
       <CertificateContainer>
         {certificates &&
           certificates
-            .sort()
+            .sort((a, b) => a.id - b.id)
             .reverse()
-            .map(({ image, name }: CertificateTypes, index: number) => (
-              <CertificateBox key={index} image={image} name={name} />
+            .map(({ image, name, id }: CertificateTypes, index: number) => (
+              <CertificateBox key={index} image={image} name={name} id={id} />
             ))}
       </CertificateContainer>
     </Section>
